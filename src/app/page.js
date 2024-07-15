@@ -1,21 +1,26 @@
-"use client"
-import React, { useEffect } from 'react';
-import ReservationForm from '@/app/components/ReservationForm';
-import { useCurrency } from '@/app/contexts/CurrencyContext';
-import { roomData } from '@/roomData'; 
+"use client";
+import React, { useEffect } from "react";
+import ReservationForm from "@/app/components/ReservationForm";
+import { useCurrency } from "@/app/contexts/CurrencyContext";
+import { roomData } from "@/roomData";
+import Hero from "./components/Hero";
 
 const Home = () => {
   const { setRoomData } = useCurrency();
 
   useEffect(() => {
-    setRoomData(roomData); 
+    setRoomData(roomData);
   }, [setRoomData]);
 
   return (
-    <div className="container mx-auto p-4">
-      <h1 className="text-2xl font-bold">Bienvenido a nuestro Hotel</h1>
-      <ReservationForm />
-    </div>
+    <>
+      {/* <h1 className="text-2xl font-bold">Bienvenido a nuestro Hotel</h1> */}
+      <Hero />
+      <Hero />
+      <Hero />
+      <Hero />
+      <Hero />
+    </>
   );
 };
 

@@ -1,34 +1,33 @@
-"use client"
+"use client";
 import React, { createContext, useContext, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import es from '../locales/es';
 import en from '../locales/en';
-import fr from '../locales/fr';
 import it from '../locales/it';
+import fr from '../locales/fr';
 
-const LanguageContext = createContext();
+export const LanguageContext = createContext();
 
 export const LanguageProvider = ({ children }) => {
+  const { i18n } = useTranslation();
   const [language, setLanguage] = useState('es');
 
   const translations = {
     es,
     en,
-    fr,
     it,
+    fr,
   };
 
   const getTranslations = () => translations[language];
 
-  const menuItems = [
-    { href: '/', label: 'welcome', current: true },
-    { href: '/rooms', label: 'rooms', current: false },
-    { href: '/services', label: 'services', current: false },
-    { href: '/reservations', label: 'reservations', current: false },
-    { href: '/contact', label: 'contact', current: false },
-  ];
+  const changeLanguage = (lng) => {
+    setLanguage(lng);
+    // i18n.changeLanguage(lng); // Cambia el idioma en i18next
+  };
 
   return (
-    <LanguageContext.Provider value={{ language, setLanguage, getTranslations, menuItems }}>
+    <LanguageContext.Provider value={{ language, changeLanguage, getTranslations }}>
       {children}
     </LanguageContext.Provider>
   );

@@ -41,8 +41,11 @@ const ReservationForm = () => {
     .filter(r => r.roomType === selectedRoom.roomType)
     .map(r => r.capacity);
 
+  // Calculate total price
+  const totalPrice = (selectedRoom.price[currency] + selectedRoom.fees[currency]).toFixed(2);
+
   return (
-    <form className="space-y-4">
+    <form className="space-y-4 mt-[50rem]">
       <div>
         <label className="block">Selecciona el tipo de habitación:</label>
         <select
@@ -77,6 +80,14 @@ const ReservationForm = () => {
         <label className="block">Precio:</label>
         <span>
           {selectedRoom.price[currency]} {currency}
+        </span>
+        <label className="block">Impuestos:</label>
+        <span>
+          {selectedRoom.fees[currency]} {currency}
+        </span>
+        <label className="block">Total:</label>
+        <span>
+          {totalPrice} {currency}
         </span>
       </div>
 

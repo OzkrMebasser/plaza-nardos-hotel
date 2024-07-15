@@ -1,3 +1,26 @@
+
+import React from 'react';
+import "/node_modules/flag-icons/css/flag-icons.min.css";
+
+import { LanguageProvider } from './contexts/LanguageContext.jsx';
+import { CurrencyProvider } from './contexts/CurrencyContext.jsx';
+import Navbar from './components/Navbar.jsx';
+import './globals.css';
+
+export default function RootLayout({ children }) {
+  return (
+    <LanguageProvider>
+      <CurrencyProvider>
+        <html lang="en">
+          <body>
+            <Navbar />
+            {children}
+          </body>
+        </html>
+      </CurrencyProvider>
+    </LanguageProvider>
+  );
+}
 // import { Inter } from "next/font/google";
 // import "./globals.css";
 
@@ -15,23 +38,3 @@
 //     </html>
 //   );
 // }
-import React from 'react';
-import { LanguageProvider } from './contexts/LanguageContext.jsx';
-import { CurrencyProvider } from './contexts/CurrencyContext.jsx';
-import Navbar from './components/Navbar';
-import './globals.css';
-
-export default function RootLayout({ children }) {
-  return (
-    <LanguageProvider>
-      <CurrencyProvider>
-        <html lang="en">
-          <body>
-            <Navbar />
-            {children}
-          </body>
-        </html>
-      </CurrencyProvider>
-    </LanguageProvider>
-  );
-}

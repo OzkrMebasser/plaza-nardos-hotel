@@ -11,8 +11,9 @@ i18n
     resources: {
       es: { translation: es },
       en: { translation: en },
-      fr: { translation: fr },
       it: { translation: it },
+      fr: { translation: fr },
+      
     },
     lng: 'es',
     fallbackLng: 'en',
