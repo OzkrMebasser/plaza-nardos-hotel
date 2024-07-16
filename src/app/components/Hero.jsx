@@ -15,8 +15,8 @@ const Hero = () => {
         <div className="absolute inset-0 bg-black bg-opacity-30 z-10"></div>
       </div>
       <div className="video-content z-20 space-y-2 px-4 md:px-0">
-        <h1 className="font-light text-6xl">Disfruta nuestro hotel</h1>
-        <h3 className="font-light text-3xl">La mejor ubicacion</h3>
+       <h1 className="text-5xl font-bold">Bienvenido a nuestro Hotel</h1>
+        <h3 className="font-light text-3xl">Relajate y disfruta!</h3>
       </div>
     </section>
   );
