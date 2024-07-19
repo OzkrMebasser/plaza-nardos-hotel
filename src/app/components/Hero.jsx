@@ -1,7 +1,13 @@
 import React from 'react';
 
+
+
+
 const Hero = () => {
-  return (
+
+ ;
+
+    return (
     <section className="relative h-screen w-full flex flex-col items-center justify-center text-center text-white">
       <div className="video-docker absolute top-0 left-0 w-full h-full overflow-hidden">
         <video
@@ -12,9 +18,9 @@ const Hero = () => {
           muted
           loop
         />
-        <div className="absolute inset-0 bg-black bg-opacity-30 z-10"></div>
+        <div className="absolute inset-0 bg-black bg-opacity-30 "></div>
       </div>
-      <div className="video-content z-20 space-y-2 px-4 md:px-0">
+      <div className="video-content z-10 space-y-2 px-4 md:px-0">
        <h1 className="text-5xl font-bold">Bienvenido a nuestro Hotel</h1>
         <h3 className="font-light text-3xl">Relajate y disfruta!</h3>
       </div>

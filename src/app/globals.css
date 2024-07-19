@@ -10,3 +10,7 @@
       @apply translate-x-3;
     }
   }
+
+.chatBtn{
+  z-index: 9999999999999999;
+}
