@@ -344,7 +344,7 @@ const ChatCard = () => {
                       >
                         <FaFacebookMessenger className="w-5 h-5 inline mr-3" />
                         <a
-                          href="https://www.facebook.com/messages/t/342504035620912"
+                          href="https://m.me/342504035620912"
                           target="_blank"
                           rel="noopener noreferrer"
                         >
