@@ -118,13 +118,13 @@ const Navbar = () => {
           }`}
         >
           {Object.keys(translations.nav).map((key, index) => (
-            <li className="w-80   " key={index}>
+            <li className="" key={index}>
               <Link
                 href={`/${key}`}
                 className={`block py-4   ${
                   isScrolled
-                    ? "text-[#2b3163]   hover:bg-gray-100 "
-                    : "text-white   hover:bg-gray-700"
+                    ? "text-[#2b3163]  hover:text-[#575e96]"
+                    : "text-white   hover:text-gray-500"
                 }`}
               >
                 {translations.nav[key]}

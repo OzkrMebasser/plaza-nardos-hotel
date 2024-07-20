@@ -13,7 +13,7 @@ const DropdownsSMscreen = ({
 }) => {
   return (
     <>
-      <li className="fixed left-[3rem] bottom-[2rem] text-[#2b3163] flex flex-col items-center ">
+      <li className="fixed right-9 top-[16rem] text-[#2b3163] flex flex-col items-center ">
         <div onClick={() => setMobileCurrencyOpen(!isMobileCurrencyOpen)}>
           <BsCurrencyExchange
             className={` text-[32px] cursor-pointer ${
@@ -52,7 +52,7 @@ const DropdownsSMscreen = ({
           </div>
         )}
       </li>
-      <li className="fixed right-[3rem] bottom-[2em] justify-center text-[#2b3163] flex flex-col items-center">
+      <li className="fixed right-9 bottom-[15rem] justify-center text-[#2b3163] flex flex-col items-center">
         <div onClick={() => setMobileLanguageOpen(!isMobileLanguageOpen)}>
           <BsTranslate
             className={` text-3xl cursor-pointer ${
