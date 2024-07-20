@@ -5,6 +5,7 @@ import { CurrencyProvider } from "./contexts/CurrencyContext.jsx";
 import Navbar from "./components/Navbar.jsx";
 import ChatCard from "./components/ChatCard.jsx";
 import "./globals.css";
+import Footer from "./components/Footer.jsx";
 
 
 
@@ -32,6 +33,7 @@ export default function RootLayout({ children }) {
             <Navbar />
             {children}
             <ChatCard />
+            <Footer/>
           </body>
         </html>
       </CurrencyProvider>
