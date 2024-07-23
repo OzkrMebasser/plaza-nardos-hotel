@@ -18,6 +18,7 @@ const ChatCard = () => {
   const [hasName, setHasName] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [isAtBottom, setIsAtBottom] = useState(false);
+  const [images, setImages] = useState([]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -25,7 +26,14 @@ const ChatCard = () => {
 
       const scrollPosition = window.innerHeight + window.scrollY;
       const documentHeight = document.body.offsetHeight;
-      setIsAtBottom(documentHeight - scrollPosition < 450);
+
+      const footer = document.getElementById("footer");
+      if (footer) {
+        const footerTop = footer.getBoundingClientRect().top + window.scrollY;
+        setIsAtBottom(scrollPosition >= footerTop);
+      } else {
+        setIsAtBottom(documentHeight - scrollPosition < 450);
+      }
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -61,10 +69,33 @@ const ChatCard = () => {
     }
   };
 
+  const callCenterImgs = [
+    "https://firebasestorage.googleapis.com/v0/b/hotel-plaza-nardos.appspot.com/o/main-images%2FcallCenter1.jpeg?alt=media&token=cf9f5bbd-a67b-4634-a170-3b6ae50bb5d5",
+    "https://firebasestorage.googleapis.com/v0/b/hotel-plaza-nardos.appspot.com/o/main-images%2FcallCenter2.png?alt=media&token=65e77511-8ad8-4ae4-81ef-cfc88bb4e61d",
+    "https://firebasestorage.googleapis.com/v0/b/hotel-plaza-nardos.appspot.com/o/main-images%2FcallCenter3.png?alt=media&token=12a0ab69-47bc-4457-8e49-65cccc7946a3",
+  ];
+
+  // Función para seleccionar imágenes aleatorias
+  const getRandomImages = () => {
+    let selectedImages = [];
+    let usedIndices = new Set();
+    while (selectedImages.length < 3) {
+      const randomIndex = Math.floor(Math.random() * callCenterImgs.length);
+      if (!usedIndices.has(randomIndex)) {
+        usedIndices.add(randomIndex);
+        selectedImages.push(callCenterImgs[randomIndex]);
+      }
+    }
+    return selectedImages;
+  };
+
+  useEffect(() => {
+    setImages(getRandomImages());
+  }, []);
   return (
     <>
       <div
-        className={`fixed w-full px-4 lg:w-[29rem] bottom-20 lg:bottom-5 md:px-4 md:right-4 lg:px-4 lg:right-20 ${
+        className={`fixed w-full px-4 lg:w-[29rem] bottom-[5.5rem] lg:bottom-16 md:px-4 md:right-4 lg:px-4 lg:right-16 ${
           isOpen ? "z-50" : "-z-50"
         } `}
       >
@@ -131,17 +162,18 @@ const ChatCard = () => {
                         <div className="flex flex-row -space-x-12">
                           <img
                             className="w-16 h-16 rounded-full border-2 border-white"
-                            src="https://images.unsplash.com/photo-1544725176-7c40e5a71c5e"
+                            src={images[0]}
+
                             alt="user1"
                           />
                           <img
                             className="w-16 h-16 rounded-full border-2 border-white"
-                            src="https://images.unsplash.com/flagged/photo-1570612861542-284f4c12e75f"
+                            src={images[1]}
                             alt="user2"
                           />
                           <img
                             className="w-16 h-16 rounded-full border-2 border-white"
-                            src="https://images.unsplash.com/photo-1499952127939-9bbf5af6c51c"
+                            src={images[2]}
                             alt="user3"
                           />
                         </div>
@@ -209,7 +241,7 @@ const ChatCard = () => {
 
       <div
         onClick={toggleChat}
-        className={`fixed z-50 shadow-2xl right-4 bottom-4 rounded-full w-16 h-16 flex items-center justify-center cursor-pointer ${
+        className={`fixed z-50 shadow-2xl right-4 bottom-4 rounded-full w-16 h-16 flex items-center justify-center cursor-pointer roll-in-blurred-left ${
           isAtBottom
             ? "text-[#2b3163] bg-white text-[26px]"
             : isScrolled
@@ -224,3 +256,4 @@ const ChatCard = () => {
 };
 
 export default ChatCard;
+

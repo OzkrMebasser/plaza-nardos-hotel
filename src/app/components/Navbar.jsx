@@ -19,10 +19,16 @@ const Navbar = () => {
   const [isMobileCurrencyOpen, setMobileCurrencyOpen] = useState(false);
   const [isMobileLanguageOpen, setMobileLanguageOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isFooterVisible, setIsFooterVisible] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
+
+      const footer = document.getElementById("footer");
+      const rect = footer.getBoundingClientRect();
+      const isVisible = rect.top <= window.innerHeight && rect.bottom >= 0;
+      setIsFooterVisible(isVisible);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -43,16 +49,18 @@ const Navbar = () => {
 
   return (
     <nav
-      className={` fixed top-0 left-0 w-full transition-all duration-300 ${
-        isScrolled ? "bg-white " : "bg-transparent"
-      }  py-2.5  z-50`}
+      className={`fixed top-0 left-0 w-full transition-all duration-300 ${
+        isScrolled ? "bg-white shadow-lg" : "bg-transparent"
+      } py-2.5 z-50 ${
+        isFooterVisible ? "h-[5.5rem] lg:px-6" : "h-auto"
+      }`}
     >
       <div className="p-2 lg:px-6 xl:px-8 2xl:px-11 flex flex-wrap justify-between items-center mx-auto">
         <Link href="/" className="flex items-center">
           <Image
             src={logo}
-            height={80}
-            width={140}
+            height={isFooterVisible ? 60 : 80}
+            width={isFooterVisible ? 100 : 140}
             alt="logo Plaza Nardos Hotel"
             className={`transition-opacity duration-300 z-50 ml-[10px] md:ml-6 lg:ml-0 ${
               isScrolled
@@ -70,25 +78,25 @@ const Navbar = () => {
 
         <div className="hidden md:flex md:items-center">
           <ul
-            className={`flex space-x-8 md:ml-6 
-            ${isScrolled ? "ml-24 " : "text-white ml-8"}
-            `}
+            className={`flex space-x-8 md:ml-6 ${
+              isScrolled ? "ml-24" : "text-white ml-8"
+            }`}
           >
             {Object.keys(translations.nav).map((key, index) => (
               <li key={index}>
                 <Link
-                
                   href={`/${key}`}
-                 
-                  className={`font-semibold relative  cursor-pointer
-                    ${isScrolled
-                      ? "text-[#2b3163] hover:text-gray-400 after:bg-[#4d4d52] after:absolute after:h-[1px] after:w-0 after:bottom-[-3px] after:left-0 hover:after:w-full after:transition-all after:duration-300 "
+                  className={`font-semibold relative cursor-pointer ${
+                    isScrolled
+                      ? "text-[#2b3163] hover:text-gray-400 after:bg-[#4d4d52] after:absolute after:h-[1px] after:w-0 after:bottom-[-3px] after:left-0 hover:after:w-full after:transition-all after:duration-300"
                       : "text-white hover:text-[#2b3163] after:bg-white after:absolute after:h-[1px] after:w-0 after:bottom-[-3px] after:left-0 hover:after:w-full after:transition-all after:duration-300"
                   }`}
+                  style={{
+                    fontSize: isFooterVisible ? "0.75rem" : "1rem",
+                  }}
                 >
                   {translations.nav[key]}
                 </Link>
-
               </li>
             ))}
             <DropdownsLGscreen
@@ -102,18 +110,16 @@ const Navbar = () => {
 
       {/* MOBILE NAV */}
       <div
-        className={`w-full h-screen mx-auto md:hidden  ${
+        className={`w-full h-screen mx-auto md:hidden ${
           isMobileMenuOpen ? "" : "hidden"
-        } 
-        ${
+        } ${
           isScrolled
             ? "left-0"
-            : "left-0 top-0 absolute bg-[#2b3163] bg-opacity-4 "
-        }
-        `}
+            : "left-0 top-0 absolute bg-[#2b3163] bg-opacity-4"
+        }`}
       >
         <ul
-          className={`flex flex-col ml-6  ${
+          className={`flex flex-col ml-6 ${
             isScrolled ? "py-7 mt-[1rem]" : "py-7 mt-[8rem]"
           }`}
         >
@@ -121,10 +127,10 @@ const Navbar = () => {
             <li className="" key={index}>
               <Link
                 href={`/${key}`}
-                className={`block py-4   ${
+                className={`block py-4 ${
                   isScrolled
-                    ? "text-[#2b3163]  hover:text-[#575e96]"
-                    : "text-white   hover:text-gray-500"
+                    ? "text-[#2b3163] hover:text-[#575e96]"
+                    : "text-white hover:text-gray-500"
                 }`}
               >
                 {translations.nav[key]}
