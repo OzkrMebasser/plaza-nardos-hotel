@@ -110,28 +110,29 @@ const Navbar = () => {
 
       {/* MOBILE NAV */}
       <div
-        className={`w-full h-screen mx-auto md:hidden ${
-          isMobileMenuOpen ? "" : "hidden"
+        className={`w-full  mx-auto md:hidden ${
+          isMobileMenuOpen ? `${
+            isFooterVisible ? "bg-white absolute -mt-2 h-screen" : "h-screen"
+          }` : "hidden"
         } ${
           isScrolled
-            ? "left-0"
+            ? "left-0 "
             : "left-0 top-0 absolute bg-[#2b3163] bg-opacity-4"
-        }`}
+        } `}
       >
         <ul
           className={`flex flex-col ml-6 ${
-            isScrolled ? "py-7 mt-[1rem]" : "py-7 mt-[8rem]"
-          }`}
+            isScrolled ? "py-7 mt-[1rem]" : "py-7 mt-[8rem] "
+          } `}
         >
           {Object.keys(translations.nav).map((key, index) => (
-            <li className="" key={index}>
+            <li className={``} key={index}>
               <Link
                 href={`/${key}`}
-                className={`block py-4 ${
-                  isScrolled
-                    ? "text-[#2b3163] hover:text-[#575e96]"
-                    : "text-white hover:text-gray-500"
-                }`}
+                className={`block py-4  ${isScrolled
+                      ? "text-[#2b3163] hover:text-gray-400 after:bg-[#4d4d52] after:absolute after:h-[1px] after:w-0 after:bottom-[-3px] after:left-0 hover:after:w-full after:transition-all after:duration-300 "
+                      : "text-white hover:text-[#2b3163] after:bg-white after:absolute after:h-[1px] after:w-0 after:bottom-[-3px] after:left-0 hover:after:w-full after:transition-all after:duration-300"
+                  }`}
               >
                 {translations.nav[key]}
               </Link>
