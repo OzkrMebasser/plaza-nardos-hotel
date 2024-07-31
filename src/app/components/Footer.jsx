@@ -18,19 +18,19 @@ const Footer = () => {
               {/* <h2 className="mb-3 text-sm font-medium tracking-widest text-white uppercase title-font ">
                 About
               </h2> */}
-              {/* <p class=""> */}
+              {/* <p className=""> */}
 
-              <p class=" mb-3 font-medium tracking-widest text-white uppercase title-font relative inline-block stroke-current">
+              <p className=" mb-3 font-medium tracking-widest text-white uppercase title-font relative inline-block stroke-current">
                 Rooms
                 <svg
-                  class="absolute -bottom-0.5 w-full max-h-1.5"
+                  className="absolute -bottom-0.5 w-full max-h-1.5"
                   viewBox="0 0 55 5"
                   xmlns="http://www.w3.org/2000/svg"
                   preserveAspectRatio="none"
                 >
                   <path
                     d="M0.652466 4.00002C15.8925 2.66668 48.0351 0.400018 54.6853 2.00002"
-                    stroke-width="2"
+                    strokeWidth="2"
                   ></path>
                 </svg>
               </p>
@@ -72,17 +72,17 @@ const Footer = () => {
               </nav>
             </div>
             <div className="w-full px-4 lg:w-1/5 md:w-1/2">
-              <p class=" mb-3 font-medium tracking-widest text-white uppercase title-font relative inline-block stroke-current">
+              <p className=" mb-3 font-medium tracking-widest text-white uppercase title-font relative inline-block stroke-current">
                 Contact
                 <svg
-                  class="absolute -bottom-0.5 w-full max-h-1.5"
+                  className="absolute -bottom-0.5 w-full max-h-1.5"
                   viewBox="0 0 55 5"
                   xmlns="http://www.w3.org/2000/svg"
                   preserveAspectRatio="none"
                 >
                   <path
                     d="M0.652466 4.00002C15.8925 2.66668 48.0351 0.400018 54.6853 2.00002"
-                    stroke-width="2"
+                    strokeWidth="2"
                   ></path>
                 </svg>
               </p>
@@ -114,17 +114,17 @@ const Footer = () => {
               </nav>
             </div>
             <div className=" w-full px-4 lg:w-1/5 md:w-1/2">
-              <p class=" mb-3 font-medium tracking-widest text-white uppercase title-font relative inline-block stroke-current">
+              <p className=" mb-3 font-medium tracking-widest text-white uppercase title-font relative inline-block stroke-current">
                 Reservations
                 <svg
-                  class="absolute -bottom-0.5 w-full max-h-1.5"
+                  className="absolute -bottom-0.5 w-full max-h-1.5"
                   viewBox="0 0 55 5"
                   xmlns="http://www.w3.org/2000/svg"
                   preserveAspectRatio="none"
                 >
                   <path
                     d="M0.652466 4.00002C15.8925 2.66668 48.0351 0.400018 54.6853 2.00002"
-                    stroke-width="2"
+                    strokeWidth="2"
                   ></path>
                 </svg>
               </p>
@@ -156,23 +156,23 @@ const Footer = () => {
               </nav>
             </div>
             <div className=" w-full px-4 lg:w-1/5 md:w-1/2">
-              <p class=" mb-3 font-medium tracking-widest text-white uppercase title-font relative inline-block stroke-current">
+              <p className=" mb-3 font-medium tracking-widest text-white uppercase title-font relative inline-block stroke-current">
                 Siguenos en:
                 <svg
-                  class="absolute -bottom-0.5 w-full max-h-1.5"
+                  className="absolute -bottom-0.5 w-full max-h-1.5"
                   viewBox="0 0 55 5"
                   xmlns="http://www.w3.org/2000/svg"
                   preserveAspectRatio="none"
                 >
                   <path
                     d="M0.652466 4.00002C15.8925 2.66668 48.0351 0.400018 54.6853 2.00002"
-                    stroke-width="2"
+                    strokeWidth="2"
                   ></path>
                 </svg>
               </p>
               <div className="">
                 <span className="inline-flex justify-center  sm:ml-auto sm:mt-0 sm:justify-start text-center mb-8">
-                  <button className="group relative w-7 h-7 overflow-hidden rounded-full bg-white text-lg shadow justify-center hover:border hover:border-white hover:scale-125   mr-4 ">
+                  <button className="group relative w-7 h-7 overflow-hidden rounded-full bg-white text-lg shadow justify-center hover:border hover:border-white hover:scale-125  mr-4 ">
                     <div className=" text-center flex align-middle justify-center absolute inset-0 w-0 bg-[#2b3163] transition-all duration-[250ms] ease-out group-hover:w-full  "></div>
 
                     <a className="relative text-[#2b3163] group-hover:text-white text-center  "
@@ -203,8 +203,10 @@ const Footer = () => {
                 &copy; {currentYear}, All Rights Reserved.
               </p>
               <a className="flex items-left justify-left lg:items-center lg:justify-center font-medium text-gray-900 title-font ">
-                <img
+                <Image
                   src={logo}
+                  width={100}
+                  height={100}
                   alt="logo"
                   className="w-auto h-24 filter brightness-[100] contrast-100 transition duration-300 fill-current"
                 />

@@ -1,21 +1,21 @@
 "use client"
 import React, { useEffect, useState } from 'react';
-import { useCurrency } from '../contexts/CurrencyContext';
+import { useRoomsAndCurrency } from '../contexts/RoomsAndCurrencyContext';
 
 const ReservationForm = () => {
-  const { roomData, currency } = useCurrency();
+  const { roomsData, currency } = useRoomsAndCurrency();
   const [selectedRoom, setSelectedRoom] = useState(null);
   const [numberOfPeople, setNumberOfPeople] = useState(2); // Default to 2
 
   useEffect(() => {
-    if (roomData && roomData.length > 0) {
-      setSelectedRoom(roomData[0]);
+    if (roomsData && roomsData.length > 0) {
+      setSelectedRoom(roomsData[0]);
     }
-  }, [roomData]);
+  }, [roomsData]);
 
   const handleRoomChange = (e) => {
     const roomType = e.target.value;
-    const room = roomData.find(r => r.roomType === roomType);
+    const room = roomsData.find(r => r.roomType === roomType);
     
     setSelectedRoom(room);
     setNumberOfPeople(2); // Reset number of people to default
@@ -25,7 +25,7 @@ const ReservationForm = () => {
     const selectedNumber = Number(e.target.value);
     setNumberOfPeople(selectedNumber);
 
-    const room = roomData.find(r => r.roomType === selectedRoom.roomType && r.capacity === selectedNumber);
+    const room = roomsData.find(r => r.roomType === selectedRoom.roomType && r.capacity === selectedNumber);
     if (room) {
       setSelectedRoom(room);
     }
@@ -34,10 +34,10 @@ const ReservationForm = () => {
   if (!selectedRoom) return null;
 
   // Get unique room types
-  const uniqueRoomTypes = [...new Set(roomData.map(room => room.roomType))];
+  const uniqueRoomTypes = [...new Set(roomsData.map(room => room.roomType))];
 
   // Get available capacities for the selected room type
-  const availableCapacities = roomData
+  const availableCapacities = roomsData
     .filter(r => r.roomType === selectedRoom.roomType)
     .map(r => r.capacity);
 

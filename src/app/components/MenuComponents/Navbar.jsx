@@ -2,8 +2,8 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { useLanguage } from "../contexts/LanguageContext";
-import { useCurrency } from "../contexts/CurrencyContext";
+import { useLanguage } from "../../contexts/LanguageContext";
+import { useRoomsAndCurrency } from "../../contexts/RoomsAndCurrencyContext";
 import DropdownsLGscreen from "./DropdownsLGscreen";
 import HamburguerMenu from "./HamburguerMenu";
 import DropdownsSMscreen from "./DropdownsSMscreen";
@@ -13,7 +13,7 @@ const logo =
 
 const Navbar = () => {
   const { getTranslations, changeLanguage } = useLanguage();
-  const { setCurrency } = useCurrency();
+  const { setCurrency } = useRoomsAndCurrency();
   const translations = getTranslations();
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isMobileCurrencyOpen, setMobileCurrencyOpen] = useState(false);
@@ -51,9 +51,7 @@ const Navbar = () => {
     <nav
       className={`fixed top-0 left-0 w-full transition-all duration-300 ${
         isScrolled ? "bg-white shadow-lg" : "bg-transparent"
-      } py-2.5 z-50 ${
-        isFooterVisible ? "h-[5.5rem] lg:px-6" : "h-auto"
-      }`}
+      } py-2.5 z-50 ${isFooterVisible ? "h-[5.5rem] lg:px-6" : "h-auto"}`}
     >
       <div className="p-2 lg:px-6 xl:px-8 2xl:px-11 flex flex-wrap justify-between items-center mx-auto">
         <Link href="/" className="flex items-center">
@@ -85,7 +83,7 @@ const Navbar = () => {
             {Object.keys(translations.nav).map((key, index) => (
               <li key={index}>
                 <Link
-                  href={`/${key}`}
+                  href={key === "inicio" ? "/" : `/${key}`}
                   className={`font-semibold relative cursor-pointer ${
                     isScrolled
                       ? "text-[#2b3163] hover:text-gray-400 after:bg-[#4d4d52] after:absolute after:h-[1px] after:w-0 after:bottom-[-3px] after:left-0 hover:after:w-full after:transition-all after:duration-300"
@@ -111,9 +109,13 @@ const Navbar = () => {
       {/* MOBILE NAV */}
       <div
         className={`w-full  mx-auto md:hidden ${
-          isMobileMenuOpen ? `${
-            isFooterVisible ? "bg-white absolute -mt-2 h-screen" : "h-screen"
-          }` : "hidden"
+          isMobileMenuOpen
+            ? `${
+                isFooterVisible
+                  ? "bg-white absolute -mt-2 h-screen"
+                  : "h-screen"
+              }`
+            : "hidden"
         } ${
           isScrolled
             ? "left-0 "
@@ -128,11 +130,13 @@ const Navbar = () => {
           {Object.keys(translations.nav).map((key, index) => (
             <li className={``} key={index}>
               <Link
-                href={`/${key}`}
-                className={`block py-4  ${isScrolled
-                      ? "text-[#2b3163] hover:text-gray-400 after:bg-[#4d4d52] after:absolute after:h-[1px] after:w-0 after:bottom-[-3px] after:left-0 hover:after:w-full after:transition-all after:duration-300 "
-                      : "text-white hover:text-[#2b3163] after:bg-white after:absolute after:h-[1px] after:w-0 after:bottom-[-3px] after:left-0 hover:after:w-full after:transition-all after:duration-300"
-                  }`}
+                href={key === "inicio" ? "/" : `/${key}`}
+                onClick={() => setMobileMenuOpen(false)}
+                className={`block py-4  ${
+                  isScrolled
+                    ? "text-[#2b3163] hover:text-gray-400 after:bg-[#4d4d52] after:absolute after:h-[1px] after:w-0 after:bottom-[-3px] after:left-0 hover:after:w-full after:transition-all after:duration-300 "
+                    : "text-white hover:text-[#2b3163] after:bg-white after:absolute after:h-[1px] after:w-0 after:bottom-[-3px] after:left-0 hover:after:w-full after:transition-all after:duration-300"
+                }`}
               >
                 {translations.nav[key]}
               </Link>

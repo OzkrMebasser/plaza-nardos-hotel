@@ -259,3 +259,172 @@
             </p>
           </div>
         </div> */}
+
+
+
+        
+  //   FaWifi,
+  //   FaSnowflake,
+  //   FaTv,
+  //   FaSmokingBan,
+  //   FaShower,
+  //   FaSwimmer,
+  //   FaUmbrellaBeach,
+  // } from 'react-icons/fa';
+  // import { MdFamilyRestroom } from 'react-icons/md';
+  // import { Ri24HoursFill } from 'react-icons/ri';
+  // import { GiBroom } from 'react-icons/gi';
+  // const amenities = [
+  //   {
+  //     title: "WiFi gratis",
+  //     icon: FaWifi,
+  //     description: "Disfruta de una conexión a internet rápida y gratuita en todo el establecimiento."
+  //   },
+  //   {
+  //     title: "Aire acondicionado",
+  //     icon: FaSnowflake,
+  //     description: "Mantén la comodidad en cualquier época del año con aire acondicionado en todas las habitaciones."
+  //   },
+  //   {
+  //     title: "Habitaciones familiares",
+  //     icon: MdFamilyRestroom,
+  //     description: "Habitaciones amplias y cómodas diseñadas para acomodar a toda la familia."
+  //   },
+  //   {
+  //     title: "TV de pantalla plana",
+  //     icon: FaTv,
+  //     description: "Relájate con una variedad de canales en nuestra moderna TV de pantalla plana."
+  //   },
+  //   {
+  //     title: "Habitaciones No fumar",
+  //     icon: FaSmokingBan,
+  //     description: "Habitaciones libres de humo para una estancia más saludable y cómoda."
+  //   },
+  //   {
+  //     title: "Baño y ducha privada",
+  //     icon: FaShower,
+  //     description: "Cada habitación cuenta con un baño privado con ducha para tu total comodidad."
+  //   },
+  //   {
+  //     title: "Piscina al aire libre",
+  //     icon: FaSwimmer,
+  //     description: "Disfruta de un refrescante chapuzón en nuestra piscina al aire libre durante todo el día."
+  //   },
+  //   {
+  //     title: "Recepción 24 horas",
+  //     icon: Ri24HoursFill,
+  //     description: "Nuestro personal está disponible en todo momento para atender tus necesidades y consultas."
+  //   },
+  //   {
+  //     title: "Servicio de limpieza diario",
+  //     icon: GiBroom,
+  //     description: "Mantén tu habitación siempre limpia y ordenada con nuestro servicio de limpieza diario."
+  //   },
+  //   {
+  //     title: "Zona privada de playa",
+  //     icon: FaUmbrellaBeach,
+  //     description: "Accede a nuestra exclusiva zona de playa para relajarte con total privacidad."
+  //   },
+  // ];
+  // "use client";
+// import React, { createContext, useContext, useState } from 'react';
+
+// const CurrencyContext = createContext();
+
+// export const CurrencyProvider = ({ children }) => {
+//   const [currency, setCurrency] = useState('MXN');
+//   const [roomData, setRoomData] = useState([]);
+
+//   return (
+//     <CurrencyContext.Provider value={{ currency, setCurrency, roomData, setRoomData }}>
+//       {children}
+//     </CurrencyContext.Provider>
+//   );
+// };
+
+// export const useCurrency = () => {
+//   return useContext(CurrencyContext);
+// };
+
+
+// import {
+//   FaWifi,
+//   FaSnowflake,
+//   FaTv,
+//   FaSmokingBan,
+//   FaShower,
+//   FaSwimmer,
+//   FaUmbrellaBeach,
+//   FaStar,
+//   FaMapMarkerAlt,
+//   FaInfoCircle,
+//   FaBed,
+// } from "react-icons/fa";
+// import { MdFamilyRestroom } from "react-icons/md";
+// import { Ri24HoursFill } from "react-icons/ri";
+// import { GiBroom } from "react-icons/gi";
+
+// const rooms = [
+//   {
+//     id: 1,
+//     name: "Habitación Doble Deluxe",
+//     description:
+//       "Providing free toiletries, this twin room includes a private bathroom with a shower. This twin room features air conditioning, a wardrobe, a flat-screen TV and pool views. The unit offers 2 beds.",
+//     pricePerNight: 75,
+//     beds: 2,
+//     amenities: [
+//       "20 m²",
+//       "Vistas a la piscina",
+//       "Vistas a un patio interior",
+//       "Baño privado",
+//     ],
+//     imageUrl:
+//       "https://cf.bstatic.com/xdata/images/hotel/max1024x768/581805281.jpg?k=f6dde082aa3b621d4ccebb9a0ee7e6e3a15a2e2ca1291e07367689ccad6d020c&o=&hp=1",
+//   },
+//   {
+//     id: 2,
+//     name: "Habitación Doble",
+//     description:
+//       "Una espaciosa habitación con dos camas ideales para amigos o colegas.",
+//     pricePerNight: 90,
+//     beds: 2,
+//     amenities: [
+//       "WiFi gratis",
+//       "Aire acondicionado",
+//       "TV de pantalla plana",
+//       "Baño privado",
+//       "Minibar",
+//     ],
+//     imageUrl:
+//       "https://cf.bstatic.com/xdata/images/hotel/max1024x768/582014783.jpg?k=40e7f105b716be0b4b9819be76b0c2232542e3f92414b7c3f7848ed069e6ece9&o=&hp=1",
+//   },
+//   {
+//     id: 3,
+//     name: "Suite Junior",
+//     description:
+//       "Disfrute de más espacio y lujo en nuestra Suite Junior con área de estar separada.",
+//     pricePerNight: 120,
+//     beds: 1,
+//     amenities: [
+//       "WiFi gratis",
+//       "Aire acondicionado",
+//       "TV de pantalla plana",
+//       "Baño privado",
+//       "Minibar",
+//       "Área de estar",
+//     ],
+//     imageUrl: "https://example.com/junior-suite.jpg",
+//   },
+// ];
+
+// const amenityIcons = {
+//   "WiFi gratis": <FaWifi />,
+//   "Aire acondicionado": <FaSnowflake />,
+//   "TV de pantalla plana": <FaTv />,
+//   "Baño privado": <FaShower />,
+//   Minibar: <FaTv />,
+//   "Área de estar": <MdFamilyRestroom />,
+//   Balcón: <FaUmbrellaBeach />,
+//   Jacuzzi: <FaSwimmer />,
+//   "Cuna disponible": <MdFamilyRestroom />,
+// };

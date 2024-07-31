@@ -7,7 +7,7 @@ import { FaFacebookMessenger } from "react-icons/fa6";
 import { BsArrowRightCircleFill } from "react-icons/bs";
 import { TbTimeDuration10 } from "react-icons/tb";
 import { ReactTyped } from "react-typed";
-import { useLanguage } from "../contexts/LanguageContext";
+import { useLanguage } from "../../contexts/LanguageContext";
 
 const ChatCard = () => {
   const { getTranslations, changeLanguage } = useLanguage();
@@ -36,8 +36,8 @@ const ChatCard = () => {
       }
     };
 
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll, { passive: true });
   }, []);
 
   useEffect(() => {

@@ -1,10 +1,13 @@
 const it = {
   //MetaData
-  meta: `Situato nel cuore di Playa del Carmen, a solo un isolato dalla Quinta Avenida, 
+  meta: {
+ 
+  description: `Situato nel cuore di Playa del Carmen, a solo un isolato dalla Quinta Avenida, 
     Plaza Nardo's è un hotel appena ristrutturato che offre un'esperienza unica. Con la sua 
     spiaggia privata e un facile accesso ai migliori negozi e ristoranti, godrai di un soggiorno
      impareggiabile nel centro turistico della città. Vieni a scoprire il comfort e il fascino di Plaza Nardo's!
   `,
+  },
 
   //Navigation
   nav: {
