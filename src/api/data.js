@@ -14,27 +14,56 @@ import { GiBroom, GiWifiRouter } from "react-icons/gi";
 import { HiBuildingOffice2 } from "react-icons/hi2";
 import { GrMonitor } from "react-icons/gr";
 
+import es from "../app/locales/es"
+import en from "../app/locales/en"
+import it from "../app/locales/it"
+import fr from "../app/locales/fr"
 
+
+const translations = {
+  es,
+  en,
+  it, 
+  fr
+};
+
+const defaultLanguage = "es"; 
+
+// dlbDeluxe: {
+//   title: "Camera Doppia Deluxe",
+//   doubleBeds: "Letti Dopp",
+//   description: `Questa camera doppia include articoli da toeletta gratuiti e un bagno privato con doccia. La camera dispone di aria condizionata, armadio, TV a schermo piatto e vista sulla piscina. L'unità offre 2 letti.`,
+//   amenities: {
+//     m2: "20 m²",
+//     poolView: "Vista Piscina",
+//     courtyardView: "Vista Cortile",
+//     airConditioning: "Aria Condizionata",
+//     privateBathroom: "Bagno Privato",
+//     flatScreenTV: "TV a Schermo Piatto",
+//     freeWiFi: "WiFi Gratuito",
+//   },
+// }
 
 
 
 export const roomsData = [
-  //id: 1
+  //id: 1 -- "Habitación Doble Deluxe",
   {
     id: 1,
-    roomType: "Habitación Doble Deluxe",
+    roomType: "dlbDeluxe",
+    // roomType: "Habitación Doble Deluxe",
     beds: 2,
-    doubleBeds: "Camas dobles",
+    doubleBeds: "dlbDeluxe",
     sofa: 0,
     capacity: 2,
     price: { MXN: 1700, USD: 96.43, CAD: 130.97, EUR: 87.99 },
     fees: { MXN: 374, USD: 21.21, CAD: 28.81, EUR: 19.36 },
     description:
-      "Providing free toiletries, this twin room includes a private bathroom with a shower. This twin room features air conditioning, a wardrobe, a flat-screen TV and pool views. The unit offers 2 beds.",
+      "dlbDeluxe",
 
     amenities: [
       {
-        title: "20 m² ",
+        title: "dlbDeluxe.amenities.m2",
         icon: TbRulerMeasure,
       },
       {

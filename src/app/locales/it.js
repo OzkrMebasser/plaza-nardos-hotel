@@ -1,8 +1,7 @@
-const it = {
+export const it = {
   //MetaData
   meta: {
- 
-  description: `Situato nel cuore di Playa del Carmen, a solo un isolato dalla Quinta Avenida, 
+    description: `Situato nel cuore di Playa del Carmen, a solo un isolato dalla Quinta Avenida, 
     Plaza Nardo's è un hotel appena ristrutturato che offre un'esperienza unica. Con la sua 
     spiaggia privata e un facile accesso ai migliori negozi e ristoranti, godrai di un soggiorno
      impareggiabile nel centro turistico della città. Vieni a scoprire il comfort e il fascino di Plaza Nardo's!
@@ -19,7 +18,31 @@ const it = {
     nosotros: "Chi Siamo",
   },
 
+  //Hero info
+  hero: {
+    h1Hero: "La Tua Casa nel Cuore di Playa del Carmen",
+    h3Hero: "Rilassati e Goditi la Zona Più Vibrante!",
+  },
+
   //Rooms info
+  priceFrom: "Da",
+  perNight: "a notte",
+
+  //"Deluxe Double Room"
+  dlbDeluxe: {
+    title: "Camera Doppia Deluxe",
+    doubleBeds: "Letti Dopp",
+    description: `Questa camera doppia include articoli da toeletta gratuiti e un bagno privato con doccia. La camera dispone di aria condizionata, armadio, TV a schermo piatto e vista sulla piscina. L'unità offre 2 letti.`,
+    amenities: {
+      m2: "20 m²",
+      poolView: "Vista Piscina",
+      courtyardView: "Vista Cortile",
+      airConditioning: "Aria Condizionata",
+      privateBathroom: "Bagno Privato",
+      flatScreenTV: "TV a Schermo Piatto",
+      freeWiFi: "WiFi Gratuito",
+    },
+  },
   roomType: "Camera Doppia",
   beds: "2 Letti Doppio",
 

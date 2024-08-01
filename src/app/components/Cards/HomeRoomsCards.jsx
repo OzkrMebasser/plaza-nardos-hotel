@@ -5,21 +5,15 @@ import { useLanguage } from "@/app/contexts/LanguageContext";
 import { FaInfoCircle, FaBed } from "react-icons/fa";
 import Title from "../Title";
 
-
-
 const HomeRoomsCards = () => {
-  
-  const {roomsData, setRoomsData, currency } = useRoomsAndCurrency();
+  const { roomsData, setRoomsData, currency } = useRoomsAndCurrency();
   const { getTranslations } = useLanguage();
   const translations = getTranslations();
   const [isMobile, setIsMobile] = useState();
 
- 
-
   useEffect(() => {
     setRoomsData(roomsData);
-
-  }, [roomsData,setRoomsData]);
+  }, [roomsData, setRoomsData]);
 
   useEffect(() => {
     setIsMobile(window.innerWidth < 768);
@@ -55,26 +49,23 @@ const HomeRoomsCards = () => {
                   <div
                     className="w-full sm:w-[30%] h-48 sm:h-auto relative bg-cover bg-center shadow-inner border hotel-cover"
                     style={{ backgroundImage: `url(${room.imageUrl})` }}
-                  >
-                   
-                  </div>
+                  ></div>
                   <div className="w-full sm:w-3/4 p-3">
                     <div className="flex justify-between items-center border-b pb-3">
                       <div>
                         <div className="sm:flex items-center mb-1">
                           <h2 className="mb-2 text-lg lg:text-2xl font-semibold text-gray-600">
-                            {room.roomType}
+                            {translations[room.roomType]?.title}
                           </h2>
-                        
                         </div>
                         <div className="flex items-center">
-                         
                           <div>
                             <FaBed className="w-5 h-5 text-[#2b3163]" />
                           </div>
                           <p className="text-sm ml-2 text-gray-600 font-semibold">
                             {room.beds} {""}
-                            {room.doubleBeds}
+                            {/* {room.doubleBeds} */}
+                            {translations[room.roomType]?.doubleBeds}
                             {/* {room.beds > 1 ? "s" : ""} */}
                           </p>
                         </div>
@@ -83,19 +74,25 @@ const HomeRoomsCards = () => {
                         {isMobile ? (
                           <div className="text-right text-[1rem] leading-tight text-[#2b3163] font-semibold">
                             <span className="">
-                              from <br /> {currency === "EUR" ? "€" : "$"}
+                              {/* From */}
+                              {translations.priceFrom}
+                              <br /> {currency === "EUR" ? "€" : "$"}
                             </span>{" "}
                             <strong className="">{room.price[currency]}</strong>{" "}
                             <br />
-                            per night
+                            {/* per night */}
+                            {translations.perNight}
                           </div>
                         ) : (
                           <div className="text-right text-xl leading-tight text-[#2b3163] font-semibold">
                             <span className="">
-                              from {currency === "EUR" ? "€" : "$"}
+                              {/* From */}
+                              {translations.priceFrom}{" "}
+                              {currency === "EUR" ? "€" : "$"}
                             </span>{" "}
                             <strong className="">{room.price[currency]}</strong>{" "}
-                            per night
+                            {/* per night */}
+                            {translations.perNight}
                           </div>
                         )}
                       </div>
@@ -105,31 +102,34 @@ const HomeRoomsCards = () => {
                         <FaInfoCircle className="w-4 h-4 text-[#2b3163] mt-1 mr-2" />
                       </div>
                       <p className="text-xs ml-1 text-[#2b3163]">
-                        {room.description}
+                        {/*Descrption of Room*/}
+                        {translations[room.description]?.description}
                       </p>
                     </div>
                     <div className="flex flex-wrap mt-3 items-center justify-center ">
                       {room.amenities?.map((amenity, index) => (
-                        <div key={index} className="mr-4 flex items-center justify-center h-auto w-auto py-2">
+                        <div
+                          key={index}
+                          className="mr-4 flex items-center justify-center h-auto w-auto py-2"
+                        >
                           <amenity.icon className="w-5 h-5 text-[#2b3163] mr-1" />
                           <p className="text-xs ml-1 text-[#2b3163]">
                             {amenity.title}
+                            {/* {translations[amenity["title"]]}  ESTOY TRABAJANDO EN ESTE*/}
                           </p>
                         </div>
                       ))}
                     </div>
-                 
 
                     <div className="mt-4 flex justify-center lg:justify-end">
-                    <button className="lg:mt-0 lg:mx-0 cursor-pointer font-semibold overflow-hidden relative z-100 border border-[#2b3163] group px-8 py-2 rounded-xl">
-                      <span className="relative z-10 text-[#2b3163] group-hover:text-white text-xl duration-500">
-                        See details
-                      </span>
-                      <span className="absolute w-full h-full bg-[#2b3163] -left-32 top-0 -rotate-45 group-hover:rotate-0 group-hover:left-0 duration-500"></span>
-                      <span className="absolute w-full h-full bg-[#2b3163] -right-32 top-0 -rotate-45 group-hover:rotate-0 group-hover:right-0 duration-500"></span>
-                    </button>
+                      <button className="lg:mt-0 lg:mx-0 cursor-pointer font-semibold overflow-hidden relative z-100 border border-[#2b3163] group px-8 py-2 rounded-xl">
+                        <span className="relative z-10 text-[#2b3163] group-hover:text-white text-xl duration-500">
+                          See details
+                        </span>
+                        <span className="absolute w-full h-full bg-[#2b3163] -left-32 top-0 -rotate-45 group-hover:rotate-0 group-hover:left-0 duration-500"></span>
+                        <span className="absolute w-full h-full bg-[#2b3163] -right-32 top-0 -rotate-45 group-hover:rotate-0 group-hover:right-0 duration-500"></span>
+                      </button>
                     </div>
-                   
                   </div>
                 </div>
               </div>
