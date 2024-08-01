@@ -44,6 +44,38 @@ export const es = {
       flatScreenTV: "TV de pantalla plana",
       freeWiFi: "WiFi gratis",
     },
+    // amenities: [
+    //   {
+    //     title: "20 m²",
+       
+    //   },
+    //   {
+    //     title: "Vistas a la piscina",
+      
+    //   },
+    //   {
+    //     title: "Vistas a un patio interior ",
+       
+    //   },
+
+    //   {
+    //     title: "Aire acondicionado",
+       
+    //   },
+    //   {
+    //     title: "Baño privado",
+      
+    //   },
+    //   {
+    //     title: "TV de pantalla plana",
+ 
+    //   },
+    //   {
+    //     title: " WiFi gratis",
+        
+    //   },
+  
+    // ],
   },
   roomType: "Habitación Doble",
   beds: "2 camas dobles",

@@ -10,6 +10,7 @@ const HomeRoomsCards = () => {
   const { getTranslations } = useLanguage();
   const translations = getTranslations();
   const [isMobile, setIsMobile] = useState();
+  console.log("Translations:", translations);
 
   useEffect(() => {
     setRoomsData(roomsData);
@@ -113,10 +114,13 @@ const HomeRoomsCards = () => {
                           className="mr-4 flex items-center justify-center h-auto w-auto py-2"
                         >
                           <amenity.icon className="w-5 h-5 text-[#2b3163] mr-1" />
-                          <p className="text-xs ml-1 text-[#2b3163]">
-                            {amenity.title}
-                            {/* {translations[amenity["title"]]}  ESTOY TRABAJANDO EN ESTE*/}
-                          </p>
+                   
+                            <p className="text-xs ml-1 text-[#2b3163]">
+                              {translations[room.roomType]?.amenities[
+                                amenity.title
+                              ] || amenity.title}
+                            </p>
+                    
                         </div>
                       ))}
                     </div>

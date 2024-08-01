@@ -61,38 +61,36 @@ export const roomsData = [
     description:
       "dlbDeluxe",
 
-    amenities: [
-      {
-        title: "dlbDeluxe.amenities.m2",
-        icon: TbRulerMeasure,
-      },
-      {
-        title: "Vistas a la piscina",
-        icon: FaSwimmer,
-      },
-      {
-        title: "Vistas a un patio interior ",
-        icon: HiBuildingOffice2,
-      },
-
-      {
-        title: "Aire acondicionado",
-        icon: FaSnowflake,
-      },
-      {
-        title: "Baño privado",
-        icon: FaShower,
-      },
-      {
-        title: "TV de pantalla plana",
-        icon: GrMonitor,
-      },
-      {
-        title: " WiFi gratis",
-        icon: FaWifi,
-      },
-  
-    ],
+      amenities: [
+        {
+          title: "m2",
+          icon: TbRulerMeasure,
+        },
+        {
+          title: "poolView",
+          icon: FaSwimmer,
+        },
+        {
+          title: "courtyardView",
+          icon: HiBuildingOffice2,
+        },
+        {
+          title: "airConditioning",
+          icon: FaSnowflake,
+        },
+        {
+          title: "privateBathroom",
+          icon: FaShower,
+        },
+        {
+          title: "flatScreenTV",
+          icon: GrMonitor,
+        },
+        {
+          title: "freeWiFi",
+          icon: FaWifi,
+        },
+      ],
     imageUrl:
       "https://cf.bstatic.com/xdata/images/hotel/max1024x768/581805281.jpg?k=f6dde082aa3b621d4ccebb9a0ee7e6e3a15a2e2ca1291e07367689ccad6d020c&o=&hp=1",
   },
