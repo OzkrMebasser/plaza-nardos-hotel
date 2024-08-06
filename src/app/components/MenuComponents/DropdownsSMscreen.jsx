@@ -10,6 +10,7 @@ const DropdownsSMscreen = ({
   setMobileLanguageOpen,
   isMobileLanguageOpen,
   handleLanguageChange,
+  toggleMobileMenu
 }) => {
   return (
     <>
@@ -25,25 +26,25 @@ const DropdownsSMscreen = ({
           <div className="absolute bottom-full mb-2 w-auto px-2 justify-stretch bg-[#f0f1ec] border rounded shadow z-10">
             <div className="flex flex-col py-1">
               <button
-                onClick={() => handleCurrencyChange("MXN")}
+                onClick={() => {handleCurrencyChange("MXN"); toggleMobileMenu()}}
                 className="flex items-center justify-between rounded hover:bg-gray-200"
               >
                 MXN <span className="ml-1 fi fi-mx"></span>
               </button>
               <button
-                onClick={() => handleCurrencyChange("USD")}
+                onClick={() => {handleCurrencyChange("USD"); toggleMobileMenu()}}
                 className="flex items-center justify-between rounded hover:bg-gray-200"
               >
                 USD <span className="ml-1 fi fi-us"></span>
               </button>
               <button
-                onClick={() => handleCurrencyChange("CAD")}
+                onClick={() => {handleCurrencyChange("CAD"); toggleMobileMenu()}}
                 className="flex items-center justify-between rounded hover:bg-gray-200"
               >
                 CAD <span className="ml-1 fi fi-ca"></span>
               </button>
               <button
-                onClick={() => handleCurrencyChange("EUR")}
+                onClick={() => {handleCurrencyChange("EUR"); toggleMobileMenu()}}
                 className="flex items-center justify-between rounded hover:bg-gray-200"
               >
                 EUR <span className="ml-1 fi fi-eu"></span>
@@ -64,25 +65,25 @@ const DropdownsSMscreen = ({
           <div className="absolute bottom-full w-auto px-2 mb-2 bg-[#f0f1ec] border rounded shadow z-10">
             <div className="flex flex-col p-1">
               <button
-                onClick={() => handleLanguageChange("es")}
+                onClick={() => {handleLanguageChange("es"); toggleMobileMenu()}  }
                 className="flex items-center justify-between rounded hover:bg-gray-200"
               >
                 ES <span className="ml-2 fi fi-mx"></span>
               </button>
               <button
-                onClick={() => handleLanguageChange("en")}
+                onClick={() => {handleLanguageChange("en"); toggleMobileMenu()} }
                 className="flex items-center justify-between rounded hover:bg-gray-200"
               >
                 EN <span className="ml-2 fi fi-us"></span>
               </button>
               <button
-                onClick={() => handleLanguageChange("it")}
+                onClick={() => {handleLanguageChange("it"); toggleMobileMenu()}}
                 className="flex items-center justify-between rounded hover:bg-gray-200"
               >
                 IT <span className="ml-2  fi fi-it"></span>
               </button>
               <button
-                onClick={() => handleLanguageChange("fr")}
+                onClick={() => {handleLanguageChange("fr"); toggleMobileMenu()}}
                 className="flex items-center justify-between rounded hover:bg-gray-200"
               >
                 FR <span className="ml-2 fi fi-fr"></span>

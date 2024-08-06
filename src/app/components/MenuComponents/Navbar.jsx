@@ -150,6 +150,7 @@ const Navbar = () => {
             setMobileLanguageOpen={setMobileLanguageOpen}
             isMobileLanguageOpen={isMobileLanguageOpen}
             handleLanguageChange={handleLanguageChange}
+            toggleMobileMenu={toggleMobileMenu}
           />
         </ul>
       </div>

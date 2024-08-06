@@ -24,10 +24,53 @@ export const en = {
     h1Hero: "Your Home in the Heart of Playa del Carmen",
     h3Hero: "Relax and Enjoy in the Most Vibrant Area!",
   },
+  //Home Titles
+
+  homeTitles: {
+    ourRooms: "Our Rooms",
+    services: "Hotel Amenities",
+    location: "Location",
+  },
+//Home amenities
+  homeServices: {
+    freeWiFi: "Free WiFi",
+    airConditioning: "Air Conditioning",
+    familyRooms: "Family Rooms",
+    flatScreenTV: "Flat Screen TV",
+    nonSmokingRooms: "Non-Smoking Rooms",
+    privateBathroom: "Private Bathroom",
+    outdoorPool: "Outdoor Pool",
+    twentyFourHourReception: "24-Hour Reception",
+    dailyCleaningService: "Daily Cleaning Service",
+    privateBeachArea: "Private Beach Area",
+  },
+  
 
   //Rooms info
   priceFrom: "From",
   perNight: "per night",
+  seeDetails: "Details",
+
+// "Double Room, Balcón y terraza"
+  dlbBedRoom: {
+    title: "Double Room",
+    doubleBeds: "Double Beds",
+    description: `The twin room provides air conditioning, a wardrobe, a terrace with pool views as well as a private bathroom featuring a shower. The unit offers 2 beds.`,
+    amenities: {
+      m2: "20 m²",
+      poolView: "Pool View",
+      courtyardView: "Courtyard View",
+      airConditioning: "Air Conditioning",
+      privateBathroom: "Private Bathroom",
+      flatScreenTV: "Flat Screen TV",
+      freeWiFi: "Free WiFi",
+      balcony: "Balcony",
+      cityView: "City View",
+      patio: "Patio",
+      terrace: "Terrace",
+    },
+  },
+  
 
   //"Deluxe Double Room"
   dlbDeluxe: {

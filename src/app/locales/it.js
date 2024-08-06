@@ -17,16 +17,57 @@ export const it = {
     contacto: "Contatto",
     nosotros: "Chi Siamo",
   },
-
   //Hero info
   hero: {
     h1Hero: "La Tua Casa nel Cuore di Playa del Carmen",
     h3Hero: "Rilassati e Goditi la Zona Più Vibrante!",
   },
+  //Home Titles
+  homeTitles: {
+    ourRooms: "Le Nostre Camere",
+    services: "Servizi dell'Hotel",
+    location: "Posizione",
+  },
+  //Home amenities
+  homeServices: {
+    freeWiFi: "WiFi gratuito",
+    airConditioning: "Aria condizionata",
+    familyRooms: "Camere familiari",
+    flatScreenTV: "TV a schermo piatto",
+    nonSmokingRooms: "Camere per non fumatori",
+    privateBathroom: "Bagno privato",
+    outdoorPool: "Piscina all'aperto",
+    twentyFourHourReception: "Reception 24 ore su 24",
+    dailyCleaningService: "Servizio di pulizia giornaliero",
+    privateBeachArea: "Area privata sulla spiaggia",
+  },
 
   //Rooms info
   priceFrom: "Da",
   perNight: "a notte",
+  seeDetails: "Dettagli",
+
+
+// "Double Room, Balcón y terraza"
+dlbBedRoom: {
+  title: "Camera Matrimoniale",
+  doubleBeds: "Letti Matrimoniali",
+  description: `La camera matrimoniale offre aria condizionata, un armadio, una terrazza con vista sulla piscina e un bagno privato con doccia. La unità dispone di 2 letti.`,
+  amenities: {
+    m2: "20 m²",
+    poolView: "Vista Piscina",
+    courtyardView: "Vista Cortile",
+    airConditioning: "Aria Condizionata",
+    privateBathroom: "Bagno Privato",
+    flatScreenTV: "TV a Schermo Piatto",
+    freeWiFi: "WiFi Gratuito",
+    balcony: "Balcone",
+    cityView: "Vista Città",
+    patio: "Patio",
+    terrace: "Terrazza",
+  },
+},
+
 
   //"Deluxe Double Room"
   dlbDeluxe: {

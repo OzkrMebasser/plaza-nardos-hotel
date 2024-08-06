@@ -79,7 +79,7 @@ const HomeCards = () => {
             >
               <h1 className="text-2xl text-sky-900 font-black">{room.name}</h1>
               <p className="mb-3">{room.description}</p>
-              <img className="object-cover w-full h-48" src={room.imageUrl} alt={room.name} />
+              <img className="object-cover w-full h-48" src={room.imageUrl} alt={room.name} loading="lazy"/>
               <div className="p-4">
                 <h4 className="text-xl font-semibold text-blue-800">${room.pricePerNight} por noche</h4>
                 <p className="mb-2 leading-normal">Camas: {room.beds}</p>
