@@ -19,11 +19,6 @@ import { FaTreeCity } from "react-icons/fa6";
 import { AiOutlineBank } from "react-icons/ai";
 import { GiTripleGate } from "react-icons/gi"; //patio
 
-
-
-
-
-
 import es from "../app/locales/es";
 import en from "../app/locales/en";
 import it from "../app/locales/it";
@@ -48,7 +43,7 @@ export const roomsData = [
     sofa: 0,
     homeShow: true,
     capacity: 2,
-    
+
     price: { MXN: 2100, USD: 119.12, CAD: 161.79, EUR: 108.7 },
     fees: { MXN: 462, USD: 26.21, CAD: 35.59, EUR: 23.91 },
     description: "dlbBedRoom",
@@ -80,7 +75,7 @@ export const roomsData = [
       {
         title: "cityView",
         icon: BsFillBuildingsFill,
-      },  
+      },
       {
         title: "courtyardView",
         icon: FaTreeCity,
@@ -219,19 +214,27 @@ export const roomsData = [
     price: { MXN: 1700, USD: 96.43, CAD: 130.97, EUR: 87.99 },
     fees: { MXN: 374, USD: 21.21, CAD: 28.81, EUR: 19.36 },
     description: "dlbDeluxe",
-
+    // m2: "24 m²", ya
+    // balcony: "Balcón", ya
+    // cityView: "Vistas a la ciudad", ya
+    // airConditioning: "Aire acondicionado", ya
+    // patio: "Patio", no
+    // privateBathroom: "Baño privado", ya
+    // flatScreenTV: "TV de pantalla plana", ya
+    // terrace: "Terraza",
+    // freeWiFi: "WiFi gratis",
     amenities: [
       {
         title: "m2",
         icon: TbRulerMeasure,
       },
       {
-        title: "poolView",
-        icon: FaSwimmer,
+        title: "balcony",
+        icon: MdOutlineBalcony,
       },
       {
-        title: "courtyardView",
-        icon: HiBuildingOffice2,
+        title: "cityView",
+        icon: BsFillBuildingsFill,
       },
       {
         title: "airConditioning",
@@ -244,6 +247,10 @@ export const roomsData = [
       {
         title: "flatScreenTV",
         icon: GrMonitor,
+      },
+      {
+        title: "terrace",
+        icon: AiOutlineBank,
       },
       {
         title: "freeWiFi",
@@ -293,7 +300,7 @@ export const roomsData = [
       "https://firebasestorage.googleapis.com/v0/b/hotel-plaza-nardos.appspot.com/o/main-images%2FHabitaci%C3%B3n-Triple-Deluxe%2FHabitaci%C3%B3n-Triple-Deluxe-2.webp?alt=media&token=439b838a-2b67-4b92-acb4-857ee0fe4ba9",
       "https://firebasestorage.googleapis.com/v0/b/hotel-plaza-nardos.appspot.com/o/main-images%2FHabitaci%C3%B3n-Triple-Deluxe%2FHabitaci%C3%B3n-Triple-Deluxe-3.webp?alt=media&token=103a659b-b84b-4394-9e57-d929aace071d",
       "https://firebasestorage.googleapis.com/v0/b/hotel-plaza-nardos.appspot.com/o/main-images%2FHabitaci%C3%B3n-Triple-Deluxe%2FHabitaci%C3%B3n-Triple-Deluxe-4.webp?alt=media&token=01fb69d2-d2e1-498f-8282-ec5db00ef17d",
-      "https://firebasestorage.googleapis.com/v0/b/hotel-plaza-nardos.appspot.com/o/main-images%2FHabitaci%C3%B3n-Triple-Deluxe%2FHabitaci%C3%B3n-Triple-Deluxe-5.webp?alt=media&token=d251d604-bea3-4307-9a4e-832123709be0"
+      "https://firebasestorage.googleapis.com/v0/b/hotel-plaza-nardos.appspot.com/o/main-images%2FHabitaci%C3%B3n-Triple-Deluxe%2FHabitaci%C3%B3n-Triple-Deluxe-5.webp?alt=media&token=d251d604-bea3-4307-9a4e-832123709be0",
     ],
   },
   //id: 11 -- Habitación Cuádruple Confort, 3 personas, // homeShow: true
@@ -313,7 +320,6 @@ export const roomsData = [
       "https://firebasestorage.googleapis.com/v0/b/hotel-plaza-nardos.appspot.com/o/main-images%2FHabitaci%C3%B3n-Cu%C3%A1druple-Confort%2FHabitaci%C3%B3n-Cu%C3%A1druple-Confort-3.webp?alt=media&token=f90848c7-ecba-4f22-8021-918d5663d36e",
     ],
   },
-  
 ];
 
 export const homeAmenities = [

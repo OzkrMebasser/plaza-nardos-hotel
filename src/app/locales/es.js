@@ -110,16 +110,30 @@ export const es = {
   //"Deluxe Double Room CON Balcón"
   dlbDeluxeWithBalcony: {
     title: "Habitación Doble Deluxe, Balcón",
-    doubleBeds: "Camas dobles",
+    doubleBeds: "Camas dobles grandes",
     description: `Este dormitorio doble incluye artículos de tocador gratuitos y un baño privado con ducha. La habitación cuenta con aire acondicionado, un armario, una televisión de pantalla plana y vistas a la piscina. La unidad ofrece 2 camas.`,
     amenities: {
-      m2: "20 m²",
-      poolView: "Vistas a la piscina",
-      courtyardView: "Vistas a un patio interior",
+      m2: "24 m²",
+      balcony: "Balcón",
+      cityView: "Vistas a la ciudad", 
       airConditioning: "Aire acondicionado",
+      patio: "Patio", 
       privateBathroom: "Baño privado",
       flatScreenTV: "TV de pantalla plana",
+      terrace: "Terraza",
       freeWiFi: "WiFi gratis",
+      // WORKING IN THIS SECTIONS
+// 24 m² ya
+// Balcón ya
+// Vistas a la ciudad ya
+// Aire acondicionado ya
+// Patio ya
+// Baño privado
+// TV de pantalla plana
+// Terraza
+// WiFi gratis
+
+
     },
   },
 
