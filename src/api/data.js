@@ -18,6 +18,7 @@ import { BsFillBuildingsFill } from "react-icons/bs";
 import { FaTreeCity } from "react-icons/fa6";
 import { AiOutlineBank } from "react-icons/ai";
 import { GiTripleGate } from "react-icons/gi"; //patio
+import { MdDeck } from "react-icons/md";
 
 import es from "../app/locales/es";
 import en from "../app/locales/en";
@@ -47,17 +48,7 @@ export const roomsData = [
     price: { MXN: 2100, USD: 119.12, CAD: 161.79, EUR: 108.7 },
     fees: { MXN: 462, USD: 26.21, CAD: 35.59, EUR: 23.91 },
     description: "dlbBedRoom",
-    // m2: "20 m²", //si
-    // balcony: "Balcón", //si
-    // poolView: "Vistas a la piscina", //si
-    // cityView: "Vistas a la ciudad", //si
-    // courtyardView: "Vistas a un patio interior", //si
-    // airConditioning: "Aire acondicionado", // si
-    // patio: "Patio", //no
-    // privateBathroom: "Baño en la habitación", // si
-    // flatScreenTV: "TV de pantalla plana", // si
-    // terrace: "Terraza", //no
-    // freeWiFi: "WiFi gratis",
+
     amenities: [
       {
         title: "m2",
@@ -83,6 +74,10 @@ export const roomsData = [
       {
         title: "airConditioning",
         icon: FaSnowflake,
+      },
+      {
+        title: "Patio",
+        icon: MdDeck,
       },
       {
         title: "privateBathroom",
@@ -241,6 +236,10 @@ export const roomsData = [
         icon: FaSnowflake,
       },
       {
+        title: "Patio",
+        icon: MdDeck,
+      },
+      {
         title: "privateBathroom",
         icon: FaShower,
       },
@@ -294,6 +293,37 @@ export const roomsData = [
     capacity: 3,
     price: { MXN: 3000, USD: 170.16, CAD: 231.12, EUR: 155.28 },
     fees: { MXN: 660, USD: 37.44, CAD: 50.85, EUR: 34.16 },
+    description: "tripleDeluxe",
+    amenities: [
+      {
+        title: "m2",
+        icon: TbRulerMeasure,
+      },
+      {
+        title: "poolView",
+        icon: FaSwimmer,
+      },
+      {
+        title: "courtyardView",
+        icon: HiBuildingOffice2,
+      },
+      {
+        title: "airConditioning",
+        icon: FaSnowflake,
+      },
+      {
+        title: "privateBathroom",
+        icon: FaShower,
+      },
+      {
+        title: "flatScreenTV",
+        icon: GrMonitor,
+      },
+      {
+        title: "freeWiFi",
+        icon: FaWifi,
+      },
+    ],
     imageHomeCards: [
       "https://firebasestorage.googleapis.com/v0/b/hotel-plaza-nardos.appspot.com/o/main-images%2FHabitaci%C3%B3n-Triple-Deluxe%2FHabitaci%C3%B3n-Triple-Deluxe.webp?alt=media&token=2d27a6a4-777c-4990-81b7-a44995e55221",
       "https://firebasestorage.googleapis.com/v0/b/hotel-plaza-nardos.appspot.com/o/main-images%2FHabitaci%C3%B3n-Triple-Deluxe%2FHabitaci%C3%B3n-Triple-Deluxe-1.webp?alt=media&token=414f7b38-f608-4b0e-b97b-3b4cbe0e4316",
@@ -308,11 +338,63 @@ export const roomsData = [
     id: 11,
     roomType: "cuadrupleBedRoom",
     beds: 2,
-    homeShow: true,
     sofa: 0,
+    singleBed: 1,
+    homeShow: true,
     capacity: 4,
     price: { MXN: 3200, USD: 181.51, CAD: 246.53, EUR: 165.63 },
     fees: { MXN: 704, USD: 39.93, CAD: 54.24, EUR: 36.44 },
+    description: "cuadrupleBedRoom",
+    amenities: [
+      {
+        title: "m2",
+        icon: TbRulerMeasure,
+      },
+      {
+        title: "balcony",
+        icon: MdOutlineBalcony,
+      },
+      {
+        title: "cityView",
+        icon: BsFillBuildingsFill,
+      },
+      {
+        title: "airConditioning",
+        icon: FaSnowflake,
+      },
+      {
+        title: "Patio",
+        icon: MdDeck,
+      },
+      {
+        title: "privateBathroom",
+        icon: FaShower,
+      },
+      {
+        title: "flatScreenTV",
+        icon: GrMonitor,
+      },
+      {
+        title: "terrace",
+        icon: AiOutlineBank,
+      },
+      {
+        title: "freeWiFi",
+        icon: FaWifi,
+      },
+    ],
+    //  41 m²
+    // Balcón
+    // Vistas a la piscina
+    // Vistas a la ciudad
+    // Vistas a un patio interior
+    // Aire acondicionado
+    // Patio
+    // Baño privado
+    // TV de pantalla plana
+    // Terraza
+    // WiFi gratis
+
     imageHomeCards: [
       "https://firebasestorage.googleapis.com/v0/b/hotel-plaza-nardos.appspot.com/o/main-images%2FHabitaci%C3%B3n-Cu%C3%A1druple-Confort%2FHabitaci%C3%B3n-Cu%C3%A1druple-Confort.webp?alt=media&token=08056e0c-c074-42ac-92d8-760f4e071818",
       "https://firebasestorage.googleapis.com/v0/b/hotel-plaza-nardos.appspot.com/o/main-images%2FHabitaci%C3%B3n-Cu%C3%A1druple-Confort%2FHabitaci%C3%B3n-Cu%C3%A1druple-Confort-1.webp?alt=media&token=99a1a021-6492-4e16-afda-0fa977840359",

@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
+    "aos": "^2.3.4",
     "axios": "^1.7.2",
     "flag-icons": "^7.2.3",
     "i18next": "^23.11.5",

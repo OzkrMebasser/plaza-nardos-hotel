@@ -7,6 +7,7 @@ import { useRoomsAndCurrency } from "../../contexts/RoomsAndCurrencyContext";
 import DropdownsLGscreen from "./DropdownsLGscreen";
 import HamburguerMenu from "./HamburguerMenu";
 import DropdownsSMscreen from "./DropdownsSMscreen";
+import ScrollProgressBar from "../ScrollProgressBar";
 
 const logo =
   "https://firebasestorage.googleapis.com/v0/b/hotel-plaza-nardos.appspot.com/o/main-images%2Flogo-plaza-nardos-bgt.PNG?alt=media&token=3fd75ec3-3b07-496a-94b2-835db367653f";
@@ -154,6 +155,7 @@ const Navbar = () => {
           />
         </ul>
       </div>
+      <ScrollProgressBar/>
     </nav>
   );
 };

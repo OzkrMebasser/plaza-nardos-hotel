@@ -159,3 +159,18 @@
   
   background: white !important;
 }
+
+.scroll-progress{
+  animation: scroll-progress linear;
+  animation-timeline: scroll();
+  z-index: 999999;
+}
+
+@heyframes scroll-progress {
+  from {
+    width: 0px;
+  }
+  to {
+    width: 100%;
+  }
+}

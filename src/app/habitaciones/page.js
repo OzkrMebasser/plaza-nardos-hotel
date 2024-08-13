@@ -1,9 +1,8 @@
 
 
-import CardRoom from '../components/Cards/HomeRoomsCards';
-
-// import { useLanguage } from "@/app/contexts/LanguageContext";
-
+import AllRoomsInfo from '../components/AllRoomsInfo';
+import ReservationForm from '../components/ReservationForm';
+// import RoomDetails from '../components/RoomDetails';
 
 
 
@@ -21,10 +20,11 @@ const Habitaciones = () => {
   
   return (
     <>
-  
-      <CardRoom />
+   <AllRoomsInfo/>
+ 
     </>
   )
 }
 
 export default Habitaciones
+
