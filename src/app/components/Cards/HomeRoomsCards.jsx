@@ -7,6 +7,8 @@ import { FaInfoCircle, FaBed } from "react-icons/fa";
 import { PiCouchFill } from "react-icons/pi";
 import { FaEye } from "react-icons/fa6";
 import { IoBed } from "react-icons/io5";
+import { BiSolidBed } from "react-icons/bi";
+
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import Title from "../Title";
@@ -93,6 +95,17 @@ const HomeRoomsCards = () => {
                             <p className="text-sm ml-2 text-[#2b3163] font-semibold">
                               <span className="inline mr-1">{room.sofa}</span>
                               {translations[room.roomType]?.sofaBed}
+                            </p>
+                          </div>
+                        ) : null}
+                           {room.singleBed ? (
+                          <div className="flex items-center">
+                            <div>
+                              <BiSolidBed className="w-5 h-5 text-[#2b3163]" />
+                            </div>
+                            <p className="text-sm ml-2 text-[#2b3163] font-semibold">
+                              <span className="inline mr-1">{room.singleBed}</span>
+                              {translations[room.roomType]?.singleBed}
                             </p>
                           </div>
                         ) : null}

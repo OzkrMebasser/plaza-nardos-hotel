@@ -1,0 +1,3 @@
+[] working in HomeRoomsCards complete info and match
+[] finish rooms info /habitaciones page
+[] finish /reservaciones page

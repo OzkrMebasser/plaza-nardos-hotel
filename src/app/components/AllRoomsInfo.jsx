@@ -1,9 +1,14 @@
-import React from "react";
+
+"use client"
+import { useLanguage } from "@/app/contexts/LanguageContext";
 
 import RoomDetails from "./RoomDetails";
 import Title from "./Title";
 
 const AllRoomsInfo = () => {
+  const { getTranslations } = useLanguage();
+  const translations = getTranslations();
+
   const images_A = [
     "https://firebasestorage.googleapis.com/v0/b/hotel-plaza-nardos.appspot.com/o/main-images%2FHabitaci%C3%B3n-Doble-regular%2FHabitaci%C3%B3n-Doble.webp?alt=media&token=16209fb6-62af-4c52-8bcd-981f56bc076f",
     "https://firebasestorage.googleapis.com/v0/b/hotel-plaza-nardos.appspot.com/o/main-images%2FHabitaci%C3%B3n-Doble-regular%2FHabitaci%C3%B3n-Doble-1.webp?alt=media&token=34bc58db-7ac8-40ba-b75a-53ea944d49b1",
@@ -41,7 +46,7 @@ const AllRoomsInfo = () => {
     </section>
       <section className="mt-4 py-8">
       <Title
-        title={"ALL ROOMS"}
+        title={translations.homeTitles.ourRooms}
       />
         <RoomDetails
           roomType="Room Double"

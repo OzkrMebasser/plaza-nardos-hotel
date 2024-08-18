@@ -43,37 +43,36 @@ export const it = {
   },
 
   //Rooms info
+  ourRooms: "Le Nostre Camere",
   priceFrom: "Da",
   perNight: "a notte",
   seeDetails: "Dettagli",
 
-
-// "Double Room, Balcón y terraza"
-dlbBedRoom: {
-  title: "Camera Matrimoniale",
-  doubleBeds: "Letti Matrimoniali",
-  description: `La camera matrimoniale offre aria condizionata, un armadio, una terrazza con vista sulla piscina e un bagno privato con doccia. La unità dispone di 2 letti.`,
-  amenities: {
-    m2: "20 m²",
-    poolView: "Vista Piscina",
-    courtyardView: "Vista Cortile",
-    airConditioning: "Aria Condizionata",
-    privateBathroom: "Bagno Privato",
-    flatScreenTV: "TV a Schermo Piatto",
-    freeWiFi: "WiFi Gratuito",
-    balcony: "Balcone",
-    cityView: "Vista Città",
-    patio: "Patio",
-    terrace: "Terrazza",
+  // "Double Room, Balcón y terraza"
+  dlbBedRoom: {
+    title: "Camera doppia",
+    doubleBeds: "Letti Matrimoniali",
+    description: `La camera doppia offre aria condizionata, un armadio, una terrazza con vista sulla piscina, oltre a un bagno privato con doccia. L'unità dispone di 2 letti`,
+    amenities: {
+      m2: "20 m²",
+      poolView: "Vista Piscina",
+      courtyardView: "Vista Cortile",
+      airConditioning: "Aria Condizionata",
+      privateBathroom: "Bagno Privato",
+      flatScreenTV: "TV a Schermo Piatto",
+      freeWiFi: "WiFi Gratuito",
+      balcony: "Balcone",
+      cityView: "Vista Città",
+      patio: "Patio",
+      terrace: "Terrazza",
+    },
   },
-},
 
-
-  //"Deluxe Double Room"
+  //"Deluxe Double Room SIN Balcón"
   dlbDeluxe: {
     title: "Camera Doppia Deluxe",
     doubleBeds: "Letti Dopp",
-    description: `Questa camera doppia include articoli da toeletta gratuiti e un bagno privato con doccia. La camera dispone di aria condizionata, armadio, TV a schermo piatto e vista sulla piscina. L'unità offre 2 letti.`,
+    description: `Camera doppia con articoli da toeletta gratuiti e bagno privato con doccia. Questa camera doppia dispone di aria condizionata, armadio, TV a schermo piatto e vista sulla piscina. Dispone di 2 letti.`,
     amenities: {
       m2: "20 m²",
       poolView: "Vista Piscina",
@@ -86,6 +85,60 @@ dlbBedRoom: {
   },
   roomType: "Camera Doppia",
   beds: "2 Letti Doppio",
+
+  //"Deluxe Double Room CON Balcón"
+  dlbDeluxeWithBalcony: {
+    title: "Camera Doppia Deluxe",
+    doubleBeds: "Letti grandi",
+    description: `Camera con 2 letti singoli, aria condizionata, un armadio, una terrazza con vista sulla città e un bagno privato con doccia. L'alloggio dispone di 2 letti.`,
+    amenities: {
+      m2: "24 m²",
+      balcony: "Balcone",
+      cityView: "Vista città",
+      airConditioning: "Aria condizionata",
+      patio: "Patio",
+      privateBathroom: "Bagno privato",
+      flatScreenTV: "TV a schermo piatto",
+      terrace: "Terrazza",
+      freeWiFi: "WiFi gratuito",
+    },
+  },
+  //"Habitación Triple Deluxe SIN Balcón"
+  tripleDeluxe: {
+    title: "Camera Tripla Deluxe",
+    doubleBeds: "Letto King Size",
+    sofaBed: "Divano Letto",
+    description: `Fornendo articoli da toeletta gratuiti, questa camera tripla include un bagno privato con doccia. La spaziosa camera tripla climatizzata offre una TV a schermo piatto, una zona soggiorno, un armadio, un divano e viste sulla piscina. L'unità dispone di 2 letti.`,
+    amenities: {
+      m2: "41 m²",
+      poolView: "Vista Piscina",
+      courtyardView: "Vista Cortile",
+      airConditioning: "Aria Condizionata",
+      privateBathroom: "Bagno Privato",
+      flatScreenTV: "TV a Schermo Piatto",
+      freeWiFi: "WiFi Gratis",
+    },
+  },
+ // "Habitación Cuádruple Confort"
+ cuadrupleBedRoom: {
+  title: "Camera Quadrupla Comfort",
+  doubleBeds: "Letti matrimoniali",
+  singleBed: "Letto singolo",
+  description: `Questa spaziosa camera quadrupla dispone di aria condizionata, area salotto, terrazza con vista sulla piscina e bagno privato con doccia. Ha 3 letti.`,
+  amenities: {
+      m2: "41 m²",
+      balcony: "Balcone",
+      poolView: "Vista piscina",
+      cityView: "Vista città",
+      courtyardView: "Vista cortile",
+      airConditioning: "Aria condizionata",
+      patio: "Patio",
+      privateBathroom: "Bagno privato",
+      flatScreenTV: "TV a schermo piatto",
+      terrace: "Terrazza",
+      freeWiFi: "Wi-Fi gratuito",
+    },
+},
 
   //Chat
   chatCard: {

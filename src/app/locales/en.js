@@ -31,7 +31,7 @@ export const en = {
     services: "Hotel Amenities",
     location: "Location",
   },
-//Home amenities
+  //Home amenities
   homeServices: {
     freeWiFi: "Free WiFi",
     airConditioning: "Air Conditioning",
@@ -44,18 +44,18 @@ export const en = {
     dailyCleaningService: "Daily Cleaning Service",
     privateBeachArea: "Private Beach Area",
   },
-  
 
   //Rooms info
+  ourRooms: "Our Rooms",
   priceFrom: "From",
   perNight: "per night",
   seeDetails: "Details",
 
-// "Double Room, Balcón y terraza"
+  // "Double Room, Balcón y terraza"
   dlbBedRoom: {
     title: "Double Room",
     doubleBeds: "Double Beds",
-    description: `The twin room provides air conditioning, a wardrobe, a terrace with pool views as well as a private bathroom featuring a shower. The unit offers 2 beds.`,
+    description: `The double room offers air conditioning, a closet, a terrace overlooking the pool, as well as a private bathroom with shower. The unit has 2 beds`,
     amenities: {
       m2: "20 m²",
       poolView: "Pool View",
@@ -70,13 +70,12 @@ export const en = {
       terrace: "Terrace",
     },
   },
-  
 
-  //"Deluxe Double Room"
+  //"Deluxe Double Room SIN Balcón"
   dlbDeluxe: {
     title: "Deluxe Double Room",
     doubleBeds: "Double Beds",
-    description: `This double room includes free toiletries and a private bathroom with a shower. The room features air conditioning, a wardrobe, a flat-screen TV, and pool views. The unit offers 2 beds.`,
+    description: `Double room with free toiletries and private bathroom with shower. This double room features air conditioning, a wardrobe, a flat-screen TV, and views of the pool. It has 2 beds.`,
     amenities: {
       m2: "20 m²",
       poolView: "Pool View",
@@ -84,6 +83,61 @@ export const en = {
       airConditioning: "Air Conditioning",
       privateBathroom: "Private Bathroom",
       flatScreenTV: "Flat-Screen TV",
+      freeWiFi: "Free WiFi",
+    },
+  },
+
+  //"Deluxe Double Room CON Balcón"
+  dlbDeluxeWithBalcony: {
+    title: "Deluxe Double Room",
+    doubleBeds: "Large beds",
+    description: `Room with 2 single beds, air conditioning, a wardrobe, a terrace with city views, and a private bathroom with a shower. The accommodation has 2 beds.`,
+    amenities: {
+      m2: "24 m²",
+      balcony: "Balcony",
+      cityView: "City view",
+      airConditioning: "Air conditioning",
+      patio: "Patio",
+      privateBathroom: "Private bathroom",
+      flatScreenTV: "Flat-screen TV",
+      terrace: "Terrace",
+      freeWiFi: "Free WiFi",
+    },
+  },
+
+  //"Habitación Triple Deluxe SIN Balcón"
+  tripleDeluxe: {
+    title: "Deluxe Triple Room",
+    doubleBeds: "King Size Bed",
+    sofaBed: "Sofa Bed",
+    description: `Providing free toiletries, this triple room includes a private bathroom with a shower. The spacious air-conditioned triple room offers a flat-screen TV, a seating area, a wardrobe, a sofa, and pool views. The unit has 2 beds.`,
+    amenities: {
+      m2: "41 m²",
+      poolView: "Pool View",
+      courtyardView: "Courtyard View",
+      airConditioning: "Air Conditioning",
+      privateBathroom: "Private Bathroom",
+      flatScreenTV: "Flat-Screen TV",
+      freeWiFi: "Free WiFi",
+    },
+  },
+  // "Habitación Cuádruple Confort"
+  cuadrupleBedRoom: {
+    title: "Comfort Quadruple Room",
+    doubleBeds: "Double beds",
+    singleBed: "Single bed",
+    description: `This spacious quadruple room features air conditioning, a seating area, a terrace with pool views, and a private bathroom with a shower. It has 3 beds.`,
+    amenities: {
+      m2: "41 m²",
+      balcony: "Balcony",
+      poolView: "Pool view",
+      cityView: "City view",
+      courtyardView: "Courtyard view",
+      airConditioning: "Air conditioning",
+      patio: "Patio",
+      privateBathroom: "Private bathroom",
+      flatScreenTV: "Flat-screen TV",
+      terrace: "Terrace",
       freeWiFi: "Free WiFi",
     },
   },

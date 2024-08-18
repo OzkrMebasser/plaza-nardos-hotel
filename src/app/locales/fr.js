@@ -43,6 +43,7 @@ export const fr = {
   },
 
   //Rooms info
+  ourRooms: "Nos Chambres",
   priceFrom: "À partir de",
   perNight: "par nuit",
   seeDetails: "Détails",
@@ -66,13 +67,12 @@ export const fr = {
       terrace: "Terrasse",
     },
   },
-  
 
-  //"Deluxe Double Room"
+  //"Deluxe Double Room SIN Balcón"
   dlbDeluxe: {
     title: "Chambre Double Deluxe",
     doubleBeds: "Lits Doubles",
-    description: `Cette chambre double comprend des articles de toilette gratuits et une salle de bain privée avec douche. La chambre dispose de la climatisation, d'une armoire, d'une télévision à écran plat et de vues sur la piscine. L'unité offre 2 lits.`,
+    description: `Chambre double avec articles de toilette gratuits et salle de bain privée avec douche. Cette chambre double est équipée de la climatisation, d'une armoire, d'une télévision à écran plat et offre une vue sur la piscine. Elle dispose de 2 lits.`,
     amenities: {
       m2: "20 m²",
       poolView: "Vue sur la Piscine",
@@ -83,6 +83,61 @@ export const fr = {
       freeWiFi: "WiFi Gratuit",
     },
   },
+  //"Deluxe Double Room CON Balcón"
+  dlbDeluxeWithBalcony: {
+    title: "Chambre Double Deluxe",
+    doubleBeds: "Grands lits",
+    description: `Chambre avec 2 lits simples, climatisation, armoire, terrasse avec vue sur la ville et salle de bain privée avec douche. L'hébergement dispose de 2 lits.`,
+    amenities: {
+      m2: "24 m²",
+      balcony: "Balcon",
+      cityView: "Vue sur la ville",
+      airConditioning: "Climatisation",
+      patio: "Patio",
+      privateBathroom: "Salle de bain privée",
+      flatScreenTV: "Télévision à écran plat",
+      terrace: "Terrasse",
+      freeWiFi: "WiFi gratuit",
+    },
+  },
+  //"Habitación Triple Deluxe SIN Balcón"
+  tripleDeluxe: {
+    title: "Chambre Triple Deluxe",
+    doubleBeds: "Lit King Size",
+    sofaBed: "Canapé-Lit",
+    description: `Fournissant des articles de toilette gratuits, cette chambre triple comprend une salle de bain privée avec douche. La spacieuse chambre triple climatisée offre une télévision à écran plat, un coin salon, une armoire, un canapé et une vue sur la piscine. L'unité dispose de 2 lits.`,
+    amenities: {
+      m2: "41 m²",
+      poolView: "Vue sur la Piscine",
+      courtyardView: "Vue sur Cour Intérieure",
+      airConditioning: "Climatisation",
+      privateBathroom: "Salle de Bain Privée",
+      flatScreenTV: "TV à Écran Plat",
+      freeWiFi: "WiFi Gratuit",
+    },
+  },
+ // "Habitación Cuádruple Confort"
+ cuadrupleBedRoom: {
+  title: "Chambre Quadruple Confort",
+  doubleBeds: "Lits doubles",
+  singleBed: "Lit simple",
+  description: `Cette spacieuse chambre quadruple est dotée de la climatisation, d'un coin salon, d'une terrasse avec vue sur la piscine et d'une salle de bains privative avec douche. Elle dispose de 3 lits.`,
+  amenities: {
+      m2: "41 m²",
+      balcony: "Balcon",
+      poolView: "Vue sur la piscine",
+      cityView: "Vue sur la ville",
+      courtyardView: "Vue sur la cour",
+      airConditioning: "Climatisation",
+      patio: "Patio",
+      privateBathroom: "Salle de bains privative",
+      flatScreenTV: "Télévision à écran plat",
+      terrace: "Terrasse",
+      freeWiFi: "Wi-Fi gratuit",
+    },
+},
+
+
 
   roomType: "Chambre Double",
   beds: "2 Lits Doubles",

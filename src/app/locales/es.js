@@ -46,19 +46,22 @@ export const es = {
   },
 
   //Rooms info
+  // ourRooms: "Nuestras habitaciones",
   priceFrom: "Desde",
   perNight: "por noche",
   seeDetails: "Detalles",
 
-  // "Double Room, Balcón y terraza ✔"
+  // "Double Room, Balcón y terraza "
   dlbBedRoom: {
+    // (✔) info completa y traducida
     title: "Habitación Doble",
     doubleBeds: "Camas dobles",
     description: `La habitación doble ofrece aire acondicionado, un armario, una terraza con vistas a la piscina, así como un baño privado con ducha. La unidad dispone de 2 camas.`,
+    // (✔) info completa y traducida
     amenities: {
       m2: "20 m²",
       balcony: "Balcón",
-      poolView: "Vistas a la piscina",
+      poolView: "Vistas a la alberca",
       cityView: "Vistas a la ciudad",
       courtyardView: "Vistas a un patio interior",
       airConditioning: "Aire acondicionado",
@@ -68,7 +71,7 @@ export const es = {
       terrace: "Terraza",
       freeWiFi: "WiFi gratis",
     },
-    //[PENDIENT] SINGLE 
+    //[PENDIENT] SINGLE
     bathroomStuff: {
       title: "En el baño privado:",
       freeStuff: "Artículos de aseo gratis",
@@ -99,9 +102,11 @@ export const es = {
   },
   //"Deluxe Double Room SIN Balcón"
   dlbDeluxe: {
+    // (✔) info completa y traducida
     title: "Habitación Doble Deluxe",
     doubleBeds: "Camas dobles",
-    description: `Este dormitorio doble incluye artículos de tocador gratuitos y un baño privado con ducha. La habitación cuenta con aire acondicionado, un armario, una televisión de pantalla plana y vistas a la piscina. La unidad ofrece 2 camas.`,
+    description: `Habitación doble con artículos de aseo gratuitos y baño privado con ducha. Esta habitación doble cuenta con aire acondicionado, armario, TV de pantalla plana y vistas a la piscina. Dispone de 2 camas.`,
+    // (✔) info completa y traducida
     amenities: {
       m2: "20 m²",
       poolView: "Vistas a la piscina",
@@ -114,9 +119,11 @@ export const es = {
   },
   //"Deluxe Double Room CON Balcón"
   dlbDeluxeWithBalcony: {
-    title: "Habitación Doble Deluxe, Balcón",
-    doubleBeds: "Camas dobles grandes",
-    description: `Este dormitorio doble incluye artículos de tocador gratuitos y un baño privado con ducha. La habitación cuenta con aire acondicionado, un armario, una televisión de pantalla plana y vistas a la piscina. La unidad ofrece 2 camas.`,
+    // (✔) info completa y traducida
+    title: "Habitación Doble Deluxe",
+    doubleBeds: "Camas grandes",
+    description: `Habitación con 2 camas individuales, aire acondicionado, armario, terraza con vistas a la ciudad y baño privado con ducha. El alojamiento cuenta con 2 camas.`,
+    // (✔) info completa y traducida
     amenities: {
       m2: "24 m²",
       balcony: "Balcón",
@@ -127,23 +134,13 @@ export const es = {
       flatScreenTV: "TV de pantalla plana",
       terrace: "Terraza",
       freeWiFi: "WiFi gratis",
-      // WORKING IN THIS SECTIONS
-      // 24 m² ya
-      // Balcón ya
-      // Vistas a la ciudad ya
-      // Aire acondicionado ya
-      // Patio ya
-      // Baño privado
-      // TV de pantalla plana
-      // Terraza
-      // WiFi gratis
     },
   },
 
   //"Habitación Triple Deluxe SIN Balcón"
   tripleDeluxe: {
     title: "Habitación Triple Deluxe",
-    doubleBeds: "Cama doble extra grande",
+    doubleBeds: "Cama King Size",
     sofaBed: "Sofá cama",
     description: `Proporcionando artículos de tocador gratuitos, esta habitación triple incluye un baño privado con ducha. La amplia habitación triple con aire acondicionado ofrece una televisión de pantalla plana, una zona de estar, un armario, un sofá y vistas a la piscina. La unidad cuenta con 2 camas.`,
 
@@ -160,42 +157,24 @@ export const es = {
 
   // "Habitación Cuádruple Confort"
   cuadrupleBedRoom: {
+    // (✔) info completa y traducida
     title: "Habitación Cuádruple Confort",
-    doubleBeds: "Camas dobles",
+    doubleBeds: "Camas matrimoniales",
+    singleBed: "Cama individual",
     description: `Esta amplia habitación cuádruple dispone de aire acondicionado, zona de estar, terraza con vistas a la piscina y baño privado con ducha. Dispone de 3 camas.`,
+    // (✔) info completa y traducida
     amenities: {
       m2: "41 m²",
+      balcony: "Balcón",
       poolView: "Vistas a la piscina",
+      cityView: "Vistas a la ciudad",
       courtyardView: "Vistas a un patio interior",
       airConditioning: "Aire acondicionado",
+      patio: "Patio",
       privateBathroom: "Baño privado",
       flatScreenTV: "TV de pantalla plana",
+      terrace: "Terraza",
       freeWiFi: "WiFi gratis",
-
-      amenities: {
-        m2: "41 m²",
-        balcony: "Balcón",
-        poolView: "Vistas a la piscina",
-        cityView: "Vistas a la ciudad",
-        courtyardView: "Vistas a un patio interior",
-        airConditioning: "Aire acondicionado",
-        patio: "Patio",
-        privateBathroom: "Baño privado",
-        flatScreenTV: "TV de pantalla plana",
-        terrace: "Terraza",
-        freeWiFi: "WiFi gratis",
-      },
-      //  41 m²
-      // Balcón
-      // Vistas a la piscina
-      // Vistas a la ciudad
-      // Vistas a un patio interior
-      // Aire acondicionado
-      // Patio
-      // Baño privado
-      // TV de pantalla plana
-      // Terraza
-      // WiFi gratis
     },
   },
 

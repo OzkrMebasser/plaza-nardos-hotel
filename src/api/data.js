@@ -69,7 +69,7 @@ export const roomsData = [
       },
       {
         title: "courtyardView",
-        icon: FaTreeCity,
+        icon: HiBuildingOffice2,
       },
       {
         title: "airConditioning",
@@ -202,22 +202,14 @@ export const roomsData = [
     roomType: "dlbDeluxeWithBalcony",
     homeShow: true,
     beds: 2,
-    doubleBeds: "dlbDeluxe",
+    doubleBeds: "dlbDeluxeWithBalcony",
     sofa: 0,
     capacity: 2,
     maxCapacity: "",
     price: { MXN: 1700, USD: 96.43, CAD: 130.97, EUR: 87.99 },
     fees: { MXN: 374, USD: 21.21, CAD: 28.81, EUR: 19.36 },
-    description: "dlbDeluxe",
-    // m2: "24 m²", ya
-    // balcony: "Balcón", ya
-    // cityView: "Vistas a la ciudad", ya
-    // airConditioning: "Aire acondicionado", ya
-    // patio: "Patio", no
-    // privateBathroom: "Baño privado", ya
-    // flatScreenTV: "TV de pantalla plana", ya
-    // terrace: "Terraza",
-    // freeWiFi: "WiFi gratis",
+    description: "dlbDeluxeWithBalcony",
+
     amenities: [
       {
         title: "m2",
@@ -383,17 +375,7 @@ export const roomsData = [
         icon: FaWifi,
       },
     ],
-    //  41 m²
-    // Balcón
-    // Vistas a la piscina
-    // Vistas a la ciudad
-    // Vistas a un patio interior
-    // Aire acondicionado
-    // Patio
-    // Baño privado
-    // TV de pantalla plana
-    // Terraza
-    // WiFi gratis
+    
 
     imageHomeCards: [
       "https://firebasestorage.googleapis.com/v0/b/hotel-plaza-nardos.appspot.com/o/main-images%2FHabitaci%C3%B3n-Cu%C3%A1druple-Confort%2FHabitaci%C3%B3n-Cu%C3%A1druple-Confort.webp?alt=media&token=08056e0c-c074-42ac-92d8-760f4e071818",
