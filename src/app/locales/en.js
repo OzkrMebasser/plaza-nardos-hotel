@@ -160,6 +160,16 @@ export const en = {
     sendWhatsApp: "Send us a WhatsApp",
     phoneCall: "Give us a Phone Call",
   },
+
+  // Footer
+  footer: {
+    rooms: "Rooms",
+    dlbBedRoom: "Double",
+    dlbDeluxe: "Double Deluxe",
+    dlbDeluxeWithBalcony: "Double Deluxe, (Balcony)",
+    tripleDeluxe: "Triple Deluxe",
+    cuadrupleBedRoom: "Quadruple Comfort",
+  },
 };
 
 export default en;

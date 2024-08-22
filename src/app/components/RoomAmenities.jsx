@@ -1,11 +1,17 @@
-// import React from 'react'
+"use client";
 import { HiBadgeCheck } from "react-icons/hi";
+import AmenitiesList from "./AmenitiesList";
 import Link from "next/link";
 
-const RoomAmenities = () => {
+const RoomAmenities = ({ roomType, roomAmenities }) => {
   return (
     <>
-      <div className="text-justify w-[800px] bg-[white] p-4 lg:p-4 lg:mt-10 ">
+      <div className="text-justify w-full h-full  p-2">
+        <h2 className="mt-6 text-lg lg:text-xl text-sky-900 font-black text-center">
+          {roomType}
+        </h2>
+
+        <AmenitiesList roomAmenities={roomAmenities} />
         <p className="text-justify">
           {/* Contamos con 6 Departamentos en villas por cada módulo de 90 m²
                 y/o 110 m². */}
@@ -106,7 +112,7 @@ const RoomAmenities = () => {
           </ul>
         </div>
         <Link href="/reservaciones">
-          <button className="lg:absolute bottom-4 px-4 py-2 bg-blue-500 hover:bg-blue-600 text-white rounded">
+          <button className="lg:absolute bottom-4 mx-auto px-4 py-2 bg-blue-500 hover:bg-blue-600 text-white rounded">
             Book
           </button>
         </Link>

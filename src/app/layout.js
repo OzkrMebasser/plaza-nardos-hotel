@@ -1,6 +1,7 @@
 import "/node_modules/flag-icons/css/flag-icons.min.css";
 import { LanguageProvider } from "./contexts/LanguageContext.jsx";
 import { RoomsAndCurrencyProvider } from "./contexts/RoomsAndCurrencyContext.jsx";
+import {RoomToggleProvider} from "./contexts/RoomToggleContext.jsx"
 
 import Navbar from "./components/MenuComponents/Navbar.jsx";
 import ChatCard from "./components/Cards/ChatCard.jsx";
@@ -22,6 +23,7 @@ export default function RootLayout({ children }) {
   return (
     <LanguageProvider>
       <RoomsAndCurrencyProvider>
+        <RoomToggleProvider>
         <html lang="es">
           <body>
          
@@ -33,6 +35,7 @@ export default function RootLayout({ children }) {
             <ScrollToTopButton/>
           </body>
         </html>
+        </RoomToggleProvider>
       </RoomsAndCurrencyProvider>
     </LanguageProvider>
   );

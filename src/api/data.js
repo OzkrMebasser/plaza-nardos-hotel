@@ -38,6 +38,8 @@ export const roomsData = [
   //id: 1 -- Habitación Doble, 2 personas // homeShow: true,
   {
     id: 1,
+    roomId: "double",
+    route: "/habitaciones#double",
     roomType: "dlbBedRoom",
     beds: 2,
     doubleBeds: "dlbBedRoom",
@@ -103,6 +105,13 @@ export const roomsData = [
       "https://firebasestorage.googleapis.com/v0/b/hotel-plaza-nardos.appspot.com/o/main-images%2FHabitaci%C3%B3n-Doble-regular%2FHabitaci%C3%B3n-Doble-3.webp?alt=media&token=a77704fa-2c32-4771-bf6d-89828e6f43af",
       "https://firebasestorage.googleapis.com/v0/b/hotel-plaza-nardos.appspot.com/o/main-images%2FHabitaci%C3%B3n-Doble-regular%2FHabitaci%C3%B3n-Doble-4.webp?alt=media&token=36f9afdf-95b7-4ede-b332-54b62000da8a",
     ],
+    images_B: [
+      "https://firebasestorage.googleapis.com/v0/b/hotel-plaza-nardos.appspot.com/o/main-images%2FHabitaci%C3%B3n-Doble-regular%2FHabitaci%C3%B3n-Doble.webp?alt=media&token=16209fb6-62af-4c52-8bcd-981f56bc076f",
+      "https://firebasestorage.googleapis.com/v0/b/hotel-plaza-nardos.appspot.com/o/main-images%2FHabitaci%C3%B3n-Doble-regular%2FHabitaci%C3%B3n-Doble-1.webp?alt=media&token=34bc58db-7ac8-40ba-b75a-53ea944d49b1",
+      "https://firebasestorage.googleapis.com/v0/b/hotel-plaza-nardos.appspot.com/o/main-images%2FHabitaci%C3%B3n-Doble-regular%2FHabitaci%C3%B3n-Doble-2.webp?alt=media&token=d0f7e7f4-3752-4d1e-a68a-a05a087af3ed",
+      "https://firebasestorage.googleapis.com/v0/b/hotel-plaza-nardos.appspot.com/o/main-images%2FHabitaci%C3%B3n-Doble-regular%2FHabitaci%C3%B3n-Doble-3.webp?alt=media&token=a77704fa-2c32-4771-bf6d-89828e6f43af",
+      "https://firebasestorage.googleapis.com/v0/b/hotel-plaza-nardos.appspot.com/o/main-images%2FHabitaci%C3%B3n-Doble-regular%2FHabitaci%C3%B3n-Doble-4.webp?alt=media&token=36f9afdf-95b7-4ede-b332-54b62000da8a",
+    ],
   },
   //id: 2 -- Habitación Doble, 3 personas,
   {
@@ -127,6 +136,8 @@ export const roomsData = [
   //id: 4 -- "Habitación Doble Deluxe SIN BALCON, 2 personas // homeShow: true,
   {
     id: 4,
+    roomId: "double-deluxe",
+    route: "/habitaciones#double-deluxe",
     roomType: "dlbDeluxe",
     homeShow: true,
     beds: 2,
@@ -175,6 +186,13 @@ export const roomsData = [
       "https://firebasestorage.googleapis.com/v0/b/hotel-plaza-nardos.appspot.com/o/main-images%2FHabitaci%C3%B3n-Doble-Deluxe-2-camas-imagenes%2FHabitaci%C3%B3n-Doble%20-Deluxe-3.webp?alt=media&token=bc8abd39-2a7a-4acd-88de-1b430fc69485",
       "https://firebasestorage.googleapis.com/v0/b/hotel-plaza-nardos.appspot.com/o/main-images%2FHabitaci%C3%B3n-Doble-Deluxe-2-camas-imagenes%2FHabitaci%C3%B3n-Doble%20-Deluxe-4.webp?alt=media&token=cb5fe3b2-f42b-489c-913a-95800d4ed0bd",
     ],
+    images_B: [
+      "https://firebasestorage.googleapis.com/v0/b/hotel-plaza-nardos.appspot.com/o/main-images%2FHabitaci%C3%B3n-Doble-Deluxe-2-camas-imagenes%2FHabitaci%C3%B3n-Doble%20-Deluxe-1.webp?alt=media&token=c9e2c685-6f04-4a2d-8220-8b8f3137e5f2",
+      "https://firebasestorage.googleapis.com/v0/b/hotel-plaza-nardos.appspot.com/o/main-images%2FHabitaci%C3%B3n-Doble-Deluxe-2-camas-imagenes%2FHabitaci%C3%B3n-Doble%20-Deluxe.webp?alt=media&token=30c4f45b-e359-44aa-a722-2dfe8ac54072",
+      "https://firebasestorage.googleapis.com/v0/b/hotel-plaza-nardos.appspot.com/o/main-images%2FHabitaci%C3%B3n-Doble-Deluxe-2-camas-imagenes%2FHabitaci%C3%B3n-Doble%20-Deluxe-2.webp?alt=media&token=891f6c9e-bffd-4ac7-b2e3-c63b2e5f7c9c",
+      "https://firebasestorage.googleapis.com/v0/b/hotel-plaza-nardos.appspot.com/o/main-images%2FHabitaci%C3%B3n-Doble-Deluxe-2-camas-imagenes%2FHabitaci%C3%B3n-Doble%20-Deluxe-3.webp?alt=media&token=bc8abd39-2a7a-4acd-88de-1b430fc69485",
+      "https://firebasestorage.googleapis.com/v0/b/hotel-plaza-nardos.appspot.com/o/main-images%2FHabitaci%C3%B3n-Doble-Deluxe-2-camas-imagenes%2FHabitaci%C3%B3n-Doble%20-Deluxe-4.webp?alt=media&token=cb5fe3b2-f42b-489c-913a-95800d4ed0bd",
+    ],
   },
   //id: 5 -- "Habitación Doble Deluxe SIN BALCON, 3 personas",
   {
@@ -199,6 +217,8 @@ export const roomsData = [
   //id: 7 -- "Habitación Doble Deluxe **CON BALCON**, 2 personas // homeShow: true,
   {
     id: 7,
+    roomId: "double-deluxe-balcony",
+    route: "/habitaciones#double-deluxe-balcony",
     roomType: "dlbDeluxeWithBalcony",
     homeShow: true,
     beds: 2,
@@ -254,6 +274,12 @@ export const roomsData = [
       "https://firebasestorage.googleapis.com/v0/b/hotel-plaza-nardos.appspot.com/o/main-images%2FHabitaci%C3%B3n-Doble-Deluxe-balcon%2FHabitaci%C3%B3n-Doble-Deluxe-balcon-2.webp?alt=media&token=5848bc3d-462c-45c5-8a8c-a0add6a18415",
       "https://firebasestorage.googleapis.com/v0/b/hotel-plaza-nardos.appspot.com/o/main-images%2FHabitaci%C3%B3n-Doble-Deluxe-balcon%2FHabitaci%C3%B3n-Doble-Deluxe-balcon-4.webp?alt=media&token=280be52c-a45c-4aea-b687-c4284c74a7a1",
     ],
+    images_B:[
+      "https://firebasestorage.googleapis.com/v0/b/hotel-plaza-nardos.appspot.com/o/main-images%2FHabitaci%C3%B3n-Doble-Deluxe-balcon%2FHabitaci%C3%B3n-Doble-Deluxe-balcon-1.webp?alt=media&token=e9edf4d8-7584-4e16-96fe-27551e35c2cf",
+      "https://firebasestorage.googleapis.com/v0/b/hotel-plaza-nardos.appspot.com/o/main-images%2FHabitaci%C3%B3n-Doble-Deluxe-balcon%2FHabitaci%C3%B3n-Doble-Deluxe-balcon.webp?alt=media&token=8cef5d9e-d366-46ef-8861-1f15138a914a",
+      "https://firebasestorage.googleapis.com/v0/b/hotel-plaza-nardos.appspot.com/o/main-images%2FHabitaci%C3%B3n-Doble-Deluxe-balcon%2FHabitaci%C3%B3n-Doble-Deluxe-balcon-2.webp?alt=media&token=5848bc3d-462c-45c5-8a8c-a0add6a18415",
+      "https://firebasestorage.googleapis.com/v0/b/hotel-plaza-nardos.appspot.com/o/main-images%2FHabitaci%C3%B3n-Doble-Deluxe-balcon%2FHabitaci%C3%B3n-Doble-Deluxe-balcon-4.webp?alt=media&token=280be52c-a45c-4aea-b687-c4284c74a7a1",
+    ],
   },
   //id: 8 -- "Habitación Doble Deluxe **CON BALCON**, 3 personas",
   {
@@ -278,6 +304,8 @@ export const roomsData = [
   //id: 10 -- Habitación Triple Deluxe, 3 personas, // homeShow: true
   {
     id: 10,
+    roomId: "triple-deluxe",
+    route: "/habitaciones#triple-deluxe",
     roomType: "tripleDeluxe",
     beds: 1,
     sofa: 1,
@@ -324,10 +352,20 @@ export const roomsData = [
       "https://firebasestorage.googleapis.com/v0/b/hotel-plaza-nardos.appspot.com/o/main-images%2FHabitaci%C3%B3n-Triple-Deluxe%2FHabitaci%C3%B3n-Triple-Deluxe-4.webp?alt=media&token=01fb69d2-d2e1-498f-8282-ec5db00ef17d",
       "https://firebasestorage.googleapis.com/v0/b/hotel-plaza-nardos.appspot.com/o/main-images%2FHabitaci%C3%B3n-Triple-Deluxe%2FHabitaci%C3%B3n-Triple-Deluxe-5.webp?alt=media&token=d251d604-bea3-4307-9a4e-832123709be0",
     ],
+    images_B:[
+      "https://firebasestorage.googleapis.com/v0/b/hotel-plaza-nardos.appspot.com/o/main-images%2FHabitaci%C3%B3n-Triple-Deluxe%2FHabitaci%C3%B3n-Triple-Deluxe.webp?alt=media&token=2d27a6a4-777c-4990-81b7-a44995e55221",
+      "https://firebasestorage.googleapis.com/v0/b/hotel-plaza-nardos.appspot.com/o/main-images%2FHabitaci%C3%B3n-Triple-Deluxe%2FHabitaci%C3%B3n-Triple-Deluxe-1.webp?alt=media&token=414f7b38-f608-4b0e-b97b-3b4cbe0e4316",
+      "https://firebasestorage.googleapis.com/v0/b/hotel-plaza-nardos.appspot.com/o/main-images%2FHabitaci%C3%B3n-Triple-Deluxe%2FHabitaci%C3%B3n-Triple-Deluxe-2.webp?alt=media&token=439b838a-2b67-4b92-acb4-857ee0fe4ba9",
+      "https://firebasestorage.googleapis.com/v0/b/hotel-plaza-nardos.appspot.com/o/main-images%2FHabitaci%C3%B3n-Triple-Deluxe%2FHabitaci%C3%B3n-Triple-Deluxe-3.webp?alt=media&token=103a659b-b84b-4394-9e57-d929aace071d",
+      "https://firebasestorage.googleapis.com/v0/b/hotel-plaza-nardos.appspot.com/o/main-images%2FHabitaci%C3%B3n-Triple-Deluxe%2FHabitaci%C3%B3n-Triple-Deluxe-4.webp?alt=media&token=01fb69d2-d2e1-498f-8282-ec5db00ef17d",
+      "https://firebasestorage.googleapis.com/v0/b/hotel-plaza-nardos.appspot.com/o/main-images%2FHabitaci%C3%B3n-Triple-Deluxe%2FHabitaci%C3%B3n-Triple-Deluxe-5.webp?alt=media&token=d251d604-bea3-4307-9a4e-832123709be0",
+    ],
   },
   //id: 11 -- Habitación Cuádruple Confort, 3 personas, // homeShow: true
   {
     id: 11,
+    roomId: "cuadruple",
+    route: "/habitaciones#cuadruple",
     roomType: "cuadrupleBedRoom",
     beds: 2,
     sofa: 0,
@@ -378,6 +416,12 @@ export const roomsData = [
     
 
     imageHomeCards: [
+      "https://firebasestorage.googleapis.com/v0/b/hotel-plaza-nardos.appspot.com/o/main-images%2FHabitaci%C3%B3n-Cu%C3%A1druple-Confort%2FHabitaci%C3%B3n-Cu%C3%A1druple-Confort.webp?alt=media&token=08056e0c-c074-42ac-92d8-760f4e071818",
+      "https://firebasestorage.googleapis.com/v0/b/hotel-plaza-nardos.appspot.com/o/main-images%2FHabitaci%C3%B3n-Cu%C3%A1druple-Confort%2FHabitaci%C3%B3n-Cu%C3%A1druple-Confort-1.webp?alt=media&token=99a1a021-6492-4e16-afda-0fa977840359",
+      "https://firebasestorage.googleapis.com/v0/b/hotel-plaza-nardos.appspot.com/o/main-images%2FHabitaci%C3%B3n-Cu%C3%A1druple-Confort%2FHabitaci%C3%B3n-Cu%C3%A1druple-Confort-2.webp?alt=media&token=4fe29aad-7eab-46a8-8281-4e0d64a8d291",
+      "https://firebasestorage.googleapis.com/v0/b/hotel-plaza-nardos.appspot.com/o/main-images%2FHabitaci%C3%B3n-Cu%C3%A1druple-Confort%2FHabitaci%C3%B3n-Cu%C3%A1druple-Confort-3.webp?alt=media&token=f90848c7-ecba-4f22-8021-918d5663d36e",
+    ],
+    images_B:[
       "https://firebasestorage.googleapis.com/v0/b/hotel-plaza-nardos.appspot.com/o/main-images%2FHabitaci%C3%B3n-Cu%C3%A1druple-Confort%2FHabitaci%C3%B3n-Cu%C3%A1druple-Confort.webp?alt=media&token=08056e0c-c074-42ac-92d8-760f4e071818",
       "https://firebasestorage.googleapis.com/v0/b/hotel-plaza-nardos.appspot.com/o/main-images%2FHabitaci%C3%B3n-Cu%C3%A1druple-Confort%2FHabitaci%C3%B3n-Cu%C3%A1druple-Confort-1.webp?alt=media&token=99a1a021-6492-4e16-afda-0fa977840359",
       "https://firebasestorage.googleapis.com/v0/b/hotel-plaza-nardos.appspot.com/o/main-images%2FHabitaci%C3%B3n-Cu%C3%A1druple-Confort%2FHabitaci%C3%B3n-Cu%C3%A1druple-Confort-2.webp?alt=media&token=4fe29aad-7eab-46a8-8281-4e0d64a8d291",

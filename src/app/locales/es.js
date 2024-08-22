@@ -51,6 +51,7 @@ export const es = {
   perNight: "por noche",
   seeDetails: "Detalles",
 
+
   // "Double Room, Balcón y terraza "
   dlbBedRoom: {
     // (✔) info completa y traducida
@@ -195,6 +196,15 @@ export const es = {
     sendMessage: "Envíanos un Mensaje",
     sendWhatsApp: "Envíanos un WhatsApp",
     phoneCall: "Haznos una llamada ",
+  },
+  // Footer
+  footer: {
+    rooms: "Habitaciones",
+    dlbBedRoom: "Doble",
+    dlbDeluxe: "Doble Deluxe",
+    dlbDeluxeWithBalcony: "Doble Deluxe, (Balcon)",
+    tripleDeluxe: "Triple Deluxe",
+    cuadrupleBedRoom: "Cuádruple Confort",
   },
 };
 

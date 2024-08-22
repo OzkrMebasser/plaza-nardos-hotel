@@ -3,22 +3,24 @@ import { useState, useEffect } from "react";
 import RoomImgSlider from "@/app/components/Sliders/RoomImgSlider";
 import { useRoomsAndCurrency } from "@/app/contexts/RoomsAndCurrencyContext";
 import { useLanguage } from "@/app/contexts/LanguageContext";
+import { useRoomToggle } from "@/app/contexts/RoomToggleContext";
 import { FaInfoCircle, FaBed } from "react-icons/fa";
 import { PiCouchFill } from "react-icons/pi";
 import { FaEye } from "react-icons/fa6";
 import { IoBed } from "react-icons/io5";
 import { BiSolidBed } from "react-icons/bi";
+import Link from "next/link";
 
-import AOS from 'aos';
-import 'aos/dist/aos.css';
+import AOS from "aos";
+import "aos/dist/aos.css";
 import Title from "../Title";
 
 const HomeRoomsCards = () => {
   const { roomsData, setRoomsData, currency } = useRoomsAndCurrency();
   const { getTranslations } = useLanguage();
   const translations = getTranslations();
+  const { openRoomToggle } = useRoomToggle();
   const [isMobile, setIsMobile] = useState();
-
 
   useEffect(() => {
     setRoomsData(roomsData);
@@ -31,7 +33,6 @@ const HomeRoomsCards = () => {
     const handleResize = () => {
       setIsMobile(window.innerWidth < 768);
     };
-
 
     window.addEventListener("resize", handleResize, { passive: true });
 
@@ -49,14 +50,10 @@ const HomeRoomsCards = () => {
       <div className="mx-auto bg-gray-200 p-6">
         <Title title={translations.homeTitles.ourRooms} className="mt-4" />
         <div className="flex items-center justify-center h-full">
-          <div 
-          className="w-full lg:max-w-screen-lg lg:mx-auto mt-6" 
-         
-
-          >
+          <div className="w-full lg:max-w-screen-lg lg:mx-auto mt-6">
             {filteredRooms.map((room) => (
               <div
-               data-aos="fade-up"
+                data-aos="fade-up"
                 key={room.id}
                 className="w-full mb-8 lg:flex lg:justify-center"
               >
@@ -98,13 +95,15 @@ const HomeRoomsCards = () => {
                             </p>
                           </div>
                         ) : null}
-                           {room.singleBed ? (
+                        {room.singleBed ? (
                           <div className="flex items-center">
                             <div>
                               <BiSolidBed className="w-5 h-5 text-[#2b3163]" />
                             </div>
                             <p className="text-sm ml-2 text-[#2b3163] font-semibold">
-                              <span className="inline mr-1">{room.singleBed}</span>
+                              <span className="inline mr-1">
+                                {room.singleBed}
+                              </span>
                               {translations[room.roomType]?.singleBed}
                             </p>
                           </div>
@@ -191,16 +190,21 @@ const HomeRoomsCards = () => {
                         </div>
                       ))}
                     </div>
-                    <div className="mt-4 mb-4 lg:mt-0 lg:mb-0 lg:absolute lg:bottom-5 lg:right-5 flex justify-center">
-                      <button className="cursor-pointer font-semibold overflow-hidden relative z-10 border border-[#2b3163] group px-8 py-2 rounded-xl">
-                        <span className="relative z-10 text-[#2b3163] group-hover:text-white text-base lg:text-xl duration-500">
-                          {translations.seeDetails}{" "}
-                          <FaEye className="inline mb-[2px] ml-[2px]" />
-                        </span>
-                        <span className="absolute w-full h-full bg-[#2b3163] -left-32 top-0 -rotate-45 group-hover:rotate-0 group-hover:left-0 duration-500"></span>
-                        <span className="absolute w-full h-full bg-[#2b3163] -right-32 top-0 -rotate-45 group-hover:rotate-0 group-hover:right-0 duration-500"></span>
-                      </button>
-                    </div>
+                    <Link
+                      onClick={() => openRoomToggle(`${room.roomId}`)}
+                      href={`${room.route}`}
+                    >
+                      <div className="mt-4 mb-4 lg:mt-0 lg:mb-0 lg:absolute lg:bottom-5 lg:right-5 flex justify-center">
+                        <button className="cursor-pointer font-semibold overflow-hidden relative z-10 border border-[#2b3163] group px-8 py-2 rounded-xl">
+                          <span className="relative z-10 text-[#2b3163] group-hover:text-white text-base lg:text-xl duration-500">
+                            {translations.seeDetails}{" "}
+                            <FaEye className="inline mb-[2px] ml-[2px]" />
+                          </span>
+                          <span className="absolute w-full h-full bg-[#2b3163] -left-32 top-0 -rotate-45 group-hover:rotate-0 group-hover:left-0 duration-500"></span>
+                          <span className="absolute w-full h-full bg-[#2b3163] -right-32 top-0 -rotate-45 group-hover:rotate-0 group-hover:right-0 duration-500"></span>
+                        </button>
+                      </div>
+                    </Link>
                   </div>
                 </div>
               </div>

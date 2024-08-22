@@ -1,76 +1,76 @@
-
-"use client"
+"use client";
 import { useLanguage } from "@/app/contexts/LanguageContext";
-
+import { useRoomsAndCurrency } from "@/app/contexts/RoomsAndCurrencyContext";
 import RoomDetails from "./RoomDetails";
 import Title from "./Title";
 
 const AllRoomsInfo = () => {
   const { getTranslations } = useLanguage();
+  const { roomsData } = useRoomsAndCurrency();
   const translations = getTranslations();
 
-  const images_A = [
-    "https://firebasestorage.googleapis.com/v0/b/hotel-plaza-nardos.appspot.com/o/main-images%2FHabitaci%C3%B3n-Doble-regular%2FHabitaci%C3%B3n-Doble.webp?alt=media&token=16209fb6-62af-4c52-8bcd-981f56bc076f",
-    "https://firebasestorage.googleapis.com/v0/b/hotel-plaza-nardos.appspot.com/o/main-images%2FHabitaci%C3%B3n-Doble-regular%2FHabitaci%C3%B3n-Doble-1.webp?alt=media&token=34bc58db-7ac8-40ba-b75a-53ea944d49b1",
-    "https://firebasestorage.googleapis.com/v0/b/hotel-plaza-nardos.appspot.com/o/main-images%2FHabitaci%C3%B3n-Doble-regular%2FHabitaci%C3%B3n-Doble-2.webp?alt=media&token=d0f7e7f4-3752-4d1e-a68a-a05a087af3ed",
-    "https://firebasestorage.googleapis.com/v0/b/hotel-plaza-nardos.appspot.com/o/main-images%2FHabitaci%C3%B3n-Doble-regular%2FHabitaci%C3%B3n-Doble-3.webp?alt=media&token=a77704fa-2c32-4771-bf6d-89828e6f43af",
-    "https://firebasestorage.googleapis.com/v0/b/hotel-plaza-nardos.appspot.com/o/main-images%2FHabitaci%C3%B3n-Doble-regular%2FHabitaci%C3%B3n-Doble-4.webp?alt=media&token=36f9afdf-95b7-4ede-b332-54b62000da8a",
-  ];
-  const images_B = [
-    "https://firebasestorage.googleapis.com/v0/b/hotel-plaza-nardos.appspot.com/o/main-images%2FHabitaci%C3%B3n-Doble-regular%2FHabitaci%C3%B3n-Doble.webp?alt=media&token=16209fb6-62af-4c52-8bcd-981f56bc076f",
-    "https://firebasestorage.googleapis.com/v0/b/hotel-plaza-nardos.appspot.com/o/main-images%2FHabitaci%C3%B3n-Doble-regular%2FHabitaci%C3%B3n-Doble-1.webp?alt=media&token=34bc58db-7ac8-40ba-b75a-53ea944d49b1",
-    "https://firebasestorage.googleapis.com/v0/b/hotel-plaza-nardos.appspot.com/o/main-images%2FHabitaci%C3%B3n-Doble-regular%2FHabitaci%C3%B3n-Doble-2.webp?alt=media&token=d0f7e7f4-3752-4d1e-a68a-a05a087af3ed",
-    "https://firebasestorage.googleapis.com/v0/b/hotel-plaza-nardos.appspot.com/o/main-images%2FHabitaci%C3%B3n-Doble-regular%2FHabitaci%C3%B3n-Doble-3.webp?alt=media&token=a77704fa-2c32-4771-bf6d-89828e6f43af",
-    "https://firebasestorage.googleapis.com/v0/b/hotel-plaza-nardos.appspot.com/o/main-images%2FHabitaci%C3%B3n-Doble-regular%2FHabitaci%C3%B3n-Doble-4.webp?alt=media&token=36f9afdf-95b7-4ede-b332-54b62000da8a",
-  ];
+  const filteredRooms = roomsData.filter((room) => room.homeShow);
 
-  const images2_A = [
-    "https://firebasestorage.googleapis.com/v0/b/hotel-plaza-nardos.appspot.com/o/main-images%2FHabitaci%C3%B3n-Doble-regular%2FHabitaci%C3%B3n-Doble.webp?alt=media&token=16209fb6-62af-4c52-8bcd-981f56bc076f",
-    "https://firebasestorage.googleapis.com/v0/b/hotel-plaza-nardos.appspot.com/o/main-images%2FHabitaci%C3%B3n-Doble-regular%2FHabitaci%C3%B3n-Doble-1.webp?alt=media&token=34bc58db-7ac8-40ba-b75a-53ea944d49b1",
-    "https://firebasestorage.googleapis.com/v0/b/hotel-plaza-nardos.appspot.com/o/main-images%2FHabitaci%C3%B3n-Doble-regular%2FHabitaci%C3%B3n-Doble-2.webp?alt=media&token=d0f7e7f4-3752-4d1e-a68a-a05a087af3ed",
-    "https://firebasestorage.googleapis.com/v0/b/hotel-plaza-nardos.appspot.com/o/main-images%2FHabitaci%C3%B3n-Doble-regular%2FHabitaci%C3%B3n-Doble-3.webp?alt=media&token=a77704fa-2c32-4771-bf6d-89828e6f43af",
-    "https://firebasestorage.googleapis.com/v0/b/hotel-plaza-nardos.appspot.com/o/main-images%2FHabitaci%C3%B3n-Doble-regular%2FHabitaci%C3%B3n-Doble-4.webp?alt=media&token=36f9afdf-95b7-4ede-b332-54b62000da8a",
-  ];
-  const images2_B = [
-    "https://firebasestorage.googleapis.com/v0/b/hotel-plaza-nardos.appspot.com/o/main-images%2FHabitaci%C3%B3n-Doble-regular%2FHabitaci%C3%B3n-Doble.webp?alt=media&token=16209fb6-62af-4c52-8bcd-981f56bc076f",
-    "https://firebasestorage.googleapis.com/v0/b/hotel-plaza-nardos.appspot.com/o/main-images%2FHabitaci%C3%B3n-Doble-regular%2FHabitaci%C3%B3n-Doble-1.webp?alt=media&token=34bc58db-7ac8-40ba-b75a-53ea944d49b1",
-    "https://firebasestorage.googleapis.com/v0/b/hotel-plaza-nardos.appspot.com/o/main-images%2FHabitaci%C3%B3n-Doble-regular%2FHabitaci%C3%B3n-Doble-2.webp?alt=media&token=d0f7e7f4-3752-4d1e-a68a-a05a087af3ed",
-    "https://firebasestorage.googleapis.com/v0/b/hotel-plaza-nardos.appspot.com/o/main-images%2FHabitaci%C3%B3n-Doble-regular%2FHabitaci%C3%B3n-Doble-3.webp?alt=media&token=a77704fa-2c32-4771-bf6d-89828e6f43af",
-    "https://firebasestorage.googleapis.com/v0/b/hotel-plaza-nardos.appspot.com/o/main-images%2FHabitaci%C3%B3n-Doble-regular%2FHabitaci%C3%B3n-Doble-4.webp?alt=media&token=36f9afdf-95b7-4ede-b332-54b62000da8a",
-  ];
+   /**
+   * Obtiene la información de una habitación específica basada en su índice.
+   * 
+   * @param {number} index - El índice de la habitación en el array filteredRooms.
+   * @returns {Object} Objeto que contiene las imágenes y las amenidades de la habitación:
+   * - {Array} images_A: Array de imágenes para el componente principal de Swiper.
+   * - {Array} images_B: Array de imágenes adicionales para la habitación.
+   * - {Array} roomAmenities: Array que contiene las amenidades de la habitación.
+   * 
+   * @example
+   * const roomInfo = getRoomInfo(0);
+   * console.log(roomInfo.images_A); // Muestra las imágenes de la primera habitación.
+   */
+
+  const getRoomInfo = (index) => {
+    const room = filteredRooms[index];
+    return {
+      images_A: room.imageHomeCards,
+      images_B: room.images_B,
+      // description: room.description,
+      roomAmenities: [room],
+    };
+  };
+ 
+
+
   return (
     <>
-    {/* Fake nav back-ground color */}
-    <section className="h-[125px] bg-[#7c7498] shadow-lg top-0 left-0 w-full transition-all duration-300">
-
-    </section>
+      {/* Fake nav back-ground color */}
+      <section className="h-[125px] bg-[#7c7498] shadow-lg top-0 left-0 w-full transition-all duration-300"></section>
       <section className="mt-4 py-8">
-      <Title
-        title={translations.homeTitles.ourRooms}
-      />
+        <Title title={translations.homeTitles.ourRooms} />
+
         <RoomDetails
-          roomType="Room Double"
-          images_A={images_A}
-          images_B={images_B}
-        />
-     
-        <RoomDetails
-          roomType="Room Double deluxe"
-          images_A={images2_A}
-          images_B={images2_B}
+          id="double"
+          roomType={translations.dlbBedRoom.title}
+          {...getRoomInfo(0)}
         />
 
-<RoomDetails
-          roomType="Room Double Balcon"
-          images_A={images_A}
-          images_B={images_B}
-        />
-            <RoomDetails
-          roomType="Room Triple"
-          images_A={images_A}
-          images_B={images_B}
+        <RoomDetails
+          id="double-deluxe"
+          roomType={translations.dlbDeluxe.title}
+          {...getRoomInfo(1)}
         />
 
+        <RoomDetails
+          id="double-deluxe-balcony"
+          roomType={translations.dlbDeluxeWithBalcony.title}
+          {...getRoomInfo(2)}
+        />
+        <RoomDetails
+          id="triple-deluxe"
+          roomType={translations.tripleDeluxe.title}
+          {...getRoomInfo(3)}
+        />
+        <RoomDetails
+          id="cuadruple"
+          roomType={translations.cuadrupleBedRoom.title}
+          {...getRoomInfo(4)}
+        />
       </section>
     </>
   );

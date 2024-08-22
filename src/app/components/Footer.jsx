@@ -1,10 +1,17 @@
-import React from "react";
+"use client";
+import Link from "next/link";
+import { useLanguage } from "@/app/contexts/LanguageContext";
+import { useRoomToggle } from "../contexts/RoomToggleContext";
 import { FaTwitter, FaInstagram, FaLinkedin } from "react-icons/fa";
 import { FaFacebookF } from "react-icons/fa6";
 
 import Image from "next/image";
 
 const Footer = () => {
+  const { getTranslations } = useLanguage();
+  const translations = getTranslations();
+  const { openRoomToggle } = useRoomToggle();
+
   const logo =
     "https://firebasestorage.googleapis.com/v0/b/hotel-plaza-nardos.appspot.com/o/main-images%2Flogo-plaza-nardos-bgt.PNG?alt=media&token=3fd75ec3-3b07-496a-94b2-835db367653f";
   const currentYear = new Date().getFullYear();
@@ -15,13 +22,9 @@ const Footer = () => {
         <div className="container flex flex-col flex-wrap px-5 py-24 mx-auto md:items-center lg:items-start md:flex-row md:flex-no-wrap">
           <div className="flex flex-wrap flex-grow mt-10 -mb-10   md:mt-0 md:text-left lg:text-left">
             <div className=" w-full px-4 lg:w-1/5 md:w-1/2">
-              {/* <h2 className="mb-3 text-sm font-medium tracking-widest text-white uppercase title-font ">
-                About
-              </h2> */}
-              {/* <p className=""> */}
-
+              {/* Rooms */}
               <p className=" mb-3 font-medium tracking-widest text-white uppercase title-font relative inline-block stroke-current">
-                Rooms
+                {translations.footer.rooms}
                 <svg
                   className="absolute -bottom-0.5 w-full max-h-1.5"
                   viewBox="0 0 55 5"
@@ -34,40 +37,51 @@ const Footer = () => {
                   ></path>
                 </svg>
               </p>
-
-              {/* </p> */}
               <nav className="mb-10 list-none">
                 <li className="mb-3 hover:text-gray-300">
-                  <a
-                    href="#"
+                  <Link
+                    onClick={() => openRoomToggle("double")}
+                    href="/habitaciones#double"
                     className="relative w-fit block after:block after:content-[''] after:absolute after:h-[.8px] after:bg-white after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-left"
                   >
-                    Terms
-                  </a>
+                    {translations.footer.dlbBedRoom}
+                  </Link>
                 </li>{" "}
                 <li className="mb-3 hover:text-gray-300">
-                  <a
-                    href="#"
+                  <Link
+                    onClick={() => openRoomToggle("double-deluxe")}
+                    href="/habitaciones#double-deluxe"
                     className="relative w-fit block after:block after:content-[''] after:absolute after:h-[.8px] after:bg-white after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-left"
                   >
-                    Company
-                  </a>
+                    {translations.footer.dlbDeluxe}
+                  </Link>
                 </li>{" "}
                 <li className="mb-3 hover:text-gray-300">
-                  <a
-                    href="#"
+                  <Link
+                    onClick={() => openRoomToggle("double-deluxe-balcony")}
+                    href="/habitaciones#double-deluxe-balcony"
                     className="relative w-fit block after:block after:content-[''] after:absolute after:h-[.8px] after:bg-white after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-left"
                   >
-                    Careers
-                  </a>
+                    {translations.footer.dlbDeluxeWithBalcony}
+                  </Link>
                 </li>{" "}
                 <li className="mb-3 hover:text-gray-300">
-                  <a
-                    href="#"
+                  <Link
+                    onClick={() => openRoomToggle("triple-deluxe")}
+                    href="/habitaciones#triple-deluxe"
                     className="relative w-fit block after:block after:content-[''] after:absolute after:h-[.8px] after:bg-white after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-left"
                   >
-                    Blog
-                  </a>
+                    {translations.footer.tripleDeluxe}
+                  </Link>
+                </li>
+                <li className="mb-3 hover:text-gray-300">
+                  <Link
+                    onClick={() => openRoomToggle("cuadruple")}
+                    href="/habitaciones#cuadruple"
+                    className="relative w-fit block after:block after:content-[''] after:absolute after:h-[.8px] after:bg-white after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-left"
+                  >
+                    {translations.footer.cuadrupleBedRoom}
+                  </Link>
                 </li>
               </nav>
             </div>
@@ -175,10 +189,11 @@ const Footer = () => {
                   <button className="group relative w-7 h-7 overflow-hidden rounded-full bg-white text-lg shadow justify-center hover:border hover:border-white hover:scale-125  mr-4 ">
                     <div className=" text-center flex align-middle justify-center absolute inset-0 w-0 bg-[#2b3163] transition-all duration-[250ms] ease-out group-hover:w-full  "></div>
 
-                    <a className="relative text-[#2b3163] group-hover:text-white text-center  "
-                       href="https://www.facebook.com/profile.php?id=61561964999266"
-                       target="_blank"
-                       rel="noopener noreferrer"
+                    <a
+                      className="relative text-[#2b3163] group-hover:text-white text-center  "
+                      href="https://www.facebook.com/profile.php?id=61561964999266"
+                      target="_blank"
+                      rel="noopener noreferrer"
                     >
                       <FaFacebookF className="w-5 h-5 mx-auto" />
                     </a>

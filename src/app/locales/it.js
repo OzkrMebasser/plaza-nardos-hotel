@@ -119,13 +119,13 @@ export const it = {
       freeWiFi: "WiFi Gratis",
     },
   },
- // "Habitación Cuádruple Confort"
- cuadrupleBedRoom: {
-  title: "Camera Quadrupla Comfort",
-  doubleBeds: "Letti matrimoniali",
-  singleBed: "Letto singolo",
-  description: `Questa spaziosa camera quadrupla dispone di aria condizionata, area salotto, terrazza con vista sulla piscina e bagno privato con doccia. Ha 3 letti.`,
-  amenities: {
+  // "Habitación Cuádruple Confort"
+  cuadrupleBedRoom: {
+    title: "Camera Quadrupla Comfort",
+    doubleBeds: "Letti matrimoniali",
+    singleBed: "Letto singolo",
+    description: `Questa spaziosa camera quadrupla dispone di aria condizionata, area salotto, terrazza con vista sulla piscina e bagno privato con doccia. Ha 3 letti.`,
+    amenities: {
       m2: "41 m²",
       balcony: "Balcone",
       poolView: "Vista piscina",
@@ -138,7 +138,7 @@ export const it = {
       terrace: "Terrazza",
       freeWiFi: "Wi-Fi gratuito",
     },
-},
+  },
 
   //Chat
   chatCard: {
@@ -154,6 +154,16 @@ export const it = {
     sendMessage: "Inviaci un Messaggio",
     sendWhatsApp: "Inviaci un WhatsApp",
     phoneCall: "Fai una Chiamata",
+  },
+
+  // Footer
+  footer: {
+    rooms: "Camere",
+    dlbBedRoom: "Doppia",
+    dlbDeluxe: "Doppia Deluxe",
+    dlbDeluxeWithBalcony: "Doppia Deluxe, (Balcone)",
+    tripleDeluxe: "Tripla Deluxe",
+    cuadrupleBedRoom: "Quadrupla Comfort",
   },
 };
 

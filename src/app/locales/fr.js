@@ -116,13 +116,13 @@ export const fr = {
       freeWiFi: "WiFi Gratuit",
     },
   },
- // "Habitación Cuádruple Confort"
- cuadrupleBedRoom: {
-  title: "Chambre Quadruple Confort",
-  doubleBeds: "Lits doubles",
-  singleBed: "Lit simple",
-  description: `Cette spacieuse chambre quadruple est dotée de la climatisation, d'un coin salon, d'une terrasse avec vue sur la piscine et d'une salle de bains privative avec douche. Elle dispose de 3 lits.`,
-  amenities: {
+  // "Habitación Cuádruple Confort"
+  cuadrupleBedRoom: {
+    title: "Chambre Quadruple Confort",
+    doubleBeds: "Lits doubles",
+    singleBed: "Lit simple",
+    description: `Cette spacieuse chambre quadruple est dotée de la climatisation, d'un coin salon, d'une terrasse avec vue sur la piscine et d'une salle de bains privative avec douche. Elle dispose de 3 lits.`,
+    amenities: {
       m2: "41 m²",
       balcony: "Balcon",
       poolView: "Vue sur la piscine",
@@ -135,9 +135,7 @@ export const fr = {
       terrace: "Terrasse",
       freeWiFi: "Wi-Fi gratuit",
     },
-},
-
-
+  },
 
   roomType: "Chambre Double",
   beds: "2 Lits Doubles",
@@ -156,6 +154,15 @@ export const fr = {
     sendMessage: "Envoyez-nous un Message",
     sendWhatsApp: "Envoyez-nous un WhatsApp",
     phoneCall: "Passez un Appel",
+  },
+  // Footer
+  footer: {
+    rooms: "Chambres",
+    dlbBedRoom: "Double",
+    dlbDeluxe: "Double Deluxe",
+    dlbDeluxeWithBalcony: "Double Deluxe, (Balcon)",
+    tripleDeluxe: "Triple Deluxe",
+    cuadrupleBedRoom: "Quadruple Confort",
   },
 };
 
