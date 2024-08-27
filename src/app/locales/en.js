@@ -69,6 +69,14 @@ export const en = {
       patio: "Patio",
       terrace: "Terrace",
     },
+    bathRoomStuffTitle: "In the private bathroom:",
+    bathroomStuff: {
+      freeStuff: "Free toiletries",
+      wc: "WC",
+      toiletPaper: "Toilet paper",
+      shower: "Shower",
+    },
+    
   },
 
   //"Deluxe Double Room SIN Balcón"

@@ -6,7 +6,8 @@ import { BsFillNodePlusFill, BsNodeMinusFill } from "react-icons/bs";
 
 
 
-const RoomDetails = ({ roomType, images_A, images_B, id, roomAmenities }) => {
+
+const RoomDetails = ({ roomType, images_A, images_B, id, roomAmenities, description, bathroomStuff, bathRoomStuffTitle}) => {
  
   const { activeRoom, openRoomToggle, closeRoomToggle } = useRoomToggle();
 
@@ -54,7 +55,11 @@ const RoomDetails = ({ roomType, images_A, images_B, id, roomAmenities }) => {
                 <RoomAmenities
                   roomType={roomType}
                   roomAmenities={roomAmenities}
+                  description={description}
+                  bathroomStuff={bathroomStuff}
+                  bathRoomStuffTitle={bathRoomStuffTitle}
                 />
+               
               </div>
              
             </div>

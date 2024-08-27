@@ -11,15 +11,15 @@ const AllRoomsInfo = () => {
 
   const filteredRooms = roomsData.filter((room) => room.homeShow);
 
-   /**
+  /**
    * Obtiene la información de una habitación específica basada en su índice.
-   * 
+   *
    * @param {number} index - El índice de la habitación en el array filteredRooms.
    * @returns {Object} Objeto que contiene las imágenes y las amenidades de la habitación:
    * - {Array} images_A: Array de imágenes para el componente principal de Swiper.
    * - {Array} images_B: Array de imágenes adicionales para la habitación.
    * - {Array} roomAmenities: Array que contiene las amenidades de la habitación.
-   * 
+   *
    * @example
    * const roomInfo = getRoomInfo(0);
    * console.log(roomInfo.images_A); // Muestra las imágenes de la primera habitación.
@@ -30,11 +30,13 @@ const AllRoomsInfo = () => {
     return {
       images_A: room.imageHomeCards,
       images_B: room.images_B,
-      // description: room.description,
+      description: translations[room.description].description,
       roomAmenities: [room],
+      bathroomStuff:[room],
+      
     };
   };
- 
+
 
 
   return (
@@ -47,6 +49,7 @@ const AllRoomsInfo = () => {
         <RoomDetails
           id="double"
           roomType={translations.dlbBedRoom.title}
+          bathRoomStuffTitle={translations.dlbBedRoom.bathRoomStuffTitle}
           {...getRoomInfo(0)}
         />
 

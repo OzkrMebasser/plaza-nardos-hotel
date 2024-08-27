@@ -66,6 +66,13 @@ export const it = {
       patio: "Patio",
       terrace: "Terrazza",
     },
+    bathRoomStuffTitle: "Nel bagno privato:",
+    bathroomStuff: {
+      freeStuff: "Prodotti da bagno gratuiti",
+      wc: "WC",
+      toiletPaper: "Carta igienica",
+      shower: "Doccia",
+    },
   },
 
   //"Deluxe Double Room SIN Balcón"

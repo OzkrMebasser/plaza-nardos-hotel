@@ -73,8 +73,8 @@ export const es = {
       freeWiFi: "WiFi gratis",
     },
     //[PENDIENT] SINGLE
+    bathRoomStuffTitle: "En el baño privado:",
     bathroomStuff: {
-      title: "En el baño privado:",
       freeStuff: "Artículos de aseo gratis",
       wc: "WC",
       toiletPaper: "Papel higiénico",

@@ -1,5 +1,5 @@
 import Hero from "@/app/components/Hero";
-import MetaData from "@/app/components/MetaData";
+
 import Map from "@/app/components/Map";
 import AmenitiesGrid from "@/app/components/Cards/AmenitiesGrid";
 import HomeRoomsCards from "@/app/components/Cards/HomeRoomsCards";
@@ -17,7 +17,6 @@ const Home = () => {
   return (
     <>
       <Hero />
-      <MetaData />
       <HomeRoomsCards />
       <AmenitiesGrid />
       <Map />
