@@ -72,7 +72,7 @@ export const es = {
       terrace: "Terraza",
       freeWiFi: "WiFi gratis",
     },
-    //[PENDIENT] SINGLE
+    // (✔) info completa y traducida
     bathRoomStuffTitle: "En el baño privado:",
     bathroomStuff: {
       freeStuff: "Artículos de aseo gratis",
