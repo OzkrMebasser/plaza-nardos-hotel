@@ -33,10 +33,17 @@ const AllRoomsInfo = () => {
       description: translations[room.description].description,
       roomAmenities: [room],
       bathroomStuff:[room],
+      // bathroomStuffArray: room.bathroomStuff,
+      roomStuff:[room], 
+      views: [room],
+      // roomStuffArray: room.roomStuff,
       
     };
+
+    
   };
 
+const {bathroomStuffArray} = getRoomInfo(0);
 
 
   return (
@@ -50,6 +57,8 @@ const AllRoomsInfo = () => {
           id="double"
           roomType={translations.dlbBedRoom.title}
           bathRoomStuffTitle={translations.dlbBedRoom.bathRoomStuffTitle}
+          roomStuffTitle={translations.dlbBedRoom.roomStuffTitle}
+          viewsTitle={translations.dlbBedRoom.viewsTitle}
           {...getRoomInfo(0)}
         />
 

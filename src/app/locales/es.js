@@ -80,8 +80,9 @@ export const es = {
       toiletPaper: "Papel higiénico",
       shower: "Ducha",
     },
+    roomStuffTitle: "Equipamiento de la habitación:",
     roomStuff: {
-      title: "Equipamiento de la habitación:",
+      // title: "Equipamiento de la habitación:",
       tv: "TV de pantalla plana",
       bedCovers: "Ropa de cama",
       stairs: "Acceso a pisos superiores solo mediante escaleras",
@@ -92,8 +93,9 @@ export const es = {
       coatRack: "Perchero",
       towelsSheets: "Toallas / sábanas (por un suplemento)",
     },
+    viewsTitle: "Vista a:",
     views: {
-      title: "Vista a:",
+      // title: "Vista a:",
       toBalcony: "Balcón",
       toTerrace: "Terraza",
       toPool: "Vistas a la piscina",
