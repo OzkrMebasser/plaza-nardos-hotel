@@ -50,6 +50,9 @@ export const es = {
   priceFrom: "Desde",
   perNight: "por noche",
   seeDetails: "Detalles",
+  bookNow: "Reservar",
+   enlargeImg: "Haz clic para agrandar la imagen",
+   closeImg: "Cerrar imagen",
 
 
   // "Double Room, Balcón y terraza "
@@ -82,7 +85,6 @@ export const es = {
     },
     roomStuffTitle: "Equipamiento de la habitación:",
     roomStuff: {
-      // title: "Equipamiento de la habitación:",
       tv: "TV de pantalla plana",
       bedCovers: "Ropa de cama",
       stairs: "Acceso a pisos superiores solo mediante escaleras",
@@ -119,6 +121,10 @@ export const es = {
       flatScreenTV: "TV de pantalla plana",
       freeWiFi: "WiFi gratis",
     },
+    bathRoomStuffTitle: "En el baño privado:",
+    roomStuffTitle: "Equipamiento de la habitación:",
+    viewsTitle: "Vista a:",
+    
   },
   //"Deluxe Double Room CON Balcón"
   dlbDeluxeWithBalcony: {

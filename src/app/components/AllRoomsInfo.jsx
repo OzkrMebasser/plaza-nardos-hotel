@@ -65,6 +65,9 @@ const {bathroomStuffArray} = getRoomInfo(0);
         <RoomDetails
           id="double-deluxe"
           roomType={translations.dlbDeluxe.title}
+          bathRoomStuffTitle={translations.dlbDeluxe.bathRoomStuffTitle}
+          roomStuffTitle={translations.dlbDeluxe.roomStuffTitle}
+          viewsTitle={translations.dlbDeluxe.viewsTitle}
           {...getRoomInfo(1)}
         />
 

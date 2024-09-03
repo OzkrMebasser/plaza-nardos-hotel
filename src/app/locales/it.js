@@ -47,6 +47,10 @@ export const it = {
   priceFrom: "Da",
   perNight: "a notte",
   seeDetails: "Dettagli",
+  bookNow: "Prenotare",
+  enlargeImg: "Clicca per ingrandire l'immagine",
+    closeImg: "Chiudi immagine",
+
 
   // "Double Room, Balcón y terraza"
   dlbBedRoom: {
@@ -73,6 +77,27 @@ export const it = {
       toiletPaper: "Carta igienica",
       shower: "Doccia",
     },
+    roomStuffTitle: "Servizi in camera:",
+    roomStuff: {
+      tv: "TV a schermo piatto",
+      bedCovers: "Biancheria da letto",
+      stairs: "Piani superiori accessibili solo tramite scale",
+      fan: "Ventilatore",
+      towels: "Asciugamani",
+      closet: "Guardaroba",
+      ac: "Aria condizionata",
+      coatRack: "Appendiabiti",
+      towelsSheets: "Asciugamani / lenzuola (a pagamento)",
+    },
+    viewsTitle: "Vista su:",
+    views: {
+      toBalcony: "Balcone",
+      toTerrace: "Terrazza",
+      toPool: "Vista piscina",
+      toCity: "Vista città",
+      toPatio: "Vista cortile interno",
+    },
+    
   },
 
   //"Deluxe Double Room SIN Balcón"
@@ -89,6 +114,9 @@ export const it = {
       flatScreenTV: "TV a Schermo Piatto",
       freeWiFi: "WiFi Gratuito",
     },
+    bathRoomStuffTitle: "Nel bagno privato:",
+    roomStuffTitle: "Servizi in camera:",
+    viewsTitle: "Vista su:",
   },
   roomType: "Camera Doppia",
   beds: "2 Letti Doppio",

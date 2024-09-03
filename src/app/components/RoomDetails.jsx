@@ -1,8 +1,14 @@
 "use client";
 import { useRoomToggle } from "@/app/contexts/RoomToggleContext";
-import RoomDetailsImages from "@/app/components/Sliders/RoomDetailsImages";
+import { useLanguage } from "@/app/contexts/LanguageContext";
+import RoomSlidesPics from "@/app/components/Sliders/RoomSlidesPics";
 import RoomAmenities from "@/app/components/RoomAmenities";
-import { BsFillNodePlusFill, BsNodeMinusFill } from "react-icons/bs";
+import {
+  BsFillNodePlusFill,
+  BsNodeMinusFill,
+  BsCalendarCheckFill,
+} from "react-icons/bs";
+import "../components/Sliders/mySwyper.css";
 import Link from "next/link";
 
 const RoomDetails = ({
@@ -20,7 +26,8 @@ const RoomDetails = ({
   viewsTitle,
 }) => {
   const { activeRoom, openRoomToggle, closeRoomToggle } = useRoomToggle();
-
+  const { getTranslations } = useLanguage();
+  const translations = getTranslations();
   const isRoomOpen = activeRoom === id;
 
   return (
@@ -56,8 +63,8 @@ const RoomDetails = ({
             }`}
           >
             <div className="">
-              <section className="px-4">
-                <RoomDetailsImages images_A={images_A} images_B={images_B} />
+              <section className="px-4 ">
+                <RoomSlidesPics images_A={images_A} images_B={images_B} />
               </section>
             </div>
             <div className=" ">
@@ -77,25 +84,26 @@ const RoomDetails = ({
             </div>
 
             <div className="flex flex-col md:flex-row justify-between items-center p-4 container w-[100vw]">
-              <div className="flex-1 p-6 m-2">
-                <p className="text-[1rem] text-justify ml-1 text-[#2b3163]">{description}</p>
+              <div className="flex-1 p-4">
+                <p className="text-[1rem] text-justify ml-1 text-[#2b3163]">
+                  {description}
+                </p>
               </div>
-              <div className="flex-1 p-6 m-2 flex justify-center items-center">
-                {/* <Link href="/reservaciones">
-                  <button className="px-4 py-2 bg-blue-500 hover:bg-blue-600 text-white rounded">
-                    Book
+              <div className="flex-1 p-4 flex justify-center items-center ">
+                <Link href="/reservaciones">
+                  <button className="shake-btn cursor-pointer relative group overflow-hidden border-2 px-8 py-2 border-[#2b3163] rounded-lg">
+                    <span className="font-bold text-white text-xl relative z-10 group-hover:text-[#2b3163] duration-500">
+                      {/* Reservar{" "} bookNow */}
+                      <p className="inline mr-4"> {translations.bookNow}</p>
+                      <BsCalendarCheckFill className="  mb-1 inline h-5 w-5" />
+                    </span>
+                    <span className="absolute top-0 left-0 w-full bg-[#2b3163] duration-500 group-hover:-translate-x-full h-full"></span>
+                    <span className="absolute top-0 left-0 w-full bg-[#2b3163] duration-500 group-hover:translate-x-full h-full"></span>
+
+                    <span className="absolute top-0 left-0 w-full bg-[#2b3163] duration-500 delay-300 group-hover:-translate-y-full h-full"></span>
+                    <span className="absolute delay-300 top-0 left-0 w-full bg-[#2b3163] duration-500 group-hover:translate-y-full h-full"></span>
                   </button>
-                </Link> */}
-                    <div className="mt-4 mb-4 lg:mt-0 lg:mb-0  lg:bottom-5 lg:right-5 flex justify-center">
-                        <button className="cursor-pointer font-semibold overflow-hidden relative z-10 border border-[#2b3163] group px-8 py-2 rounded-xl">
-                          <span className="relative z-10 text-[#2b3163] group-hover:text-white text-base lg:text-xl duration-500">
-                            {/* {translations.seeDetails}{" "} */}Reservar
-                            {/* <FaEye className="inline mb-[2px] ml-[2px]" /> */}
-                          </span>
-                          <span className="absolute w-full h-full bg-[#2b3163] -left-32 top-0 -rotate-45 group-hover:rotate-0 group-hover:left-0 duration-500"></span>
-                          <span className="absolute w-full h-full bg-[#2b3163] -right-32 top-0 -rotate-45 group-hover:rotate-0 group-hover:right-0 duration-500"></span>
-                        </button>
-                      </div>
+                </Link>
               </div>
             </div>
           </div>

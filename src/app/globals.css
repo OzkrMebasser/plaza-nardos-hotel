@@ -166,7 +166,7 @@
   z-index: 999999;
 }
 
-@heyframes scroll-progress {
+@keyframes scroll-progress {
   from {
     width: 0px;
   }
@@ -174,3 +174,4 @@
     width: 100%;
   }
 }
+

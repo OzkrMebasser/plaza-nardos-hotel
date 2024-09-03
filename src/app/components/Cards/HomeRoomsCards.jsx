@@ -22,6 +22,7 @@ const HomeRoomsCards = () => {
   const { openRoomToggle } = useRoomToggle();
   const [isMobile, setIsMobile] = useState();
 
+  
   useEffect(() => {
     setRoomsData(roomsData);
     AOS.init();
@@ -62,8 +63,10 @@ const HomeRoomsCards = () => {
                     isMobile ? "hover:scale-95" : "hover:scale-110"
                   }`}
                 >
+                  
                   <div className="w-full sm:w-[30%] h-[20rem] relative bg-cover bg-center shadow-inner border hotel-cover">
                     <RoomImgSlider imageHomeCards={room.imageHomeCards} />
+                 
                   </div>
                   <div className="w-full sm:w-3/4 p-3 lg:px-8 relative">
                     <div className="flex justify-between items-center border-b pb-3">
@@ -195,13 +198,16 @@ const HomeRoomsCards = () => {
                       href={`${room.route}`}
                     >
                       <div className="mt-4 mb-4 lg:mt-0 lg:mb-0 lg:absolute lg:bottom-5 lg:right-5 flex justify-center">
-                        <button className="cursor-pointer font-semibold overflow-hidden relative z-10 border border-[#2b3163] group px-8 py-2 rounded-xl">
-                          <span className="relative z-10 text-[#2b3163] group-hover:text-white text-base lg:text-xl duration-500">
+                        <button className="cursor-pointer relative group overflow-hidden border-2 px-8 py-2 border-[#2b3163] rounded-lg">
+                          <span className="font-bold text-white text-xl relative z-10 group-hover:text-[#2b3163] duration-500">
                             {translations.seeDetails}{" "}
                             <FaEye className="inline mb-[2px] ml-[2px]" />
                           </span>
-                          <span className="absolute w-full h-full bg-[#2b3163] -left-32 top-0 -rotate-45 group-hover:rotate-0 group-hover:left-0 duration-500"></span>
-                          <span className="absolute w-full h-full bg-[#2b3163] -right-32 top-0 -rotate-45 group-hover:rotate-0 group-hover:right-0 duration-500"></span>
+                          <span className="absolute top-0 left-0 w-full bg-[#2b3163] duration-500 group-hover:-translate-x-full h-full"></span>
+                          <span className="absolute top-0 left-0 w-full bg-[#2b3163] duration-500 group-hover:translate-x-full h-full"></span>
+
+                          <span className="absolute top-0 left-0 w-full bg-[#2b3163] duration-500 delay-300 group-hover:-translate-y-full h-full"></span>
+                          <span className="absolute delay-300 top-0 left-0 w-full bg-[#2b3163] duration-500 group-hover:translate-y-full h-full"></span>
                         </button>
                       </div>
                     </Link>

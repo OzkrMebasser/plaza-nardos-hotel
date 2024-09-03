@@ -50,6 +50,9 @@ export const en = {
   priceFrom: "From",
   perNight: "per night",
   seeDetails: "Details",
+  bookNow: "Book",
+  enlargeImg: "Click to enlarge image",
+  closeImg: "Close image",
 
   // "Double Room, Balcón y terraza"
   dlbBedRoom: {
@@ -72,10 +75,31 @@ export const en = {
     bathRoomStuffTitle: "In the private bathroom:",
     bathroomStuff: {
       freeStuff: "Free toiletries",
-      wc: "WC",
+      wc: "Toilet",
       toiletPaper: "Toilet paper",
       shower: "Shower",
     },
+    roomStuffTitle: "Room amenities:",
+    roomStuff: {
+      tv: "Flat-screen TV",
+      bedCovers: "Bed linen",
+      stairs: "Upper floors accessible by stairs only",
+      fan: "Fan",
+      towels: "Towels",
+      closet: "Wardrobe",
+      ac: "Air conditioning",
+      coatRack: "Clothes rack",
+      towelsSheets: "Towels / sheets (extra fee)",
+    },
+    viewsTitle: "View of:",
+    views: {
+      toBalcony: "Balcony",
+      toTerrace: "Terrace",
+      toPool: "Pool view",
+      toCity: "City view",
+      toPatio: "Inner courtyard view",
+    },
+    
     
   },
 
@@ -93,6 +117,9 @@ export const en = {
       flatScreenTV: "Flat-Screen TV",
       freeWiFi: "Free WiFi",
     },
+    bathRoomStuffTitle: "In the private bathroom:",
+    roomStuffTitle: "Room amenities:",
+    viewsTitle: "View of:",
   },
 
   //"Deluxe Double Room CON Balcón"

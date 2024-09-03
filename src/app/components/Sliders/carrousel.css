@@ -9,7 +9,7 @@
   font-size: 18px;
   background: #fff;
 
-  /* Center slide text vertically */
+
   display: flex;
   justify-content: center;
   align-items: center;
@@ -41,15 +41,15 @@
 }
 
 .mySwiper {
-  height: 100px;
+  height: 320px;
   box-sizing: border-box;
-  padding: 5px 0;
+
 }
 
 .mySwiper .swiper-slide {
   width: 25%;
   height: 100%;
-  opacity: 0.4;
+
 }
 
 .mySwiper .swiper-slide-thumb-active {

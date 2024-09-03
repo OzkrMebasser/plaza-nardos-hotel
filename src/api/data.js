@@ -100,7 +100,6 @@ export const roomsData = [
     ],
     bathRoomStuffTitle: "bathRoomStuffTitle",
     bathroomStuff: [
-      // { title: "title" },
       { title: "freeStuff" },
       { title: "wc" },
       { title: "toiletPaper" },
@@ -117,15 +116,6 @@ export const roomsData = [
       { title: "ac" },
       { title: "coatRack" },
       { title: "towelsSheets" },
-      // tv: "TV de pantalla plana",
-      // bedCovers: "Ropa de cama",
-      // stairs: "Acceso a pisos superiores solo mediante escaleras",
-      // fan: "Ventilador",
-      // towels: "Toallas",
-      // closet: "Armario",
-      // ac: "Aire acondicionado",
-      // coatRack: "Perchero",
-      // towelsSheets: "Toallas / sábanas (por un suplemento)",
     ],
     viewsTitle: "viewsTitle",
     views: [
@@ -134,11 +124,6 @@ export const roomsData = [
       { title: "toPool" },
       { title: "toCity" },
       { title: "toPatio" },
-      // toBalcony: "Balcón",
-      // toTerrace: "Terraza",
-      // toPool: "Vistas a la piscina",
-      // toCity: "Vistas a la ciudad",
-      // toPatio: "Vistas a un patio interior",
     ],
     imageHomeCards: [
       "https://firebasestorage.googleapis.com/v0/b/hotel-plaza-nardos.appspot.com/o/main-images%2FHabitaci%C3%B3n-Doble-regular%2FHabitaci%C3%B3n-Doble.webp?alt=media&token=16209fb6-62af-4c52-8bcd-981f56bc076f",
@@ -221,6 +206,7 @@ export const roomsData = [
         icon: FaWifi,
       },
     ],
+    bathRoomStuffTitle: "bathRoomStuffTitle",
     imageHomeCards: [
       "https://firebasestorage.googleapis.com/v0/b/hotel-plaza-nardos.appspot.com/o/main-images%2FHabitaci%C3%B3n-Doble-Deluxe-2-camas-imagenes%2FHabitaci%C3%B3n-Doble%20-Deluxe-1.webp?alt=media&token=c9e2c685-6f04-4a2d-8220-8b8f3137e5f2",
       "https://firebasestorage.googleapis.com/v0/b/hotel-plaza-nardos.appspot.com/o/main-images%2FHabitaci%C3%B3n-Doble-Deluxe-2-camas-imagenes%2FHabitaci%C3%B3n-Doble%20-Deluxe.webp?alt=media&token=30c4f45b-e359-44aa-a722-2dfe8ac54072",
