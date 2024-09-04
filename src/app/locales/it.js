@@ -49,8 +49,7 @@ export const it = {
   seeDetails: "Dettagli",
   bookNow: "Prenotare",
   enlargeImg: "Clicca per ingrandire l'immagine",
-    closeImg: "Chiudi immagine",
-
+  closeImg: "Chiudi immagine",
 
   // "Double Room, Balcón y terraza"
   dlbBedRoom: {
@@ -97,7 +96,8 @@ export const it = {
       toCity: "Vista città",
       toPatio: "Vista cortile interno",
     },
-    
+    noSmokingTitle: "Politica sul fumo:",
+    noSmoking: "Fumare non è permesso",
   },
 
   //"Deluxe Double Room SIN Balcón"
@@ -115,15 +115,39 @@ export const it = {
       freeWiFi: "WiFi Gratuito",
     },
     bathRoomStuffTitle: "Nel bagno privato:",
+    bathroomStuff: {
+      freeStuff: "Articoli da toilette gratuiti",
+      wc: "WC",
+      toiletPaper: "Carta igienica",
+      shower: "Doccia",
+    },
     roomStuffTitle: "Servizi in camera:",
+    roomStuff: {
+      tv: "TV a schermo piatto",
+      bedCovers: "Biancheria da letto",
+      downStairs: "Tutta l'unità si trova al piano terra",
+      fan: "Ventilatore",
+      towels: "Asciugamani",
+      closet: "Armadio",
+      socket: "Presa vicino al letto",
+      ac: "Aria condizionata",
+      coatRack: "Appendiabiti",
+      towelsSheets: "Asciugamani/lenzuola (a pagamento)",
+    },
     viewsTitle: "Vista su:",
+    views: {
+      toPool: "Vista piscina",
+      toPatio: "Vista patio",
+    },
+    noSmokingTitle: "Politica sul fumo:",
+    noSmoking: "Fumare non è permesso",
   },
   roomType: "Camera Doppia",
   beds: "2 Letti Doppio",
 
   //"Deluxe Double Room CON Balcón"
   dlbDeluxeWithBalcony: {
-    title: "Camera Doppia Deluxe",
+    title: "Camera Doppia Deluxe *",
     doubleBeds: "Letti grandi",
     description: `Camera con 2 letti singoli, aria condizionata, un armadio, una terrazza con vista sulla città e un bagno privato con doccia. L'alloggio dispone di 2 letti.`,
     amenities: {
@@ -137,6 +161,35 @@ export const it = {
       terrace: "Terrazza",
       freeWiFi: "WiFi gratuito",
     },
+    bathRoomStuffTitle: "Nel bagno privato:",
+    bathroomStuff: {
+      freeStuff: "Articoli da toilette gratuiti",
+      wc: "WC",
+      toiletPaper: "Carta igienica",
+      shower: "Doccia",
+    },
+    roomStuffTitle: "Dotazioni della camera:",
+    roomStuff: {
+      tv: "TV a schermo piatto",
+      bedCovers: "Biancheria da letto",
+      downStairs: "Tutta l'unità si trova al piano terra",
+      fan: "Ventilatore",
+      towels: "Asciugamani",
+      closet: "Armadio",
+      socket: "Presa vicino al letto",
+      ac: "Aria condizionata",
+      coatRack: "Appendiabiti",
+      towelsSheets: "Asciugamani/lenzuola (a pagamento)",
+    },
+    viewsTitle: "Vista su:",
+    views: {
+      toBalcony: "Balcone",
+      toTerrace: "Terrazza",
+      toCity: "Vista città",
+      toPatio: "Vista patio",
+    },
+    noSmokingTitle: "Politica sul fumo:",
+    noSmoking: "Fumare non è permesso",
   },
   //"Habitación Triple Deluxe SIN Balcón"
   tripleDeluxe: {

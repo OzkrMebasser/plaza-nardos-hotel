@@ -1,12 +1,14 @@
 import React, { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { useLanguage } from "@/app/contexts/LanguageContext";
+import { TbHandClick } from "react-icons/tb";
 import "swiper/css";
 import "swiper/css/free-mode";
 import "swiper/css/navigation";
 import "swiper/css/thumbs";
 import "./mySwyper.css";
 import { FreeMode, Navigation, Thumbs } from "swiper/modules";
+
 import ModalImg from "../ModalImg";
 
 const RoomSlidesPics = ({ images_A, images_B }) => {
@@ -30,8 +32,8 @@ const RoomSlidesPics = ({ images_A, images_B }) => {
     <>
       <div className="swiper-container">
         <section className={`${modalOpen ? "opacity-30" : ""}`}>
-          <h6 className="text-center text-gray-400">
-            {translations.enlargeImg}
+          <h6 className="text-center text-gray-400 mb-2">
+            {translations.enlargeImg} <TbHandClick className="inline ml-2" />
           </h6>
           <Swiper
             style={{

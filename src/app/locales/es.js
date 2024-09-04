@@ -51,9 +51,8 @@ export const es = {
   perNight: "por noche",
   seeDetails: "Detalles",
   bookNow: "Reservar",
-   enlargeImg: "Haz clic para agrandar la imagen",
-   closeImg: "Cerrar imagen",
-
+  enlargeImg: "Haz clic para agrandar la imagen",
+  closeImg: "Cerrar imagen",
 
   // "Double Room, Balcón y terraza "
   dlbBedRoom: {
@@ -78,10 +77,10 @@ export const es = {
     // (✔) info completa y traducida
     bathRoomStuffTitle: "En el baño privado:",
     bathroomStuff: {
-      freeStuff: "Artículos de aseo gratis",
+      freeStuff: "Artículos de higiene gratis",
       wc: "WC",
       toiletPaper: "Papel higiénico",
-      shower: "Ducha",
+      shower: "Regadera",
     },
     roomStuffTitle: "Equipamiento de la habitación:",
     roomStuff: {
@@ -92,18 +91,19 @@ export const es = {
       towels: "Toallas",
       closet: "Armario",
       ac: "Aire acondicionado",
-      coatRack: "Perchero",
-      towelsSheets: "Toallas / sábanas (por un suplemento)",
+      coatRack: "Perchero para ropa",
+      towelsSheets: "Toallas/sábanas (por un cargo extra)",
     },
     viewsTitle: "Vista a:",
     views: {
-      // title: "Vista a:",
       toBalcony: "Balcón",
       toTerrace: "Terraza",
-      toPool: "Vistas a la piscina",
+      toPool: "Vistas a la alberca",
       toCity: "Vistas a la ciudad",
-      toPatio: "Vistas a un patio interior",
+      toPatio: "Vistas al patio interior",
     },
+    noSmokingTitle: "Política de fumadores:",
+    noSmoking: "no se puede fumar",
   },
   //"Deluxe Double Room SIN Balcón"
   dlbDeluxe: {
@@ -122,14 +122,37 @@ export const es = {
       freeWiFi: "WiFi gratis",
     },
     bathRoomStuffTitle: "En el baño privado:",
+    bathroomStuff: {
+      freeStuff: "Artículos de higiene gratis",
+      wc: "WC",
+      toiletPaper: "Papel higiénico",
+      shower: "Regadera",
+    },
     roomStuffTitle: "Equipamiento de la habitación:",
+    roomStuff: {
+      tv: "TV de pantalla plana",
+      bedCovers: "Ropa de cama",
+      downStairs: "Toda la unidad está situada en la planta baja",
+      fan: "Ventilador",
+      towels: "Toallas",
+      closet: "Armario",
+      socket: "Enchufe cerca de la cama",
+      ac: "Aire acondicionado",
+      coatRack: "Perchero para ropa",
+      towelsSheets: "Toallas/sábanas (por un cargo extra)",
+    },
     viewsTitle: "Vista a:",
-    
+    views: {
+      toPool: "Vistas a la alberca",
+      toPatio: "Vistas al patio interior",
+    },
+    noSmokingTitle: "Política de fumadores:",
+    noSmoking: "no se puede fumar",
   },
   //"Deluxe Double Room CON Balcón"
   dlbDeluxeWithBalcony: {
     // (✔) info completa y traducida
-    title: "Habitación Doble Deluxe",
+    title: "Habitación Doble Deluxe *",
     doubleBeds: "Camas grandes",
     description: `Habitación con 2 camas individuales, aire acondicionado, armario, terraza con vistas a la ciudad y baño privado con ducha. El alojamiento cuenta con 2 camas.`,
     // (✔) info completa y traducida
@@ -144,6 +167,35 @@ export const es = {
       terrace: "Terraza",
       freeWiFi: "WiFi gratis",
     },
+    bathRoomStuffTitle: "En el baño privado:",
+    bathroomStuff: {
+      freeStuff: "Artículos de higiene gratis",
+      wc: "WC",
+      toiletPaper: "Papel higiénico",
+      shower: "Regadera",
+    },
+    roomStuffTitle: "Equipamiento de la habitación:",
+    roomStuff: {
+      tv: "TV de pantalla plana",
+      bedCovers: "Ropa de cama",
+      downStairs: "Toda la unidad está situada en la planta baja",
+      fan: "Ventilador",
+      towels: "Toallas",
+      closet: "Armario",
+      socket: "Enchufe cerca de la cama",
+      ac: "Aire acondicionado",
+      coatRack: "Perchero para ropa",
+      towelsSheets: "Toallas/sábanas (por un cargo extra)",
+    },
+    viewsTitle: "Vista a:",
+    views: {
+      toBalcony: "Balcón",
+      toTerrace: "Terraza",
+      toCity: "Vistas a la ciudad",
+      toPatio: "Vistas al patio interior",
+    },
+    noSmokingTitle: "Política de fumadores:",
+    noSmoking: "no se puede fumar",
   },
 
   //"Habitación Triple Deluxe SIN Balcón"

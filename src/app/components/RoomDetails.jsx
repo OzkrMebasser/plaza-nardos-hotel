@@ -24,6 +24,8 @@ const RoomDetails = ({
   roomStuffTitle,
   views,
   viewsTitle,
+  noSmokingTitle,
+  noSmoking,
 }) => {
   const { activeRoom, openRoomToggle, closeRoomToggle } = useRoomToggle();
   const { getTranslations } = useLanguage();
@@ -79,6 +81,8 @@ const RoomDetails = ({
                   roomStuffTitle={roomStuffTitle}
                   views={views}
                   viewsTitle={viewsTitle}
+                  noSmokingTitle={noSmokingTitle}
+                  noSmoking={noSmoking}
                 />
               </div>
             </div>

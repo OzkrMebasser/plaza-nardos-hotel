@@ -99,8 +99,8 @@ export const en = {
       toCity: "City view",
       toPatio: "Inner courtyard view",
     },
-    
-    
+    noSmokingTitle: "Smoking Policy:",
+    noSmoking: "No smoking allowed",
   },
 
   //"Deluxe Double Room SIN Balcón"
@@ -118,13 +118,37 @@ export const en = {
       freeWiFi: "Free WiFi",
     },
     bathRoomStuffTitle: "In the private bathroom:",
+    bathroomStuff: {
+      freeStuff: "Free toiletries",
+      wc: "WC",
+      toiletPaper: "Toilet paper",
+      shower: "Shower",
+    },
     roomStuffTitle: "Room amenities:",
+    roomStuff: {
+      tv: "Flat-screen TV",
+      bedCovers: "Bed linen",
+      downStairs: "Entire unit located on ground floor",
+      fan: "Fan",
+      towels: "Towels",
+      closet: "Wardrobe",
+      socket: "Socket near the bed",
+      ac: "Air conditioning",
+      coatRack: "Clothes rack",
+      towelsSheets: "Towels/sheets (extra fee)",
+    },
     viewsTitle: "View of:",
+    views: {
+      toPool: "Pool view",
+      toPatio: "Patio view",
+    },
+    noSmokingTitle: "Smoking Policy:",
+    noSmoking: "No smoking allowed",
   },
 
   //"Deluxe Double Room CON Balcón"
   dlbDeluxeWithBalcony: {
-    title: "Deluxe Double Room",
+    title: "Deluxe Double Room *",
     doubleBeds: "Large beds",
     description: `Room with 2 single beds, air conditioning, a wardrobe, a terrace with city views, and a private bathroom with a shower. The accommodation has 2 beds.`,
     amenities: {
@@ -138,6 +162,35 @@ export const en = {
       terrace: "Terrace",
       freeWiFi: "Free WiFi",
     },
+    bathRoomStuffTitle: "In the private bathroom:",
+    bathroomStuff: {
+      freeStuff: "Free toiletries",
+      wc: "WC",
+      toiletPaper: "Toilet paper",
+      shower: "Shower",
+    },
+    roomStuffTitle: "Room amenities:",
+    roomStuff: {
+      tv: "Flat-screen TV",
+      bedCovers: "Bed linen",
+      downStairs: "Entire unit located on ground floor",
+      fan: "Fan",
+      towels: "Towels",
+      closet: "Wardrobe",
+      socket: "Socket near the bed",
+      ac: "Air conditioning",
+      coatRack: "Clothes rack",
+      towelsSheets: "Towels/sheets (extra fee)",
+    },
+    viewsTitle: "View of:",
+    views: {
+      toBalcony: "Balcony",
+      toTerrace: "Terrace",
+      toCity: "City view",
+      toPatio: "Patio view",
+    },
+    noSmokingTitle: "Smoking policy:",
+    noSmoking: "No smoking allowed",
   },
 
   //"Habitación Triple Deluxe SIN Balcón"

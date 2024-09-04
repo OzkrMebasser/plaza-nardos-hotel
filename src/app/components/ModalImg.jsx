@@ -2,6 +2,8 @@
 import { useLanguage } from "@/app/contexts/LanguageContext";
 import { AiFillCloseCircle } from "react-icons/ai";
 
+
+
 const ModalImg = ({ image, closeModal }) => {
   const { getTranslations } = useLanguage();
   const translations = getTranslations();

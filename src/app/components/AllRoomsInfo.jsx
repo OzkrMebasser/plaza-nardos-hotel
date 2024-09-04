@@ -32,19 +32,11 @@ const AllRoomsInfo = () => {
       images_B: room.images_B,
       description: translations[room.description].description,
       roomAmenities: [room],
-      bathroomStuff:[room],
-      // bathroomStuffArray: room.bathroomStuff,
-      roomStuff:[room], 
+      bathroomStuff: [room],
+      roomStuff: [room],
       views: [room],
-      // roomStuffArray: room.roomStuff,
-      
     };
-
-    
   };
-
-const {bathroomStuffArray} = getRoomInfo(0);
-
 
   return (
     <>
@@ -59,6 +51,8 @@ const {bathroomStuffArray} = getRoomInfo(0);
           bathRoomStuffTitle={translations.dlbBedRoom.bathRoomStuffTitle}
           roomStuffTitle={translations.dlbBedRoom.roomStuffTitle}
           viewsTitle={translations.dlbBedRoom.viewsTitle}
+          noSmokingTitle={translations.dlbBedRoom.noSmokingTitle}
+          noSmoking={translations.dlbBedRoom.noSmoking}
           {...getRoomInfo(0)}
         />
 
@@ -68,12 +62,19 @@ const {bathroomStuffArray} = getRoomInfo(0);
           bathRoomStuffTitle={translations.dlbDeluxe.bathRoomStuffTitle}
           roomStuffTitle={translations.dlbDeluxe.roomStuffTitle}
           viewsTitle={translations.dlbDeluxe.viewsTitle}
+          noSmokingTitle={translations.dlbDeluxe.noSmokingTitle}
+          noSmoking={translations.dlbDeluxe.noSmoking}
           {...getRoomInfo(1)}
         />
 
         <RoomDetails
           id="double-deluxe-balcony"
           roomType={translations.dlbDeluxeWithBalcony.title}
+          bathRoomStuffTitle={translations.dlbDeluxeWithBalcony.bathRoomStuffTitle}
+          roomStuffTitle={translations.dlbDeluxeWithBalcony.roomStuffTitle}
+          viewsTitle={translations.dlbDeluxeWithBalcony.viewsTitle}
+          noSmokingTitle={translations.dlbDeluxeWithBalcony.noSmokingTitle}
+          noSmoking={translations.dlbDeluxeWithBalcony.noSmoking}
           {...getRoomInfo(2)}
         />
         <RoomDetails

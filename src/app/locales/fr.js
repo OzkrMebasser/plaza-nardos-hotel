@@ -51,7 +51,6 @@ export const fr = {
   enlargeImg: "Cliquez pour agrandir l'image",
   closeImg: "Fermer l'image",
 
-
   // "Double Room, Balcón y terraza"
   dlbBedRoom: {
     title: "Chambre Double",
@@ -97,7 +96,8 @@ export const fr = {
       toCity: "Vue sur la ville",
       toPatio: "Vue sur la cour intérieure",
     },
-    
+    noSmokingTitle: "Politique de tabagisme :",
+    noSmoking: "Interdiction de fumer",
   },
 
   //"Deluxe Double Room SIN Balcón"
@@ -115,12 +115,36 @@ export const fr = {
       freeWiFi: "WiFi Gratuit",
     },
     bathRoomStuffTitle: "Dans la salle de bain privée :",
+    bathroomStuff: {
+      freeStuff: "Articles de toilette gratuits",
+      wc: "WC",
+      toiletPaper: "Papier toilette",
+      shower: "Douche",
+    },
     roomStuffTitle: "Équipements de la chambre :",
+    roomStuff: {
+      tv: "Télévision à écran plat",
+      bedCovers: "Linge de lit",
+      downStairs: "L'ensemble de l'unité est situé au rez-de-chaussée",
+      fan: "Ventilateur",
+      towels: "Serviettes",
+      closet: "Armoire",
+      socket: "Prise près du lit",
+      ac: "Climatisation",
+      coatRack: "Portemanteau",
+      towelsSheets: "Serviettes/draps (en supplément)",
+    },
     viewsTitle: "Vue sur :",
+    views: {
+      toPool: "Vue sur la piscine",
+      toPatio: "Vue sur le patio",
+    },
+    noSmokingTitle: "Politique de tabagisme :",
+    noSmoking: "Interdiction de fumer",
   },
   //"Deluxe Double Room CON Balcón"
   dlbDeluxeWithBalcony: {
-    title: "Chambre Double Deluxe",
+    title: "Chambre Double Deluxe *",
     doubleBeds: "Grands lits",
     description: `Chambre avec 2 lits simples, climatisation, armoire, terrasse avec vue sur la ville et salle de bain privée avec douche. L'hébergement dispose de 2 lits.`,
     amenities: {
@@ -134,6 +158,35 @@ export const fr = {
       terrace: "Terrasse",
       freeWiFi: "WiFi gratuit",
     },
+    bathRoomStuffTitle: "Dans la salle de bain privée :",
+    bathroomStuff: {
+      freeStuff: "Articles de toilette gratuits",
+      wc: "WC",
+      toiletPaper: "Papier toilette",
+      shower: "Douche",
+    },
+    roomStuffTitle: "Équipements de la chambre :",
+    roomStuff: {
+      tv: "Télévision à écran plat",
+      bedCovers: "Linge de lit",
+      downStairs: "L'ensemble de l'unité est situé au rez-de-chaussée",
+      fan: "Ventilateur",
+      towels: "Serviettes",
+      closet: "Armoire",
+      socket: "Prise près du lit",
+      ac: "Climatisation",
+      coatRack: "Portemanteau",
+      towelsSheets: "Serviettes/draps (en supplément)",
+    },
+    viewsTitle: "Vue sur :",
+    views: {
+      toBalcony: "Balcon",
+      toTerrace: "Terrasse",
+      toCity: "Vue sur la ville",
+      toPatio: "Vue sur le patio",
+    },
+    noSmokingTitle: "Politique de tabagisme :",
+    noSmoking: "Interdiction de fumer",
   },
   //"Habitación Triple Deluxe SIN Balcón"
   tripleDeluxe: {
