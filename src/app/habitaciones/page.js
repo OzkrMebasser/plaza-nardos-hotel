@@ -1,7 +1,7 @@
 
 
 import AllRoomsInfo from '../components/AllRoomsInfo';
-import ReservationForm from '../components/ReservationForm';
+import ReservationForm from '../components/BookingSteps/ReservationForm';
 // import RoomDetails from '../components/RoomDetails';
 
 

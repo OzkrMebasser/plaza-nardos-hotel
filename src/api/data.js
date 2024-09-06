@@ -143,7 +143,7 @@ export const roomsData = [
   //id: 2 -- Habitación Doble, 3 personas,
   {
     id: 2,
-    roomType: "Habitación Doble - 2 camas dobles",
+    roomType: "dlbBedRoom",
     beds: 2,
     sofa: 0,
     capacity: 3,
@@ -153,7 +153,7 @@ export const roomsData = [
   //id: 3 -- Habitación Doble, 4 personas
   {
     id: 3,
-    roomType: "Habitación Doble - 2 camas dobles",
+    roomType: "dlbBedRoom",
     beds: 2,
     sofa: 0,
     capacity: 4,
@@ -244,7 +244,7 @@ export const roomsData = [
   //id: 5 -- "Habitación Doble Deluxe SIN BALCON, 3 personas",
   {
     id: 5,
-    roomType: "Habitación Doble Deluxe - 2 camas dobles",
+    roomType: "dlbDeluxe",
     beds: 2,
     sofa: 0,
     capacity: 3,
@@ -254,7 +254,7 @@ export const roomsData = [
   //id: 6 -- "Habitación Doble Deluxe SIN BALCON, 4 personas",
   {
     id: 6,
-    roomType: "Habitación Doble Deluxe - 2 camas dobles",
+    roomType: "dlbDeluxe",
     beds: 2,
     sofa: 0,
     capacity: 4,
@@ -356,7 +356,7 @@ export const roomsData = [
   //id: 8 -- "Habitación Doble Deluxe **CON BALCON**, 3 personas",
   {
     id: 8,
-    roomType: "Habitación Doble Deluxe - 2 camas dobles",
+    roomType: "dlbDeluxeWithBalcony",
     beds: 2,
     sofa: 0,
     capacity: 3,
@@ -366,7 +366,7 @@ export const roomsData = [
   //id: 9 -- "Habitación Doble Deluxe **CON BALCON**, 4 personas",
   {
     id: 9,
-    roomType: "Habitación Doble Deluxe - 2 camas dobles",
+    roomType: "dlbDeluxeWithBalcony",
     beds: 2,
     sofa: 0,
     capacity: 4,
