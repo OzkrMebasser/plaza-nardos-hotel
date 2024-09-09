@@ -4,8 +4,10 @@ import { useState } from "react";
 const PersonalInfoForm = ({ onSubmit, onBack }) => {
   const [personalData, setPersonalData] = useState({
     name: "",
+    lastName: "",
     email: "",
     phone: "",
+    request: "",
   });
 
   const handleChange = (e) => {
@@ -19,59 +21,53 @@ const PersonalInfoForm = ({ onSubmit, onBack }) => {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-4">
-      <div>
-        <label htmlFor="name" className="block text-sm font-medium text-gray-700">
-          Nombre
-        </label>
+      <div class="grid grid-cols-1 gap-5 md:grid-cols-2 mt-5">
         <input
+          className="w-full bg-gray-100 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
           type="text"
+          placeholder="First Name*"
           name="name"
           id="name"
           value={personalData.name}
           onChange={handleChange}
-          className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
         />
-      </div>
-
-      <div>
-        <label htmlFor="email" className="block text-sm font-medium text-gray-700">
-          Email
-        </label>
         <input
+          className="w-full bg-gray-100 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
+          type="text"
+          placeholder="Last Name*"
+          name="lastName"
+          id="lastName"
+          value={personalData.lastName}
+          onChange={handleChange}
+        />
+        <input
+          className="w-full bg-gray-100 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
           type="email"
+          placeholder="Email*"
           name="email"
           id="email"
           value={personalData.email}
           onChange={handleChange}
-          className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
         />
-      </div>
-
-      <div>
-        <label htmlFor="phone" className="block text-sm font-medium text-gray-700">
-          Teléfono
-        </label>
         <input
+          className="w-full bg-gray-100 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
+          placeholder="Phone*"
           type="tel"
           name="phone"
           id="phone"
           value={personalData.phone}
           onChange={handleChange}
-          className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
         />
       </div>
-
-      <div className="flex justify-between">
-        <button
-          type="button"
-          onClick={onBack}
-          className="mt-4 bg-gray-600 text-white py-2 px-4 rounded"
-        >
-          Atrás
-        </button>
-        <button type="submit" className="mt-4 bg-indigo-600 text-white py-2 px-4 rounded">
-          Confirmar
-        </button>
+      <div class="my-4">
+        <textarea
+          placeholder="Message*"
+          name="request"
+          id="request"
+          value={personalData.request}
+          onChange={handleChange}
+          className="w-full h-32 bg-gray-100 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
+        ></textarea>
       </div>
     </form>
   );
