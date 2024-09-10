@@ -13,13 +13,14 @@ const ReservationForm = ({ onSubmit }) => {
     roomType: "",
     checkInDate: "",
     checkOutDate: "",
+    estimatedArrivalTime: "15:00", // Default to 3:00 pm
   });
 
   const today = new Date().toISOString().split("T")[0];
 
   const formatDate = (dateString) => {
-    const date = new Date(dateString);
-    return date.toLocaleDateString("en-US", {
+    const date = new Date(dateString + "T00:00:00");
+    return date.toLocaleDateString("es-MX", {
       weekday: "long",
       year: "numeric",
       month: "long",
@@ -99,8 +100,14 @@ const ReservationForm = ({ onSubmit }) => {
   const totalPrice = parseFloat(calculateTotalPrice());
   const formatNumber = (number) => number.toLocaleString();
 
+  // Check if the estimated arrival time is before 3pm
+  const isBeforeCheckInTime = () => {
+    const selectedTime = formData.estimatedArrivalTime;
+    return selectedTime && parseInt(selectedTime.split(":")[0]) < 15;
+  };
+
   return (
-    <form onSubmit={handleSubmit} className="space-y-4 ">
+    <form onSubmit={handleSubmit} className="space-y-4">
       <div className="mt-[3rem]">
         <label
           htmlFor="roomType"
@@ -170,6 +177,35 @@ const ReservationForm = ({ onSubmit }) => {
 
       <div>
         <label
+          htmlFor="estimatedArrivalTime"
+          className="block text-sm font-medium text-gray-700"
+        >
+          Hora estimada de llegada
+        </label>
+        <select
+          id="estimatedArrivalTime"
+          name="estimatedArrivalTime"
+          value={formData.estimatedArrivalTime}
+          onChange={handleChange}
+          className="w-full bg-gray-100 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
+        >
+          {Array.from({ length: 24 }, (_, i) => (
+            <option key={i} value={i < 10 ? `0${i}:00` : `${i}:00`}>
+              {i < 10 ? `0${i}:00` : `${i}:00`}
+            </option>
+          ))}
+        </select>
+        {/* Mostrar nota si la hora es antes de las 3pm */}
+        {isBeforeCheckInTime() && (
+          <p className="text-red-500 mt-2">
+            Nota: El check-in es a partir de las 3:00 p.m. Sin embargo, puedes
+            utilizar las instalaciones del hotel antes de esa hora.
+          </p>
+        )}
+      </div>
+
+      <div>
+        <label
           htmlFor="checkOutDate"
           className="block text-sm font-medium text-gray-700"
         >
@@ -193,14 +229,20 @@ const ReservationForm = ({ onSubmit }) => {
         Total de noches: {calculateNights()} noches
       </label>
 
-      <div>
+      <div className="text-right">
         <label className="block">Precio por Noche:</label>
         <span>
-          {selectedRoom?.price[currency]} {currency}
+          {selectedRoom
+            ? `${formatNumber(
+                selectedRoom?.price[currency]
+              )} ${" "} ${currency}`
+            : `0.00 ${" "} ${currency}`}
         </span>
         <label className="block">Impuestos:</label>
         <span>
-          {selectedRoom?.fees[currency]} {currency}
+          {selectedRoom
+            ? `${selectedRoom?.fees[currency]} ${" "} ${currency}`
+            : `0.00 ${" "} ${currency}`}
         </span>
         <label className="block">Total:</label>
         <span>

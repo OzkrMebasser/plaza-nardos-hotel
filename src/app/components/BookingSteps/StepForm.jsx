@@ -1,8 +1,8 @@
 "use client";
 import { useState } from "react";
-import ReservationForm from "./ReservationForm";
 import PersonalInfoForm from "./PersonalInfoForm";
 import ReservationSummary from "./ReservationSummary";
+import FormOne from "./FormOne.jsx";
 
 const steps = [
   { number: 1, label: "Reservation Details" },
@@ -16,8 +16,21 @@ const StepForm = () => {
   const [reservationData, setReservationData] = useState(null);
 
   const handleFormSubmit = (data) => {
-    setReservationData(data);
-    setCurrentStep(2); // Move to the next step
+    if (isFormOneComplete(data)) {
+      setReservationData(data);
+      setCurrentStep(2); // Move to the next step
+    }
+  };
+
+  const isFormOneComplete = (data) => {
+    // Check if all required fields are filled
+    return (
+      data.roomType &&
+      data.checkInDate &&
+      data.checkOutDate &&
+      data.estimatedArrivalTime &&
+      data.numberOfPeople
+    );
   };
 
   const handleConfirm = (personalInfo) => {
@@ -31,6 +44,7 @@ const StepForm = () => {
 
   const handleFinish = () => {
     // Handle finish logic here
+    console.log("Reservation completed:", reservationData);
   };
 
   const progressPercentage = (currentStep / steps.length) * 100;
@@ -46,7 +60,7 @@ const StepForm = () => {
 
         {/* Progress Indicator */}
         <div
-          className="absolute top-[9px]  lg:top-[2.8rem] h-1 bg-[#2b3163] rounded-lg"
+          className="absolute top-[9px] lg:top-[2.8rem] h-1 bg-[#2b3163] rounded-lg"
           style={{ width: `${progressPercentage}%`, transition: "width 0.3s" }}
         ></div>
 
@@ -61,13 +75,12 @@ const StepForm = () => {
               }`}
             >
               <span
-                className={`absolute -bottom-6 rounded-full  ${
+                className={`absolute -bottom-6 rounded-full ${
                   currentStep >= step.number
                     ? "bg-white text-[#2b3163] border-2 border-[#2b3163]"
                     : "bg-[#2b3163] text-white"
                 }`}
               >
-                {/* Icon (SVG or placeholder for the step number) */}
                 <svg
                   className="w-6 h-6"
                   xmlns="http://www.w3.org/2000/svg"
@@ -89,7 +102,7 @@ const StepForm = () => {
 
       {/* Step Content */}
       <div className="mt-8">
-        {currentStep === 1 && <ReservationForm onSubmit={handleFormSubmit} />}
+        {currentStep === 1 && <FormOne onSubmit={handleFormSubmit} />}
         {currentStep === 2 && (
           <PersonalInfoForm
             data={reservationData}
@@ -101,7 +114,7 @@ const StepForm = () => {
       </div>
 
       {/* Navigation Buttons */}
-      <div className="flex justify-between mt-4">
+      {/* <div className="flex justify-between mt-4">
         {currentStep > 1 && (
           <button
             className="px-4 py-2 bg-gray-300 text-black rounded"
@@ -110,7 +123,7 @@ const StepForm = () => {
             Back
           </button>
         )}
-        {currentStep < steps.length && (
+        {currentStep < steps.length && currentStep !== 1 && (
           <button
             className="px-4 py-2 bg-blue-600 text-white rounded"
             onClick={() => {
@@ -122,7 +135,7 @@ const StepForm = () => {
             {currentStep === steps.length - 1 ? "Finish" : "Next"}
           </button>
         )}
-      </div>
+      </div> */}
     </div>
   );
 };

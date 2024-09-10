@@ -1,5 +1,5 @@
-import StepForm from '../components/BookingSteps/StepForm'; // Importa el componente de múltiples pasos
-import BookingInfo from '../components/BookingSteps/BookingInfo'
+import StepForm from '@/app/components/BookingSteps/StepForm'; 
+
 export const metadata = {
   title: `Hotel Plaza Nardo's | Reservaciones`,
   description:
@@ -14,9 +14,9 @@ const Reservaciones = () => {
     <>
       <section className="h-[125px] bg-[#7c7498] shadow-lg top-0 left-0 w-full transition-all duration-300"></section>
       <section className="mt-4 py-8">
-        {/* Aquí se muestra el componente de múltiples pasos */}
+     
         <StepForm />
-        {/* <BookingInfo/> */}
+   
       </section>
     </>
   );
