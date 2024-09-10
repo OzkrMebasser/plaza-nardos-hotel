@@ -12,7 +12,7 @@ const ReservationSummary = ({ data }) => {
   const { roomType, numberOfPeople, checkInDate, checkOutDate, totalPrice } = data;
 
   const roomName = translations[roomType]?.title || "Habitación desconocida";
-  console.log( roomName)
+  // console.log( roomName)
   // roomType={translations.dlbBedRoom.title}
 
   return (

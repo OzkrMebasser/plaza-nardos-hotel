@@ -3,6 +3,7 @@ import { useState } from "react";
 import PersonalInfoForm from "./PersonalInfoForm";
 import ReservationSummary from "./ReservationSummary";
 import FormOne from "./FormOne.jsx";
+import FinishBooking from "./FinishBooking"; // Importamos el nuevo componente
 
 const steps = [
   { number: 1, label: "Reservation Details" },
@@ -18,12 +19,11 @@ const StepForm = () => {
   const handleFormSubmit = (data) => {
     if (isFormOneComplete(data)) {
       setReservationData(data);
-      setCurrentStep(2); // Move to the next step
+      setCurrentStep(2); // Mover al siguiente paso
     }
   };
 
   const isFormOneComplete = (data) => {
-    // Check if all required fields are filled
     return (
       data.roomType &&
       data.checkInDate &&
@@ -35,7 +35,7 @@ const StepForm = () => {
 
   const handleConfirm = (personalInfo) => {
     setReservationData({ ...reservationData, personalInfo });
-    setCurrentStep(3); // Move to the summary step
+    setCurrentStep(3); // Mover al paso de resumen
   };
 
   const handleBack = () => {
@@ -43,8 +43,7 @@ const StepForm = () => {
   };
 
   const handleFinish = () => {
-    // Handle finish logic here
-    console.log("Reservation completed:", reservationData);
+    setCurrentStep(4); // Mover al paso de finalización
   };
 
   const progressPercentage = (currentStep / steps.length) * 100;
@@ -110,32 +109,19 @@ const StepForm = () => {
             onBack={() => setCurrentStep(1)}
           />
         )}
-        {currentStep === 3 && <ReservationSummary data={reservationData} />}
+        {currentStep === 3 && (
+          <>
+            <ReservationSummary data={reservationData} />
+            <button
+              className="mt-4 px-4 py-2 bg-blue-600 text-white rounded"
+              onClick={handleFinish}
+            >
+              Finish
+            </button>
+          </>
+        )}
+        {currentStep === 4 && <FinishBooking data={reservationData} />}
       </div>
-
-      {/* Navigation Buttons */}
-      {/* <div className="flex justify-between mt-4">
-        {currentStep > 1 && (
-          <button
-            className="px-4 py-2 bg-gray-300 text-black rounded"
-            onClick={handleBack}
-          >
-            Back
-          </button>
-        )}
-        {currentStep < steps.length && currentStep !== 1 && (
-          <button
-            className="px-4 py-2 bg-blue-600 text-white rounded"
-            onClick={() => {
-              currentStep === steps.length - 1
-                ? handleFinish()
-                : setCurrentStep(currentStep + 1);
-            }}
-          >
-            {currentStep === steps.length - 1 ? "Finish" : "Next"}
-          </button>
-        )}
-      </div> */}
     </div>
   );
 };
