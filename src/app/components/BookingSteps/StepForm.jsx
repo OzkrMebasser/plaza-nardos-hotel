@@ -138,7 +138,7 @@ const StepForm = () => {
                     {<step.icon className="h-7 w-7" />}
                  
                   </span>
-                  <span className="  mt-5 text-center absolute"><LiaHandPointerSolid className="h-[10px] w-[10px] -rotate-45 "/></span>
+                  <span className=" ml-1 mt-5 text-center absolute block sm:hidden"><LiaHandPointerSolid className="h-[10px] w-[10px] -rotate-[30deg] "/></span>
                 </div>
               </li>
             ))}
