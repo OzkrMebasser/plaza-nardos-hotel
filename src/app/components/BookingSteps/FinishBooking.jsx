@@ -39,7 +39,7 @@ const FinishBooking = ({ data }) => {
       <p><strong>Total a Pagar:</strong> {totalPrice}</p>
 
       {/* Botones para descargar o imprimir */}
-      <div className="mt-4 flex gap-2 justify-around">
+      <div className="mt-4 flex gap-2 justify-around text-sm lg:text-lg">
         <button
           className="px-4 py-2 bg-blue-600 text-white rounded"
           onClick={handleDownloadPDF}
@@ -54,7 +54,7 @@ const FinishBooking = ({ data }) => {
         </button>
         <Link href={"/"}>
         <button
-          className="px-4 py-2 bg-green-600 text-white rounded"
+          className="px-4 py-2 bg-red-600 text-white rounded"
           
         >
           Cerrar
