@@ -1,11 +1,11 @@
 "use client";
 import jsPDF from "jspdf";
 import html2canvas from "html2canvas";
-
+import Link from "next/link";
 const FinishBooking = ({ data }) => {
   if (!data) return null;
 
-  const { roomType, numberOfPeople, checkInDate, checkOutDate, totalPrice } = data;
+  const { roomType, numberOfPeople, checkInDate, checkOutDate, estimatedArrivalTime, totalPrice } = data;
 
   // Función para descargar el resumen como PDF
   const handleDownloadPDF = () => {
@@ -34,6 +34,7 @@ const FinishBooking = ({ data }) => {
       <p><strong>Tipo de Habitación:</strong> {roomType}</p>
       <p><strong>Número de Personas:</strong> {numberOfPeople}</p>
       <p><strong>Check-In:</strong> {checkInDate}</p>
+      <p><strong>Arriving time: </strong> {estimatedArrivalTime}</p>
       <p><strong>Check-Out:</strong> {checkOutDate}</p>
       <p><strong>Total a Pagar:</strong> {totalPrice}</p>
 
@@ -51,6 +52,14 @@ const FinishBooking = ({ data }) => {
         >
           Imprimir
         </button>
+        <Link href={"/"}>
+        <button
+          className="px-4 py-2 bg-green-600 text-white rounded"
+          
+        >
+          Cerrar
+        </button>
+        </Link>
       </div>
     </div>
   );

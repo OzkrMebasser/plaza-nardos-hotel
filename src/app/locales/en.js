@@ -54,6 +54,15 @@ export const en = {
   enlargeImg: "Click to enlarge image",
   closeImg: "Close image",
 
+  //Booking info
+  bookingInfo: {
+    titleH1: "Booking Information",
+    roomDetails: "Room Details",
+    personalInfo: "Personal Information",
+    review: "Review",
+    finish: "Finish",
+  },
+
   // "Double Room, Balcón y terraza"
   dlbBedRoom: {
     title: "Double Room",

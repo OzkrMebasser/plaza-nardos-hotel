@@ -2,6 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+.tooltip {
+  @apply invisible absolute;
+}
+
+.has-tooltip:hover .tooltip {
+  @apply visible z-50;
+}
 @layer utilities {
     .animate-slide-right {
       @apply transform transition-transform duration-300;

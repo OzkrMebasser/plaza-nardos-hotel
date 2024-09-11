@@ -51,6 +51,14 @@ export const it = {
   enlargeImg: "Clicca per ingrandire l'immagine",
   closeImg: "Chiudi immagine",
 
+  //Booking info
+  bookingInfo: {
+    titleH1: "Informazioni sulla Prenotazione",
+    roomDetails: "Dettagli della Camera",
+    personalInfo: "Informazioni Personali",
+    review: "Rivedere",
+    finish: "Finire",
+  },
   // "Double Room, Balcón y terraza"
   dlbBedRoom: {
     title: "Camera doppia",

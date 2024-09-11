@@ -2,7 +2,10 @@
 import { useFormik } from "formik";
 import * as Yup from "yup";
 
-const PersonalInfoForm = ({ onSubmit, onBack }) => {
+const PersonalInfoForm = ({ onSubmit, onBack, data }) => {
+
+  console.log(data)
+  
   const formik = useFormik({
     initialValues: {
       name: "",
