@@ -12,7 +12,7 @@ import Title from "@/app/components/Title";
 import PersonalInfoForm from "./PersonalInfoForm";
 import ReservationSummary from "./ReservationSummary";
 import FormOne from "./FormOne.jsx";
-import FinishBooking from "./FinishBooking"; // Importamos el nuevo componente
+import FinishBooking from "./FinishBooking"; 
 
 const StepForm = () => {
   const [currentStep, setCurrentStep] = useState(1);
@@ -166,7 +166,7 @@ const StepForm = () => {
               />
             </>
           )}
-          {currentStep === 4 && <FinishBooking data={reservationData} />}
+          {currentStep === 4 && <FinishBooking data={reservationData}     personalData={personalInfoData} />}
         </div>
       </div>
     </>

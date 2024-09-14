@@ -2,10 +2,18 @@
 import jsPDF from "jspdf";
 import html2canvas from "html2canvas";
 import Link from "next/link";
-const FinishBooking = ({ data }) => {
+const FinishBooking = ({ data, personalData }) => {
   if (!data) return null;
 
   const { roomType, numberOfPeople, checkInDate, checkOutDate, estimatedArrivalTime, totalPrice } = data;
+  const { name, lastName, email, phone, request, country, city } = personalData;
+
+  const today = new Date();
+  const formattedDate = today.toISOString().slice(0, 10); // 
+  const bookingName = `booking-Hotel-Plaza-Nardos-for-${name.replace(/\s+/g, "-")}-${lastName.replace(/\s+/g, "-")}-${formattedDate}.pdf`;
+
+
+  // console.log(bookingName);
 
   // Función para descargar el resumen como PDF
   const handleDownloadPDF = () => {
@@ -19,7 +27,7 @@ const FinishBooking = ({ data }) => {
       const imgHeight = (canvas.height * imgWidth) / canvas.width;
 
       pdf.addImage(imgData, "PNG", 0, 0, imgWidth, imgHeight);
-      pdf.save("reserva.pdf");
+      pdf.save(`${bookingName}`);
     });
   };
 

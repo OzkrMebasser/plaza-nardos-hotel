@@ -88,7 +88,7 @@ const Navbar = () => {
                   className={`font-semibold relative cursor-pointer ${
                     isScrolled
                       ? "text-[#2b3163] hover:text-gray-400 after:bg-[#4d4d52] after:absolute after:h-[1px] after:w-0 after:bottom-[-3px] after:left-0 hover:after:w-full after:transition-all after:duration-300"
-                      : "text-white hover:text-[#2b3163] after:bg-white after:absolute after:h-[1px] after:w-0 after:bottom-[-3px] after:left-0 hover:after:w-full after:transition-all after:duration-300"
+                      : "text-white hover:text-[#2b3163] after:bg-white after:absolute after:h-[1px] after:w-0 after:bottom-[-3px] after:left-0 hover:after:w-full after:transition-all after:duration-300 [text-shadow:_0px_0px_8px_#838383]"
                   }`}
                   style={{
                     fontSize: isFooterVisible ? "0.75rem" : "1rem",

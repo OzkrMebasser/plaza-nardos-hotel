@@ -12,7 +12,7 @@ export const metadata = {
 const Reservaciones = () => {
   return (
     <>
-      <section className="h-[125px] bg-[#7c7498] shadow-lg top-0 left-0 w-full transition-all duration-300"></section>
+      <section className="h-[125px] bg-[#2b3163] shadow-lg top-0 left-0 w-full transition-all duration-300"></section>
       <section className="mt-4 py-8">
         <StepForm />
       </section>
