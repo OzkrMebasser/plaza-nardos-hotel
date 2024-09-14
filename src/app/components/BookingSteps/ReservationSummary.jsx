@@ -1,12 +1,17 @@
 "use client";
 import { useLanguage } from "@/app/contexts/LanguageContext";
+import { useRoomsAndCurrency } from "@/app/contexts/RoomsAndCurrencyContext";
+import RoomSumary from "./RoomSumary";
 import React, { useRef } from "react";
 import emailjs from "@emailjs/browser";
 
 const ReservationSummary = ({ data, personalData, onSubmit, onBack }) => {
   const form = useRef();
   const { getTranslations } = useLanguage();
+  const { roomsData } = useRoomsAndCurrency();
   const translations = getTranslations();
+
+  const filteredRooms = roomsData.filter((room) => room.homeShow);
 
   if (!data) return null;
 
@@ -39,9 +44,23 @@ const ReservationSummary = ({ data, personalData, onSubmit, onBack }) => {
       );
   };
 
+  const getRoomInfo = (index) => {
+    const room = filteredRooms[index];
+    return {
+      images_A: room.imageHomeCards,
+      images_B: room.images_B,
+      description: translations[room.description].description,
+      roomAmenities: [room],
+      bathroomStuff: [room],
+      roomStuff: [room],
+      views: [room],
+    };
+  };
+
   return (
     <>
-      <form ref={form} onSubmit={sendEmail}>
+      {/* <form ref={form} onSubmit={sendEmail}> */}
+      <form >
         <div className="p-4 bg-white">
           <h2 className="text-lg font-medium text-gray-900">
             Resumen de la Reserva
@@ -173,6 +192,16 @@ const ReservationSummary = ({ data, personalData, onSubmit, onBack }) => {
             </p>
           )}
         </div>
+        <RoomSumary
+          id="double"
+          roomType={translations.dlbBedRoom.title}
+          bathRoomStuffTitle={translations.dlbBedRoom.bathRoomStuffTitle}
+          roomStuffTitle={translations.dlbBedRoom.roomStuffTitle}
+          viewsTitle={translations.dlbBedRoom.viewsTitle}
+          noSmokingTitle={translations.dlbBedRoom.noSmokingTitle}
+          noSmoking={translations.dlbBedRoom.noSmoking}
+          {...getRoomInfo(0)}
+        />
         <div className="flex justify-between">
           <button
             type="button"
