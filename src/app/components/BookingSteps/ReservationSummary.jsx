@@ -57,163 +57,75 @@ const ReservationSummary = ({ data, personalData, onSubmit, onBack }) => {
     };
   };
 
+
+
+  // Definir el índice dinámicamente basado en roomType
+  let roomIndex = 0;
+  if (roomType === "dlbBedRoom") {
+    roomIndex = 0;
+  } else if (roomType === "dlbDeluxe") {
+    roomIndex = 1;
+  } else if (roomType === "dlbDeluxeWithBalcony") {
+    roomIndex = 2;
+  } else if (roomType === "tripleDeluxe") {
+    roomIndex = 3;
+  } else if (roomType === "cuadrupleBedRoom") {
+    roomIndex = 4;
+  }
+
+  // const roomInfo = getRoomInfo(roomIndex);
+
   return (
     <>
-      {/* <form ref={form} onSubmit={sendEmail}> */}
-      <form >
+      <form ref={form} onSubmit={sendEmail}>
         <div className="p-4 bg-white">
-          <h2 className="text-lg font-medium text-gray-900">
-            Resumen de la Reserva
-          </h2>
-          
+          <h2 className="text-lg font-medium text-gray-900">Resumen de la Reserva</h2>
+
           {/* Inputs ocultos para emailjs */}
-          <input
-            type="text"
-            name="roomName"
-            value={roomName}
-            readOnly
-            className="hidden"
-          />
-          <input
-            type="text"
-            name="fullName"
-            value={`${name} ${lastName}`}
-            readOnly
-            className="hidden"
-          />
-          <input
-            type="email"
-            name="email"
-            value={email}
-            readOnly
-            className="hidden"
-          />
-          <input
-            type="text"
-            name="phone"
-            value={phone}
-            readOnly
-            className="hidden"
-          />
-          <input
-            type="text"
-            name="country"
-            value={country}
-            readOnly
-            className="hidden"
-          />
-          <input
-            type="text"
-            name="city"
-            value={city}
-            readOnly
-            className="hidden"
-          />
-          <input
-            type="text"
-            name="numberOfPeople"
-            value={numberOfPeople}
-            readOnly
-            className="hidden"
-          />
-          <input
-            type="text"
-            name="checkInDate"
-            value={checkInDate}
-            readOnly
-            className="hidden"
-          />
-          <input
-            type="text"
-            name="estimatedArrivalTime"
-            value={estimatedArrivalTime}
-            readOnly
-            className="hidden"
-          />
-          <input
-            type="text"
-            name="checkOutDate"
-            value={checkOutDate}
-            readOnly
-            className="hidden"
-          />
-          <input
-            type="text"
-            name="totalPrice"
-            value={totalPrice}
-            readOnly
-            className="hidden"
-          />
-          <input
-            type="text"
-            name="request"
-            value={request}
-            readOnly
-            className="hidden"
-          />
+          <input type="text" name="roomName" value={roomName} readOnly className="hidden" />
+          <input type="text" name="fullName" value={`${name} ${lastName}`} readOnly className="hidden" />
+          <input type="email" name="email" value={email} readOnly className="hidden" />
+          <input type="text" name="phone" value={phone} readOnly className="hidden" />
+          <input type="text" name="country" value={country} readOnly className="hidden" />
+          <input type="text" name="city" value={city} readOnly className="hidden" />
+          <input type="text" name="numberOfPeople" value={numberOfPeople} readOnly className="hidden" />
+          <input type="text" name="checkInDate" value={checkInDate} readOnly className="hidden" />
+          <input type="text" name="estimatedArrivalTime" value={estimatedArrivalTime} readOnly className="hidden" />
+          <input type="text" name="checkOutDate" value={checkOutDate} readOnly className="hidden" />
+          <input type="text" name="totalPrice" value={totalPrice} readOnly className="hidden" />
+          <input type="text" name="request" value={request} readOnly className="hidden" />
 
           {/* Renderizado de la información visible */}
-          <p>
-            <strong>Tipo de Habitación:</strong> {roomName}
-          </p>
-          <p>
-            <strong>Nombre:</strong> {name + " " + lastName}
-          </p>
-          <p>
-            <strong>Email:</strong> {email}
-          </p>
-          <p>
-            <strong>Teléfono:</strong> {phone}
-          </p>
-          <p>
-            <strong>País:</strong> {country}
-          </p>
-          <p>
-            <strong>Ciudad:</strong> {city}
-          </p>
-          <p>
-            <strong>Número de Personas:</strong> {numberOfPeople}
-          </p>
-          <p>
-            <strong>Check-In:</strong> {checkInDate}
-          </p>
-          <p>
-            <strong>Hora Estimada de Llegada:</strong> {estimatedArrivalTime}
-          </p>
-          <p>
-            <strong>Check-Out:</strong> {checkOutDate}
-          </p>
-          <p>
-            <strong>Total a Pagar:</strong> {totalPrice}
-          </p>
-          {request && (
-            <p>
-              <strong>Solicitudes Especiales:</strong> {request}
-            </p>
-          )}
+          <p><strong>Tipo de Habitación:</strong> {roomName}</p>
+          <p><strong>Nombre:</strong> {name + " " + lastName}</p>
+          <p><strong>Email:</strong> {email}</p>
+          <p><strong>Teléfono:</strong> {phone}</p>
+          <p><strong>País:</strong> {country}</p>
+          <p><strong>Ciudad:</strong> {city}</p>
+          <p><strong>Número de Personas:</strong> {numberOfPeople}</p>
+          <p><strong>Check-In:</strong> {checkInDate}</p>
+          <p><strong>Hora Estimada de Llegada:</strong> {estimatedArrivalTime}</p>
+          <p><strong>Check-Out:</strong> {checkOutDate}</p>
+          <p><strong>Total a Pagar:</strong> {totalPrice}</p>
+          {request && <p><strong>Solicitudes Especiales:</strong> {request}</p>}
         </div>
+
+        {/* Componente RoomSummary con datos dinámicos */}
         <RoomSumary
-          id="double"
-          roomType={translations.dlbBedRoom.title}
-          bathRoomStuffTitle={translations.dlbBedRoom.bathRoomStuffTitle}
-          roomStuffTitle={translations.dlbBedRoom.roomStuffTitle}
-          viewsTitle={translations.dlbBedRoom.viewsTitle}
-          noSmokingTitle={translations.dlbBedRoom.noSmokingTitle}
-          noSmoking={translations.dlbBedRoom.noSmoking}
-          {...getRoomInfo(0)}
+          roomType={translations[roomType]?.title}
+          bathRoomStuffTitle={translations[roomType]?.bathRoomStuffTitle}
+          roomStuffTitle={translations[roomType]?.roomStuffTitle}
+          viewsTitle={translations[roomType]?.viewsTitle}
+          noSmokingTitle={translations[roomType]?.noSmokingTitle}
+          noSmoking={translations[roomType]?.noSmoking}
+          {...getRoomInfo(roomIndex)}  // Se pasa roomInfo dinámicamente según roomType
         />
+
         <div className="flex justify-between">
-          <button
-            type="button"
-            onClick={onBack}
-            className="px-4 py-2 bg-gray-300 text-black rounded"
-          >
+          <button type="button" onClick={onBack} className="px-4 py-2 bg-gray-300 text-black rounded">
             Back
           </button>
-          <button
-            type="submit"
-            className="px-4 py-2 bg-blue-600 text-white rounded"
-          >
+          <button type="submit" className="px-4 py-2 bg-blue-600 text-white rounded">
             Confirmar
           </button>
         </div>

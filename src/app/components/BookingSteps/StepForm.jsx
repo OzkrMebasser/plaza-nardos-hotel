@@ -12,6 +12,7 @@ import Title from "@/app/components/Title";
 import PersonalInfoForm from "./PersonalInfoForm";
 import ReservationSummary from "./ReservationSummary";
 import FormOne from "./FormOne.jsx";
+import RoomInfoForm from "./RoomInfoForm";
 import FinishBooking from "./FinishBooking"; 
 
 const StepForm = () => {
@@ -147,7 +148,7 @@ const StepForm = () => {
 
         {/* Step Content */}
         <div className="mt-8">
-          {currentStep === 1 && <FormOne onSubmit={handleFormSubmit} />}
+          {currentStep === 1 && <RoomInfoForm onSubmit={handleFormSubmit} />}
           {currentStep === 2 && (
             <PersonalInfoForm
               data={reservationData}
