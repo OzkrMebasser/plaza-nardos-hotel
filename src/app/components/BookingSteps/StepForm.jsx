@@ -83,7 +83,7 @@ const StepForm = () => {
   return (
     <>
       <Title title={translations.bookingInfo.titleH1} />
-      <div className="p-4 max-w-[48rem] mx-auto shadow-2xl rounded-lg">
+      <div className="p-8 max-w-[64rem] mx-auto shadow-2xl rounded-lg mt-10">
         {/* Steps Bar */}
         <div className="relative">
           <h2 className="sr-only">Steps</h2>

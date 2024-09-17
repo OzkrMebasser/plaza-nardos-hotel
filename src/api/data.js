@@ -416,6 +416,34 @@ export const roomsData = [
         icon: FaWifi,
       },
     ],
+    bathroomStuff: [
+      { title: "freeStuff" },
+      { title: "wc" },
+      { title: "toiletPaper" },
+      { title: "shower" },
+      // En tu baño privado:
+      // Artículos de higiene gratis
+      // Regadera
+      // Inodoro
+      // Papel de baño
+    ],
+    roomStuff: [
+      { title: "tv" },
+      { title: "bedCovers" },
+      { title: "downStairs" },
+      { title: "sofaBed" },
+      { title: "fan" },
+      { title: "towels" },
+      { title: "closet" },
+      { title: "seatingRoom" },
+      { title: "socket" },
+      { title: "ac" },
+      { title: "coatRack" },
+      { title: "towelsSheets" },
+    ],
+
+    views: [{ title: "toPool" }, { title: "toPatio" }],
+
     imageHomeCards: [
       "https://firebasestorage.googleapis.com/v0/b/hotel-plaza-nardos.appspot.com/o/main-images%2FHabitaci%C3%B3n-Triple-Deluxe%2FHabitaci%C3%B3n-Triple-Deluxe.webp?alt=media&token=2d27a6a4-777c-4990-81b7-a44995e55221",
       "https://firebasestorage.googleapis.com/v0/b/hotel-plaza-nardos.appspot.com/o/main-images%2FHabitaci%C3%B3n-Triple-Deluxe%2FHabitaci%C3%B3n-Triple-Deluxe-1.webp?alt=media&token=414f7b38-f608-4b0e-b97b-3b4cbe0e4316",
@@ -484,6 +512,39 @@ export const roomsData = [
         title: "freeWiFi",
         icon: FaWifi,
       },
+    ],
+    bathroomStuff: [
+      { title: "freeStuff" },
+      { title: "wc" },
+      { title: "toiletPaper" },
+      { title: "shower" },
+    ],
+    roomStuff: [
+      { title: "tv" },
+      { title: "bedCovers" },
+      { title: "downStairs" },
+      { title: "fan" },
+      { title: "towels" },
+      { title: "closet" },
+      { title: "seatingRoom" },
+      { title: "socket" },
+      { title: "ac" },
+      { title: "coatRack" },
+      { title: "towelsSheets" },
+    ],
+
+    views: [
+      { title: "toBalcony" },
+      { title: "toTerrace" },
+      {title: "toPool"},
+      { title: "toCity" },
+      { title: "toPatio" },
+    ],
+    imageHomeCards: [
+      "https://firebasestorage.googleapis.com/v0/b/hotel-plaza-nardos.appspot.com/o/main-images%2FHabitaci%C3%B3n-Doble-Deluxe-balcon%2FHabitaci%C3%B3n-Doble-Deluxe-balcon-1.webp?alt=media&token=e9edf4d8-7584-4e16-96fe-27551e35c2cf",
+      "https://firebasestorage.googleapis.com/v0/b/hotel-plaza-nardos.appspot.com/o/main-images%2FHabitaci%C3%B3n-Doble-Deluxe-balcon%2FHabitaci%C3%B3n-Doble-Deluxe-balcon.webp?alt=media&token=8cef5d9e-d366-46ef-8861-1f15138a914a",
+      "https://firebasestorage.googleapis.com/v0/b/hotel-plaza-nardos.appspot.com/o/main-images%2FHabitaci%C3%B3n-Doble-Deluxe-balcon%2FHabitaci%C3%B3n-Doble-Deluxe-balcon-2.webp?alt=media&token=5848bc3d-462c-45c5-8a8c-a0add6a18415",
+      "https://firebasestorage.googleapis.com/v0/b/hotel-plaza-nardos.appspot.com/o/main-images%2FHabitaci%C3%B3n-Doble-Deluxe-balcon%2FHabitaci%C3%B3n-Doble-Deluxe-balcon-4.webp?alt=media&token=280be52c-a45c-4aea-b687-c4284c74a7a1",
     ],
 
     imageHomeCards: [

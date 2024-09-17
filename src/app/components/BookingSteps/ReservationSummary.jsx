@@ -118,7 +118,7 @@ const ReservationSummary = ({ data, personalData, onSubmit, onBack }) => {
           viewsTitle={translations[roomType]?.viewsTitle}
           noSmokingTitle={translations[roomType]?.noSmokingTitle}
           noSmoking={translations[roomType]?.noSmoking}
-          {...getRoomInfo(roomIndex)}  // Se pasa roomInfo dinámicamente según roomType
+          {...getRoomInfo(roomIndex)} 
         />
 
         <div className="flex justify-between">

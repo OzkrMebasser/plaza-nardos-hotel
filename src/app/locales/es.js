@@ -55,14 +55,12 @@ export const es = {
   closeImg: "Cerrar imagen",
 
   //Booking info
-  bookingInfo: { 
+  bookingInfo: {
     titleH1: "Información de reserva",
     roomDetails: "Detalles de la Habitación",
     personalInfo: "Información Personal",
     review: "Revisar",
-    finish: "Finalizar"
-    
- 
+    finish: "Finalizar",
   },
 
   // "Double Room, Balcón y terraza "
@@ -225,6 +223,35 @@ export const es = {
       flatScreenTV: "TV de pantalla plana",
       freeWiFi: "WiFi gratis",
     },
+    bathRoomStuffTitle: "En el baño privado:",
+    bathroomStuff: {
+      freeStuff: "Artículos de higiene gratis",
+      wc: "WC",
+      toiletPaper: "Papel higiénico",
+      shower: "Regadera",
+    },
+    roomStuffTitle: "Equipamiento de la habitación:",
+    roomStuff: {
+      tv: "TV de pantalla plana",
+      bedCovers: "Ropa de cama",
+      downStairs: "Toda la unidad está situada en la planta baja",
+      sofaBed: "Sofá cama",
+      fan: "Ventilador",
+      towels: "Toallas",
+      closet: "Armario",
+      seatingRoom: "Zona de estar",
+      socket: "Enchufe cerca de la cama",
+      ac: "Aire acondicionado",
+      coatRack: "Perchero para ropa",
+      towelsSheets: "Toallas/sábanas (por un cargo extra)",
+    },
+    viewsTitle: "Vista a:",
+    views: {
+      toPool: "Vistas a la alberca",
+      toPatio: "Vistas al patio interior",
+    },
+    noSmokingTitle: "Política de fumadores:",
+    noSmoking: "no se puede fumar",
   },
 
   // "Habitación Cuádruple Confort"
@@ -248,6 +275,66 @@ export const es = {
       terrace: "Terraza",
       freeWiFi: "WiFi gratis",
     },
+
+    bathRoomStuffTitle: "En el baño privado:",
+    bathroomStuff: {
+      freeStuff: "Artículos de higiene gratis",
+      wc: "WC",
+      toiletPaper: "Papel higiénico",
+      shower: "Regadera",
+    },
+    roomStuffTitle: "Equipamiento de la habitación:",
+    roomStuff: {
+      tv: "TV de pantalla plana",
+      bedCovers: "Ropa de cama",
+      downStairs:
+        "Las plantas superiores son accesibles solo por las escaleras",
+      fan: "Ventilador",
+      towels: "Toallas",
+      closet: "Armario",
+      seatingRoom: "Zona de estar",
+      socket: "Enchufe cerca de la cama",
+      ac: "Aire acondicionado",
+      coatRack: "Perchero para ropa",
+      towelsSheets: "Toallas/sábanas (por un cargo extra)",
+    },
+    viewsTitle: "Vista a:",
+    views: {
+      toBalcony: "Balcón",
+      toTerrace: "Terraza",
+      toPool: "Vistas a la alberca",
+      toCity: "Vistas a la ciudad",
+      toPatio: "Vistas al patio interior",
+    },
+
+    noSmokingTitle: "Política de fumadores:",
+    noSmoking: "no se puede fumar",
+    // Equipamiento de la habitación: ​
+    // TV ok
+    // Ropa de cama ok
+    // Las plantas superiores son accesibles solo por las escaleras OK
+    // TV de pantalla plana OK
+    // Ventilador OK
+    // Toallas OK
+    // Armario o closet OK
+    // Zona de estar
+    // Aire acondicionado OK
+    // Perchero para ropa OK
+    // Toallas/sábanas (por un cargo extra)
+    // Política de fumadores: ​ no se puede fumar
+    // Vista:
+    // Balcón
+    // Terraza
+    // Vistas a la alberca
+    // Vistas a la ciudad
+    // Vistas al patio interior
+    // Patio
+
+    // En tu baño privado:
+    // Artículos de higiene gratis
+    // Regadera
+    // Inodoro
+    // Papel de baño
   },
 
   roomType: "Habitación Doble",

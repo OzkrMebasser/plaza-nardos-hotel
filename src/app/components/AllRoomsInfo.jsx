@@ -80,11 +80,22 @@ const AllRoomsInfo = () => {
         <RoomDetails
           id="triple-deluxe"
           roomType={translations.tripleDeluxe.title}
+          bathRoomStuffTitle={translations.tripleDeluxe.bathRoomStuffTitle}
+          roomStuffTitle={translations.tripleDeluxe.roomStuffTitle}
+          viewsTitle={translations.tripleDeluxe.viewsTitle}
+          noSmokingTitle={translations.tripleDeluxe.noSmokingTitle}
+          noSmoking={translations.tripleDeluxe.noSmoking}
+          
           {...getRoomInfo(3)}
         />
         <RoomDetails
           id="cuadruple"
           roomType={translations.cuadrupleBedRoom.title}
+          bathRoomStuffTitle={translations.cuadrupleBedRoom.bathRoomStuffTitle}
+          roomStuffTitle={translations.cuadrupleBedRoom.roomStuffTitle}
+          viewsTitle={translations.cuadrupleBedRoom.viewsTitle}
+          noSmokingTitle={translations.cuadrupleBedRoom.noSmokingTitle}
+          noSmoking={translations.cuadrupleBedRoom.noSmoking}
           {...getRoomInfo(4)}
         />
       </section>
