@@ -23,10 +23,8 @@ const RoomSumary = ({
   noSmokingTitle,
   noSmoking,
 }) => {
-
   const { getTranslations } = useLanguage();
   const translations = getTranslations();
-
 
   return (
     <>

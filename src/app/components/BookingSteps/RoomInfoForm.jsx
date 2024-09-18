@@ -4,6 +4,10 @@ import { useFormik } from "formik";
 import * as Yup from "yup";
 import { useLanguage } from "@/app/contexts/LanguageContext";
 import { useRoomsAndCurrency } from "@/app/contexts/RoomsAndCurrencyContext";
+import { MdBedroomParent } from "react-icons/md";
+import { FaPeopleGroup } from "react-icons/fa6";
+
+
 
 const RoomInfoForm = ({ onSubmit }) => {
   const { getTranslations } = useLanguage();
@@ -117,16 +121,17 @@ const RoomInfoForm = ({ onSubmit }) => {
   };
 
   return (
-    <form onSubmit={formik.handleSubmit} className="space-y-4">
-      {/* Room type and number of people in 2 columns in lg */}
+    <form onSubmit={formik.handleSubmit} className="space-y-4 mt-12 ">
       <div className="lg:grid lg:grid-cols-2 lg:gap-4">
         <div className="">
           <label
             htmlFor="roomType"
-            className="block text-sm font-medium text-gray-700"
+            className="block text-sm font-medium text-gray-700 align-middle"
           >
-            Tipo de Habitación
+             <MdBedroomParent className="inline w-6 h-6 mr-2" />Tipo de Habitación
+           
           </label>
+
           <select
             id="roomType"
             name="roomType"
@@ -151,7 +156,8 @@ const RoomInfoForm = ({ onSubmit }) => {
             htmlFor="numberOfPeople"
             className="block text-sm font-medium text-gray-700"
           >
-            Número de Personas
+              <FaPeopleGroup className="inline w-6 h-6 mr-2"/> {" "}Número de Personas{" "}
+          
           </label>
           <select
             id="numberOfPeople"
@@ -225,11 +231,10 @@ const RoomInfoForm = ({ onSubmit }) => {
             <div className="text-red-500 text-sm">
               {formik.errors.estimatedArrivalTime}
             </div>
-          ) : null} 
+          ) : null}
         </div>
 
         <div>
-            
           <label
             htmlFor="checkOutDate"
             className="block text-sm font-medium text-gray-700"
@@ -258,19 +263,19 @@ const RoomInfoForm = ({ onSubmit }) => {
       </div>
 
       <div className="mt-4">
-      {isBeforeCheckInTime() && (
-            <p className="text-red-500 mt-2">
-              Nota: El check-in es a partir de las 3:00 p.m. Sin embargo, puedes
-              utilizar las instalaciones del hotel antes de esa hora.
-            </p>
-          )}
+        {isBeforeCheckInTime() && (
+          <p className="text-red-500 mt-2">
+            Nota: El check-in es a partir de las 3:00 p.m. Sin embargo, puedes
+            utilizar las instalaciones del hotel antes de esa hora.
+          </p>
+        )}
         <div className="text-right">
-        <label className="block text-sm font-medium text-gray-700">
-          Total de noches:{" "}
-          {calculateNights(formik.values) === 1
-            ? `${calculateNights(formik.values)} noche`
-            : `${calculateNights(formik.values)} noches`}
-        </label>
+          <label className="block text-sm font-medium text-gray-700">
+            Total de noches:{" "}
+            {calculateNights(formik.values) === 1
+              ? `${calculateNights(formik.values)} noche`
+              : `${calculateNights(formik.values)} noches`}
+          </label>
           <label className="block text-sm font-medium text-gray-700">
             Precio por Noche:
           </label>
