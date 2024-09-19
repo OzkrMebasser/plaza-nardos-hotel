@@ -6,6 +6,9 @@ import { useLanguage } from "@/app/contexts/LanguageContext";
 import { useRoomsAndCurrency } from "@/app/contexts/RoomsAndCurrencyContext";
 import { MdBedroomParent } from "react-icons/md";
 import { FaPeopleGroup } from "react-icons/fa6";
+import { IoCalendarSharp } from "react-icons/io5";
+import { IoTime } from "react-icons/io5";
+
 
 
 
@@ -129,7 +132,7 @@ const RoomInfoForm = ({ onSubmit }) => {
             className="block text-sm font-medium text-gray-700 align-middle"
           >
              <MdBedroomParent className="inline w-6 h-6 mr-2" />Tipo de Habitación
-           
+            
           </label>
 
           <select
@@ -151,7 +154,7 @@ const RoomInfoForm = ({ onSubmit }) => {
           ) : null}
         </div>
 
-        <div>
+        <div className="bg-yellow-500 sm:mt-8 lg:mt-0">
           <label
             htmlFor="numberOfPeople"
             className="block text-sm font-medium text-gray-700"
@@ -183,7 +186,7 @@ const RoomInfoForm = ({ onSubmit }) => {
             htmlFor="checkInDate"
             className="block text-sm font-medium text-gray-700"
           >
-            Fecha de Check-In
+            <IoCalendarSharp className="inline w-6 h-6 mr-2" />  Fecha de Check-In
           </label>
           <input
             type="date"
@@ -210,7 +213,7 @@ const RoomInfoForm = ({ onSubmit }) => {
             htmlFor="estimatedArrivalTime"
             className="block text-sm font-medium text-gray-700"
           >
-            Hora estimada de llegada
+           <IoTime className="inline w-6 h-6 mr-2" /> Hora estimada de llegada
           </label>
           <select
             id="estimatedArrivalTime"
@@ -239,7 +242,7 @@ const RoomInfoForm = ({ onSubmit }) => {
             htmlFor="checkOutDate"
             className="block text-sm font-medium text-gray-700"
           >
-            Fecha de Check-Out
+           <IoCalendarSharp className="inline w-6 h-6 mr-2" />  Fecha de Check-Out
           </label>
           <input
             type="date"
