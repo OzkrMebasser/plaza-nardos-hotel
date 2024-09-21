@@ -6,6 +6,7 @@ import { BsPersonVcard } from "react-icons/bs";
 import { MdPreview } from "react-icons/md";
 import { AiOutlineFileDone } from "react-icons/ai";
 import { LiaHandPointerSolid } from "react-icons/lia";
+import { BiSpreadsheet } from "react-icons/bi";
 
 
 import Title from "@/app/components/Title";
@@ -37,7 +38,7 @@ const StepForm = () => {
     {
       number: 2,
       label: `${translations.bookingInfo.personalInfo}`,
-      icon: BsPersonVcard,
+      icon: BiSpreadsheet,
     },
     { number: 3, label: `${translations.bookingInfo.review}`, icon: MdPreview },
     {
@@ -89,11 +90,11 @@ const StepForm = () => {
           <h2 className="sr-only">Steps</h2>
 
           {/* Progress Bar Background */}
-          <div className="absolute top-[3.4rem] lg:top-[2.8rem] w-full h-1 bg-gray-200 rounded-lg"></div>
+          <div className="absolute top-[3.6rem] lg:top-[3.08rem] w-full h-1 bg-gray-200 rounded-lg"></div>
 
           {/* Progress Indicator */}
           <div
-            className="absolute top-[3.4rem] lg:top-[2.8rem] h-1 bg-[#2b3163] rounded-lg"
+            className="absolute top-[3.6rem] lg:top-[3.08rem] h-1 bg-[#2b3163] rounded-lg"
             style={{
               width: `${progressPercentage}%`,
               transition: "width 0.3s",
@@ -111,7 +112,7 @@ const StepForm = () => {
                 }`}
               >
                 <span
-                  className={`absolute -bottom-6 rounded-full  ${
+                  className={`absolute -bottom-7 rounded-full  ${
                     currentStep >= step.number
                       ? "bg-white text-[#2b3163] border-2 border-[#2b3163]"
                       : "bg-[#2b3163] text-white"
@@ -139,7 +140,7 @@ const StepForm = () => {
                     {<step.icon className="h-7 w-7" />}
                  
                   </span>
-                  <span className=" ml-1 mt-5 text-center absolute block sm:hidden"><LiaHandPointerSolid className="h-[10px] w-[10px] -rotate-[30deg] "/></span>
+                  <span className=" ml-1 mt-5 text-center absolute block sm:hidden moving-span"><LiaHandPointerSolid className="h-[13px] w-[13px] -rotate-[30deg] "/></span>
                 </div>
               </li>
             ))}

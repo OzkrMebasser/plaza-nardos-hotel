@@ -8,9 +8,7 @@ import { MdBedroomParent } from "react-icons/md";
 import { FaPeopleGroup } from "react-icons/fa6";
 import { IoCalendarSharp } from "react-icons/io5";
 import { IoTime } from "react-icons/io5";
-
-
-
+import SubTitle from "../SubTitle";
 
 const RoomInfoForm = ({ onSubmit }) => {
   const { getTranslations } = useLanguage();
@@ -125,14 +123,15 @@ const RoomInfoForm = ({ onSubmit }) => {
 
   return (
     <form onSubmit={formik.handleSubmit} className="space-y-4 mt-12 ">
+      <SubTitle title={translations.bookingInfo.roomDetails} />
       <div className="lg:grid lg:grid-cols-2 lg:gap-4">
-        <div className="">
+        <div className="mt-6 lg:mt-0">
           <label
             htmlFor="roomType"
-            className="block text-sm font-medium text-gray-700 align-middle"
+            className="block text-sm font-medium text-[#2b3163] align-middle"
           >
-             <MdBedroomParent className="inline w-6 h-6 mr-2" />Tipo de Habitación
-            
+            <MdBedroomParent className="inline w-6 h-6 mr-2" />
+            Tipo de Habitación
           </label>
 
           <select
@@ -154,13 +153,12 @@ const RoomInfoForm = ({ onSubmit }) => {
           ) : null}
         </div>
 
-        <div className="bg-yellow-500 sm:mt-8 lg:mt-0">
+        <div className="mt-6 lg:mt-0">
           <label
             htmlFor="numberOfPeople"
-            className="block text-sm font-medium text-gray-700"
+            className="block text-sm font-medium text-[#2b3163]"
           >
-              <FaPeopleGroup className="inline w-6 h-6 mr-2"/> {" "}Número de Personas{" "}
-          
+            <FaPeopleGroup className="inline w-6 h-6 mr-2" /> Número de Personas{" "}
           </label>
           <select
             id="numberOfPeople"
@@ -181,12 +179,13 @@ const RoomInfoForm = ({ onSubmit }) => {
 
       {/* Check-in, Check-out, and Arrival Time in 3 columns in lg */}
       <div className="lg:grid lg:grid-cols-3 lg:gap-4">
-        <div>
+        <div className="mt-6 lg:mt-0">
           <label
             htmlFor="checkInDate"
-            className="block text-sm font-medium text-gray-700"
+            className="block text-sm font-medium text-[#2b3163]"
           >
-            <IoCalendarSharp className="inline w-6 h-6 mr-2" />  Fecha de Check-In
+            <IoCalendarSharp className="inline w-6 h-6 mr-2" /> Fecha de
+            Check-In
           </label>
           <input
             type="date"
@@ -208,12 +207,12 @@ const RoomInfoForm = ({ onSubmit }) => {
           )}
         </div>
 
-        <div>
+        <div className="mt-6 lg:mt-0">
           <label
             htmlFor="estimatedArrivalTime"
-            className="block text-sm font-medium text-gray-700"
+            className="block text-sm font-medium text-[#2b3163]"
           >
-           <IoTime className="inline w-6 h-6 mr-2" /> Hora estimada de llegada
+            <IoTime className="inline w-6 h-6 mr-2" /> Hora estimada de llegada
           </label>
           <select
             id="estimatedArrivalTime"
@@ -237,12 +236,13 @@ const RoomInfoForm = ({ onSubmit }) => {
           ) : null}
         </div>
 
-        <div>
+        <div className="mt-6 lg:mt-0">
           <label
             htmlFor="checkOutDate"
-            className="block text-sm font-medium text-gray-700"
+            className="block text-sm font-medium text-[#2b3163]"
           >
-           <IoCalendarSharp className="inline w-6 h-6 mr-2" />  Fecha de Check-Out
+            <IoCalendarSharp className="inline w-6 h-6 mr-2" /> Fecha de
+            Check-Out
           </label>
           <input
             type="date"
@@ -265,29 +265,47 @@ const RoomInfoForm = ({ onSubmit }) => {
         </div>
       </div>
 
-      <div className="mt-4">
+      <div className="mt-6 lg:mt-0 border-red-500">
         {isBeforeCheckInTime() && (
-          <p className="text-red-500 mt-2">
-            Nota: El check-in es a partir de las 3:00 p.m. Sin embargo, puedes
-            utilizar las instalaciones del hotel antes de esa hora.
-          </p>
+          <strong>
+            {" "}
+            <p className="text-red-500 mt-4 mb-4">
+              Nota: El check-in es a partir de las 3:00 p.m. Sin embargo, puedes
+              utilizar las instalaciones del hotel antes de esa hora.
+            </p>
+          </strong>
         )}
         <div className="text-right">
-          <label className="block text-sm font-medium text-gray-700">
+          <label className="block text-[1rem]  font-medium text-[#2b3163]">
             Total de noches:{" "}
-            {calculateNights(formik.values) === 1
-              ? `${calculateNights(formik.values)} noche`
-              : `${calculateNights(formik.values)} noches`}
           </label>
-          <label className="block text-sm font-medium text-gray-700">
+          <strong>
+            {" "}
+            <p className="text-[#2b3163] ">
+              {" "}
+              {calculateNights(formik.values) === 1
+                ? `${calculateNights(formik.values)} noche`
+                : `${calculateNights(formik.values)} noches`}
+            </p>
+          </strong>
+          <span className="flex justify-end mt-1 mb-1">
+            <hr className="w-[8rem]" />
+          </span>
+          <label className="block text-[1rem]  font-medium text-[#2b3163]">
             Precio por Noche:
           </label>
-          <span>
-            {selectedRoom
-              ? `${formatNumber(selectedRoom.price[currency])} ${currency}`
-              : `0.00 ${currency}`}
+          <strong>
+            {" "}
+            <p className="text-[#2b3163]">
+              {selectedRoom
+                ? `${formatNumber(selectedRoom.price[currency])} ${currency}`
+                : `0.00 ${currency}`}
+            </p>
+          </strong>
+          <span className="flex justify-end mt-1 mb-1">
+            <hr className="w-[8rem]" />
           </span>
-          <label className="block text-sm font-medium text-gray-700">
+          <label className="block text-[1rem]  font-medium text-[#2b3163]">
             Impuestos:
           </label>
           <span>
@@ -295,9 +313,13 @@ const RoomInfoForm = ({ onSubmit }) => {
               ? `${formatNumber(selectedRoom.fees[currency])} ${currency}`
               : `0.00 ${currency}`}
           </span>
-          <label className="block text-sm font-medium text-gray-700">
+          <span className="flex justify-end mt-1 mb-1">
+            <hr className="w-[8rem]" />
+          </span>
+          <label className="block text-[1rem]  font-bold text-[#2b3163]">
             Total:
           </label>
+        
           <span>
             {currency === "EUR" ? "€" : "$"} {formatNumber(totalPrice)}{" "}
             {currency}
@@ -308,7 +330,7 @@ const RoomInfoForm = ({ onSubmit }) => {
       <div className="mt-4">
         <button
           type="submit"
-          className="w-full px-4 py-2 bg-blue-600 text-white rounded"
+          className="w-full px-4 py-2 bg-[#2b3163] text-white rounded"
           disabled={!formik.isValid || formik.isSubmitting}
         >
           Next

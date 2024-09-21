@@ -182,3 +182,17 @@
   }
 }
 
+.moving-span {
+
+  animation: moveLeftToRight 5s linear infinite;
+
+}
+
+@keyframes moveLeftToRight {
+  0% {
+      transform: translateY(0);
+  }
+  100% {
+      transform: translateY(10%);
+  }
+}
