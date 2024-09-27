@@ -7,6 +7,8 @@ import { useRoomsAndCurrency } from "@/app/contexts/RoomsAndCurrencyContext";
 import { MdBedroomParent } from "react-icons/md";
 import { FaPeopleGroup } from "react-icons/fa6";
 import { IoCalendarSharp } from "react-icons/io5";
+import { FaCalendarCheck } from "react-icons/fa";
+
 import { IoTime } from "react-icons/io5";
 import SubTitle from "../SubTitle";
 
@@ -18,9 +20,11 @@ const RoomInfoForm = ({ onSubmit }) => {
   const [numberOfPeople, setNumberOfPeople] = useState("");
   const today = new Date().toISOString().split("T")[0];
 
+  const localeLng = translations.bookingInfo.localeLng;
+
   const formatDate = (dateString) => {
     const date = new Date(dateString + "T00:00:00");
-    return date.toLocaleDateString("es-MX", {
+    return date.toLocaleDateString(`${localeLng}`, {
       weekday: "long",
       year: "numeric",
       month: "long",
@@ -54,17 +58,44 @@ const RoomInfoForm = ({ onSubmit }) => {
     }
   };
 
+  // validationsYup: {
+  //   //booking info
+  //  roomTypeRequired: "Tipo de habitación es requerido.",
+  //  checkInRequired: "Fecha de check-in es requerida.",
+  //  checkOutRequired: "Fecha de check-out es requerida.",
+  //  checkOutLaterThanCheckIn: "La fecha de check-out debe ser posterior a la fecha de check-in.",
+  //  arrivalTime: "Hora estimada de llegada es requerida.",
+
+  // },
+
+  // const validationSchema = Yup.object({
+  //   roomType: Yup.string().required("Tipo de habitación es requerido."),
+  //   checkInDate: Yup.date().required("Fecha de check-in es requerida."),
+  //   checkOutDate: Yup.date()
+  //     .min(
+  //       Yup.ref("checkInDate"),
+  //       "La fecha de check-out debe ser posterior a la fecha de check-in."
+  //     )
+  //     .required("Fecha de check-out es requerida."),
+  //   estimatedArrivalTime: Yup.string().required(
+  //     "Hora estimada de llegada es requerida."
+  //   ),
+  // });
   const validationSchema = Yup.object({
-    roomType: Yup.string().required("Tipo de habitación es requerido."),
-    checkInDate: Yup.date().required("Fecha de check-in es requerida."),
+    roomType: Yup.string().required(
+      `${translations.validationsYup.roomTypeRequired}`
+    ),
+    checkInDate: Yup.date().required(
+      `${translations.validationsYup.checkInRequired}`
+    ),
     checkOutDate: Yup.date()
       .min(
         Yup.ref("checkInDate"),
-        "La fecha de check-out debe ser posterior a la fecha de check-in."
+        `${translations.validationsYup.checkOutLaterThanCheckIn}`
       )
-      .required("Fecha de check-out es requerida."),
+      .required(`${translations.validationsYup.checkOutRequired}`),
     estimatedArrivalTime: Yup.string().required(
-      "Hora estimada de llegada es requerida."
+      `${translations.validationsYup.arrivalTime}`
     ),
   });
 
@@ -131,7 +162,8 @@ const RoomInfoForm = ({ onSubmit }) => {
             className="block text-sm font-medium text-[#2b3163] align-middle"
           >
             <MdBedroomParent className="inline w-6 h-6 mr-2" />
-            Tipo de Habitación
+            {/* Tipo de Habitación */}
+            {translations.bookingInfo.roomType}
           </label>
 
           <select
@@ -141,7 +173,10 @@ const RoomInfoForm = ({ onSubmit }) => {
             value={translations[selectedRoom?.roomType]?.title || ""}
             className="w-full bg-gray-100 text-gray-900 mt-2 p-3 rounded-lg text-sm border border-slate-200 transition duration-300 ease focus:outline-none focus:border-indigo-500 hover:border-indigo-300 shadow-sm focus:shadow"
           >
-            <option value="">Selecciona una habitación</option>
+            <option value="">
+              {/* Selecciona una habitación */}
+              {translations.bookingInfo.selectRoomType}
+            </option>
             {roomTypeTranslations.map((roomType) => (
               <option key={roomType} value={roomType}>
                 {roomType}
@@ -158,7 +193,9 @@ const RoomInfoForm = ({ onSubmit }) => {
             htmlFor="numberOfPeople"
             className="block text-sm font-medium text-[#2b3163]"
           >
-            <FaPeopleGroup className="inline w-6 h-6 mr-2" /> Número de Personas{" "}
+            <FaPeopleGroup className="inline w-6 h-6 mr-2" />
+            {/* Número de Personas */}
+            {translations.bookingInfo.numberOfPax}{" "}
           </label>
           <select
             id="numberOfPeople"
@@ -167,7 +204,10 @@ const RoomInfoForm = ({ onSubmit }) => {
             value={numberOfPeople}
             className="w-full bg-gray-100 text-gray-900 mt-2 p-3 rounded-lg text-sm border border-slate-200 transition duration-300 ease focus:outline-none focus:border-indigo-500 hover:border-indigo-300 shadow-sm focus:shadow"
           >
-            <option value="">Selecciona el número de personas</option>
+            <option value="">
+              {/* Selecciona el número de personas */}
+              {translations.bookingInfo.selectNumberPax}
+            </option>
             {availableCapacities.map((capacity) => (
               <option key={capacity} value={capacity}>
                 {capacity}
@@ -203,7 +243,12 @@ const RoomInfoForm = ({ onSubmit }) => {
             </div>
           ) : null}
           {formik.values.checkInDate && (
-            <p>Check-In: {formatDate(formik.values.checkInDate)}</p>
+            // Check-In: <br />
+            <p className="block text-sm font-medium text-[#2b3163] mt-3 underline">
+              {" "}
+              <FaCalendarCheck className="inline w-6 h-6 mr-2" />{" "}
+              {formatDate(formik.values.checkInDate)}
+            </p>
           )}
         </div>
 
@@ -260,7 +305,12 @@ const RoomInfoForm = ({ onSubmit }) => {
             </div>
           ) : null}
           {formik.values.checkOutDate && (
-            <p>Check-Out: {formatDate(formik.values.checkOutDate)}</p>
+            // Check-Out: <br />
+            <p className="block text-sm font-medium text-[#2b3163] mt-3 underline">
+              {" "}
+              <FaCalendarCheck className="inline w-6 h-6 mr-2" />{" "}
+              {formatDate(formik.values.checkOutDate)}{" "}
+            </p>
           )}
         </div>
       </div>
@@ -319,7 +369,7 @@ const RoomInfoForm = ({ onSubmit }) => {
           <label className="block text-[1rem]  font-bold text-[#2b3163]">
             Total:
           </label>
-        
+
           <span>
             {currency === "EUR" ? "€" : "$"} {formatNumber(totalPrice)}{" "}
             {currency}

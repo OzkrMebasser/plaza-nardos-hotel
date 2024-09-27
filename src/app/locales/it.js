@@ -58,7 +58,22 @@ export const it = {
     personalInfo: "Informazioni Personali",
     review: "Rivedere",
     finish: "Finire",
+    localeLng: "it-IT",
+    roomType: "Tipo di Camera",
+    selectRoomType: "Seleziona una camera",
+    numberOfPax: "Numero di Persone",
+selectNumberPax: "Seleziona il numero di persone",
+
   },
+  validationsYup: {
+    roomTypeRequired: "Il tipo di camera è richiesto.",
+    checkInRequired: "La data di check-in è richiesta.",
+    checkOutRequired: "La data di check-out è richiesta.",
+    checkOutLaterThanCheckIn:
+      "La data di check-out deve essere successiva alla data di check-in.",
+    arrivalTime: "L'orario di arrivo stimato è richiesto.",
+  },
+
   // "Double Room, Balcón y terraza"
   dlbBedRoom: {
     title: "Camera doppia",

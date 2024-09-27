@@ -8,13 +8,12 @@ import { AiOutlineFileDone } from "react-icons/ai";
 import { LiaHandPointerSolid } from "react-icons/lia";
 import { BiSpreadsheet } from "react-icons/bi";
 
-
 import Title from "@/app/components/Title";
 import PersonalInfoForm from "./PersonalInfoForm";
 import ReservationSummary from "./ReservationSummary";
 import FormOne from "./FormOne.jsx";
 import RoomInfoForm from "./RoomInfoForm";
-import FinishBooking from "./FinishBooking"; 
+import FinishBooking from "./FinishBooking";
 
 const StepForm = () => {
   const [currentStep, setCurrentStep] = useState(1);
@@ -136,11 +135,14 @@ const StepForm = () => {
                     {step.label}
                   </span>
                   <span className="mb-4 text-[.6rem] lg:text-sm text-center block sm:hidden cursor-pointer ">
-                  <span className='tooltip rounded shadow-lg p-1 bg-gray-100 text-[#2b3163] mt-7 w-[5rem] -ml-9'>{step.label}</span>
+                    <span className="tooltip rounded shadow-lg p-1 bg-gray-100 text-[#2b3163] mt-7 w-[5rem] -ml-9">
+                      {step.label}
+                    </span>
                     {<step.icon className="h-7 w-7" />}
-                 
                   </span>
-                  <span className=" ml-1 mt-5 text-center absolute block sm:hidden moving-span"><LiaHandPointerSolid className="h-[13px] w-[13px] -rotate-[30deg] "/></span>
+                  <span className=" ml-1 mt-5 text-center absolute block sm:hidden moving-span">
+                    <LiaHandPointerSolid className="h-[13px] w-[13px] -rotate-[30deg] " />
+                  </span>
                 </div>
               </li>
             ))}
@@ -168,7 +170,12 @@ const StepForm = () => {
               />
             </>
           )}
-          {currentStep === 4 && <FinishBooking data={reservationData}     personalData={personalInfoData} />}
+          {currentStep === 4 && (
+            <FinishBooking
+              data={reservationData}
+              personalData={personalInfoData}
+            />
+          )}
         </div>
       </div>
     </>
