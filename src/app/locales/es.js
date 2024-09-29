@@ -66,6 +66,22 @@ export const es = {
     selectRoomType: "Selecciona una habitación",
     numberOfPax: "Número de Personas",
     selectNumberPax: "Selecciona el número de personas",
+    arrivalDate: "Fecha de Llegada",
+    arrivalTime: "Hora estimada de llegada",
+    departureDate: "Fecha de Salida",
+    note3pm: "Nota: El check-in es a partir de las 3:00 p.m. Sin embargo, puedes utilizar las instalaciones del hotel antes de esa hora.",
+    totalNights: "Total de noches: ",
+    night: "noche",
+    nights: "noches", 
+    pricePerNight: "Precio por Noche:",
+    taxesPerNight: "Impuestos por noche:", 
+    totalTaxes: "Total Impuestos:",
+    grandTotal: "Total:",
+    next: "Siguiente",
+
+
+    
+
   },
 
   validationsYup: {

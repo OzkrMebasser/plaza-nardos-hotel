@@ -66,7 +66,21 @@ export const en = {
     selectRoomType: "Select a room",
     numberOfPax: "Number of People",
     selectNumberPax: "Select the number of people",
+    arrivalDate: "Arrival Date",
+    arrivalTime: "Estimated arrival time",
+    departureDate: "Departure Date",
+    note3pm: "Note: Check-in is from 3:00 p.m. However, you can use the hotel facilities before that time.",
+    totalNights: "Total nights: ",
+    night: "night",
+    nights: "nights", 
+    pricePerNight: "Price per Night:",
+    taxesPerNight: "Taxes per night:", 
+    totalTaxes: "Total Taxes:",
+    grandTotal: "Grand Total:",
+    next: "Next",
     
+
+
   },
 
   validationsYup: {
