@@ -56,6 +56,8 @@ const RoomInfoForm = ({ onSubmit }) => {
     if (room) {
       setSelectedRoom(room);
     }
+
+    console.log("Número de personas seleccionadas:", selectedNumber);
   };
 
   // validationsYup: {
@@ -256,14 +258,14 @@ const RoomInfoForm = ({ onSubmit }) => {
               {formik.errors.checkInDate}
             </div>
           ) : null}
-          {formik.values.checkInDate && (
+          {/* {formik.values.checkInDate && (
             // Check-In: <br />
             <p className="block text-sm font-medium text-[#2b3163] mt-3 underline">
               {" "}
               <FaCalendarCheck className="inline w-6 h-6 mr-2" />{" "}
               {formatDate(formik.values.checkInDate)}
             </p>
-          )}
+          )} */}
         </div>
 
         <div className="mt-6 lg:mt-0">
@@ -343,102 +345,205 @@ const RoomInfoForm = ({ onSubmit }) => {
             </p>
           </strong>
         )}
-        <div className="text-right">
-          <label className="block text-[1rem]  font-medium text-[#2b3163]">
-            {/* Total de noches:{" "} */}
-            {translations.bookingInfo.totalNights}
-          </label>
-          <strong>
-            {" "}
-            <p className="text-[#2b3163] ">
-              {" "}
-              {calculateNights(formik.values) === 1
-                ? `${calculateNights(formik.values)} ${
-                    translations.bookingInfo.night
-                  }`
-                : `${calculateNights(formik.values)} ${
-                    translations.bookingInfo.nights
-                  }`}
-            </p>
-          </strong>
-          <span className="flex justify-end mt-1 mb-1">
-            <hr className="w-[10rem]" />
-          </span>
-          <label className="block text-[1rem]  font-medium text-[#2b3163]">
-            {/* Precio por Noche: */}
-            {translations.bookingInfo.pricePerNight}
-          </label>
-          <strong>
-            {" "}
-            <p className="text-[#2b3163]">
-              {selectedRoom
-                ? `${formatNumber(selectedRoom.price[currency])} ${currency}`
-                : `0.00 ${currency}`}
-            </p>
-          </strong>
-          <span className="flex justify-end mt-1 mb-1">
-            <hr className="w-[10rem]" />
-          </span>
-          <label className="block text-[1rem]  font-medium text-[#2b3163]">
-            {/*             
-   
-    // taxesPerNight: "Impuestos por noche:", 
-    // totalTaxes: "Total Impuestos:",
-    // grandTotal: "Total:",  */}
-            {/* Impuestos por noche: */}
-            {translations.bookingInfo.taxesPerNight}
-          </label>
-          <strong>
-            {" "}
-            <p className="text-[#2b3163]">
-              {selectedRoom
-                ? `${formatNumber(selectedRoom.fees[currency])} ${currency}`
-                : `0.00 ${currency}`}
-            </p>
-          </strong>
-          <span className="flex justify-end mt-1 mb-1">
-            <hr className="w-[10rem]" />
-          </span>
-          <span className="flex justify-end mt-1 mb-1 ">
-            <hr className="w-[10rem] " />
-          </span>
-          <span className="flex justify-end mt-1 mb-1 ">
-            <hr className="w-[10rem] " />
-          </span>
-          <label className="block text-[1rem]  font-medium text-[#2b3163]">
-            {/* Total Impuestos: */}
-            {translations.bookingInfo.totalTaxes}
-          </label>
-          {/* <strong>
-            {" "}
-            <p className="text-[#2b3163]">
-            {selectedRoom
-              ? `${formatNumber(selectedRoom.fees[currency])} ${currency}`
-              : `0.00 ${currency}`}
-          </p>
-          </strong> */}
-          <strong>
-            {" "}
-            <p className="text-[#2b3163]">
-              {currency === "EUR" ? "€" : "$"} {formatNumber(totalTaxes)}{" "}
-              {currency}
-            </p>
-          </strong>
-          <span className="flex justify-end mt-1 mb-1">
-            <hr className="w-[10rem]" />
-          </span>
-          <label className="block text-[1rem]  font-bold text-[#2b3163]">
-            {/* Total: */}
-            {translations.bookingInfo.grandTotal}
-          </label>
+        {/*Selectioned inputs */}
+        <div className="flex flex-col md:flex-row gap-4">
+          <div className="w-full md:w-1/2 h-auto ">
+            <h3 className="text-center mb-2 font-bold uppercase">
+              Usted ha seleccionado
+            </h3>
+            {/* {selectedRoom && numberOfPeople && (
+              <div className="mt-4">
+                <p className="text-sm font-medium text-[#2b3163]">
+                  Habitación seleccionada:{" "}
+                  {translations[selectedRoom?.roomType]?.title ||
+                    selectedRoom?.roomType}
+                </p>
+                <p className="text-sm font-medium text-[#2b3163]">
+                  Número de personas: {numberOfPeople}
+                </p>
+              </div>
+            )} */}
+            {/*  Habitación seleccionada:*/}
 
-          <strong>
-            {" "}
-            <p className="text-[#2b3163]">
-              {currency === "EUR" ? "€" : "$"} {formatNumber(totalPrice)}{" "}
-              {currency}
-            </p>
-          </strong>
+            <label className="block text-[1rem]  font-medium text-[#2b3163]">
+              Habitación seleccionada:{" "}
+            </label>
+            <strong>
+              {selectedRoom ? (
+                <p className="text-[#2b3163] ">
+                  {translations[selectedRoom?.roomType]?.title ||
+                    selectedRoom?.roomType}
+                </p>
+              ) : (
+                <p className="text-[#cececf] ">
+                  {translations.bookingInfo.selectRoomType}
+                </p>
+              )}{" "}
+            </strong>
+
+            <span className="flex justify-start mt-1 mb-1 ">
+              <hr className="w-[15rem] " />
+            </span>
+            {/*   Número de personas:*/}
+
+            <label className="block text-[1rem]  font-medium text-[#2b3163]">
+              Número de personas:
+            </label>
+            <strong>
+              {numberOfPeople ? (
+                <p className="text-[#2b3163] ">{numberOfPeople}</p>
+              ) : (
+                <p className="text-[#cececf] ">
+                  {translations.bookingInfo.selectNumberPax}
+                </p>
+              )}{" "}
+            </strong>
+
+            <span className="flex justify-start mt-1 mb-1 ">
+              <hr className="w-[15rem] " />
+            </span>
+            {/* Fecha de llegada */}
+            <label className="block text-[1rem]  font-medium text-[#2b3163]">
+              Fecha de llegada
+            </label>
+            <strong>
+              {formik.values.checkInDate ? (
+                // Check-In: <br />
+
+                <p className=" text-[#2b3163] ">
+                  {" "}
+                  <FaCalendarCheck className="inline w-6 h-6 mr-2" />{" "}
+                  {formatDate(formik.values.checkInDate)}
+                </p>
+              ) : (
+                <p className="text-[#cececf] ">
+                  Seleccione la fecha de llegada
+                </p>
+              )}
+            </strong>
+
+            <span className="flex justify-end mt-1 mb-1">
+              <hr className="w-full" />
+            </span>
+
+            {/* Fecha de Salida */}
+            <label className="block text-[1rem]  font-medium text-[#2b3163]">
+              Fecha de Salida
+            </label>
+            <strong>
+              {formik.values.checkOutDate ? (
+                // Check-In: <br />
+
+                <p className=" text-[#2b3163] ">
+                  {" "}
+                  <FaCalendarCheck className="inline w-6 h-6 mr-2" />{" "}
+                  {formatDate(formik.values.checkOutDate)}
+                </p>
+              ) : (
+                <p className="text-[#cececf] ">Seleccione la fecha de salida</p>
+              )}
+            </strong>
+
+            <span className="flex justify-end mt-1 mb-1">
+              <hr className="w-full" />
+            </span>
+          </div>
+          {/*Price, taxes and total per night/s */}
+          <div className="w-full md:w-1/2  h-auto  text-right">
+            <label className="block text-[1rem]  font-medium text-[#2b3163]">
+              {/* Total de noches:{" "} */}
+              {translations.bookingInfo.totalNights}
+            </label>
+            <strong>
+              {" "}
+              <p className="text-[#2b3163] ">
+                {" "}
+                {calculateNights(formik.values) === 1
+                  ? `${calculateNights(formik.values)} ${
+                      translations.bookingInfo.night
+                    }`
+                  : `${calculateNights(formik.values)} ${
+                      translations.bookingInfo.nights
+                    }`}
+              </p>
+            </strong>
+            <span className="flex justify-end mt-1 mb-1">
+              <hr className="w-[10rem]" />
+            </span>
+            <label className="block text-[1rem]  font-medium text-[#2b3163]">
+              {/* Precio por Noche: */}
+              {translations.bookingInfo.pricePerNight}
+            </label>
+            <strong>
+              {" "}
+              <p className="text-[#2b3163]">
+                {selectedRoom
+                  ? `${formatNumber(selectedRoom.price[currency])} ${currency}`
+                  : `0.00 ${currency}`}
+              </p>
+            </strong>
+            <span className="flex justify-end mt-1 mb-1">
+              <hr className="w-[10rem]" />
+            </span>
+            <label className="block text-[1rem]  font-medium text-[#2b3163]">
+              {/* Impuestos por noche: */}
+              {translations.bookingInfo.taxesPerNight}
+            </label>
+            <strong>
+              {" "}
+              <p className="text-[#2b3163]">
+                {selectedRoom
+                  ? `${formatNumber(selectedRoom.fees[currency])} ${currency}`
+                  : `0.00 ${currency}`}
+              </p>
+            </strong>
+            <span className="flex justify-end mt-1 mb-1">
+              <hr className="w-[10rem]" />
+            </span>
+            <span className="flex justify-end mt-1 mb-1 ">
+              <hr className="w-[10rem] " />
+            </span>
+            <span className="flex justify-end mt-1 mb-1 ">
+              <hr className="w-[10rem] " />
+            </span>
+            <label className="block text-[1rem]  font-medium text-[#2b3163]">
+              {/* Total Impuestos: */}
+              {translations.bookingInfo.totalTaxes}
+            </label>
+            {/* <strong>
+    {" "}
+    <p className="text-[#2b3163]">
+    {selectedRoom
+      ? `${formatNumber(selectedRoom.fees[currency])} ${currency}`
+      : `0.00 ${currency}`}
+  </p>
+  </strong> */}
+            <strong>
+              {" "}
+              <p className="text-[#2b3163]">
+                {currency === "EUR" ? "€" : "$"} {formatNumber(totalTaxes)}{" "}
+                {currency}
+              </p>
+            </strong>
+            <span className="flex justify-end mt-1 mb-1">
+              <hr className="w-[10rem] border-t-4" />
+            </span>
+            <label className="block text-[1rem]  font-bold text-[#2b3163]">
+              {/* Total: */}
+              {translations.bookingInfo.grandTotal}
+            </label>
+
+            <strong>
+              {" "}
+              <p className="text-[#2b3163]">
+                {currency === "EUR" ? "€" : "$"} {formatNumber(totalPrice)}{" "}
+                {currency}
+              </p>
+            </strong>
+            <span className="flex justify-end mt-1 mb-1">
+              <hr className="w-[10rem] border-t-4" />
+            </span>
+          </div>
         </div>
       </div>
 
