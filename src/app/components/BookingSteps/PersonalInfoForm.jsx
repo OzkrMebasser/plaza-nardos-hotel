@@ -1,11 +1,13 @@
 "use client";
 import { useFormik } from "formik";
+import { useLanguage } from "@/app/contexts/LanguageContext";
 import * as Yup from "yup";
 
 const PersonalInfoForm = ({ onSubmit, onBack, data }) => {
-
+  const { getTranslations } = useLanguage();
+  const translations = getTranslations();
   // console.log(data)
-  
+
   const formik = useFormik({
     initialValues: {
       name: "",
@@ -16,14 +18,29 @@ const PersonalInfoForm = ({ onSubmit, onBack, data }) => {
       country: "",
       city: "",
     },
+    // validationSchema: Yup.object({
+    //   name: Yup.string().required("First Name is required."),
+    //   lastName: Yup.string().required("Last Name is required."),
+    //   email: Yup.string()
+    //     .email("Invalid email address")
+    //     .required("Email is required."),
+    //   phone: Yup.string().required("Phone number is required."),
+    //   city: Yup.string().required("City is required."),
+    //   country: Yup.string().required("Country is required."),
+    //   request: Yup.string().optional("Message is optional"),
+    // }),
     validationSchema: Yup.object({
-      name: Yup.string().required("First Name is required."),
-      lastName: Yup.string().required("Last Name is required."),
-      email: Yup.string().email("Invalid email address").required("Email is required."),
-      phone: Yup.string().required("Phone number is required."),
-      request: Yup.string().required("Message is required."),
-      city: Yup.string().required("City is required."), // Validación para el campo ciudad
-      country: Yup.string().required("Country is required.") // Validación para el campo país
+      name: Yup.string().required(`${translations.validationsYup.firstName}`),
+      lastName: Yup.string().required(
+        `${translations.validationsYup.lastName}`
+      ),
+      email: Yup.string()
+        .email(`${translations.validationsYup.invalidEmail}`)
+        .required(`${translations.validationsYup.emailRequired}`),
+      phone: Yup.string().required(`${translations.validationsYup.phone}`),
+      city: Yup.string().required(`${translations.validationsYup.city}`),
+      country: Yup.string().required(`${translations.validationsYup.country}`),
+      request: Yup.string().optional(`${translations.validationsYup.request}`),
     }),
     onSubmit: (values) => {
       onSubmit(values);
@@ -37,7 +54,7 @@ const PersonalInfoForm = ({ onSubmit, onBack, data }) => {
           <input
             className="w-full bg-gray-100 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
             type="text"
-            placeholder="First Name*"
+            placeholder={translations.bookingInfo.firstName}
             name="name"
             id="name"
             value={formik.values.name}
@@ -45,7 +62,9 @@ const PersonalInfoForm = ({ onSubmit, onBack, data }) => {
             onBlur={formik.handleBlur}
           />
           {formik.touched.name && formik.errors.name ? (
-            <div className="text-red-500 text-sm mt-1">{formik.errors.name}</div>
+            <div className="text-red-500 text-sm mt-1">
+              {formik.errors.name}
+            </div>
           ) : null}
         </div>
 
@@ -53,7 +72,7 @@ const PersonalInfoForm = ({ onSubmit, onBack, data }) => {
           <input
             className="w-full bg-gray-100 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
             type="text"
-            placeholder="Last Name*"
+            placeholder={translations.bookingInfo.lastName}
             name="lastName"
             id="lastName"
             value={formik.values.lastName}
@@ -61,7 +80,9 @@ const PersonalInfoForm = ({ onSubmit, onBack, data }) => {
             onBlur={formik.handleBlur}
           />
           {formik.touched.lastName && formik.errors.lastName ? (
-            <div className="text-red-500 text-sm mt-1">{formik.errors.lastName}</div>
+            <div className="text-red-500 text-sm mt-1">
+              {formik.errors.lastName}
+            </div>
           ) : null}
         </div>
 
@@ -69,7 +90,7 @@ const PersonalInfoForm = ({ onSubmit, onBack, data }) => {
           <input
             className="w-full bg-gray-100 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
             type="email"
-            placeholder="Email*"
+            placeholder={translations.bookingInfo.email}
             name="email"
             id="email"
             value={formik.values.email}
@@ -77,14 +98,16 @@ const PersonalInfoForm = ({ onSubmit, onBack, data }) => {
             onBlur={formik.handleBlur}
           />
           {formik.touched.email && formik.errors.email ? (
-            <div className="text-red-500 text-sm mt-1">{formik.errors.email}</div>
+            <div className="text-red-500 text-sm mt-1">
+              {formik.errors.email}
+            </div>
           ) : null}
         </div>
 
         <div className="relative">
           <input
             className="w-full bg-gray-100 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
-            placeholder="Phone*"
+            placeholder={translations.bookingInfo.phone}
             type="tel"
             name="phone"
             id="phone"
@@ -93,7 +116,9 @@ const PersonalInfoForm = ({ onSubmit, onBack, data }) => {
             onBlur={formik.handleBlur}
           />
           {formik.touched.phone && formik.errors.phone ? (
-            <div className="text-red-500 text-sm mt-1">{formik.errors.phone}</div>
+            <div className="text-red-500 text-sm mt-1">
+              {formik.errors.phone}
+            </div>
           ) : null}
         </div>
 
@@ -101,7 +126,7 @@ const PersonalInfoForm = ({ onSubmit, onBack, data }) => {
           <input
             className="w-full bg-gray-100 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
             type="text"
-            placeholder="Country*"
+            placeholder={translations.bookingInfo.country}
             name="country"
             id="country"
             value={formik.values.country}
@@ -109,7 +134,9 @@ const PersonalInfoForm = ({ onSubmit, onBack, data }) => {
             onBlur={formik.handleBlur}
           />
           {formik.touched.country && formik.errors.country ? (
-            <div className="text-red-500 text-sm mt-1">{formik.errors.country}</div>
+            <div className="text-red-500 text-sm mt-1">
+              {formik.errors.country}
+            </div>
           ) : null}
         </div>
 
@@ -117,7 +144,7 @@ const PersonalInfoForm = ({ onSubmit, onBack, data }) => {
           <input
             className="w-full bg-gray-100 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
             type="text"
-            placeholder="City*"
+            placeholder={translations.bookingInfo.city}
             name="city"
             id="city"
             value={formik.values.city}
@@ -125,14 +152,16 @@ const PersonalInfoForm = ({ onSubmit, onBack, data }) => {
             onBlur={formik.handleBlur}
           />
           {formik.touched.city && formik.errors.city ? (
-            <div className="text-red-500 text-sm mt-1">{formik.errors.city}</div>
+            <div className="text-red-500 text-sm mt-1">
+              {formik.errors.city}
+            </div>
           ) : null}
         </div>
       </div>
 
       <div className="my-4 relative">
         <textarea
-          placeholder="Message*"
+          placeholder={translations.bookingInfo.message}
           name="request"
           id="request"
           value={formik.values.request}
@@ -140,24 +169,24 @@ const PersonalInfoForm = ({ onSubmit, onBack, data }) => {
           onBlur={formik.handleBlur}
           className="w-full h-32 bg-gray-100 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
         ></textarea>
-        {formik.touched.request && formik.errors.request ? (
+        {/* {formik.touched.request && formik.errors.request ? (
           <div className="text-red-500 text-sm mt-1">{formik.errors.request}</div>
-        ) : null}
+        ) : null} */}
       </div>
 
       <div className="flex justify-between">
         <button
           type="button"
           onClick={onBack}
-          className="px-4 py-2 bg-gray-300 text-black rounded"
+          className="px-4 py-2 bg-gray-300 text-[#2b3163] font-semibold rounded"
         >
-          Back
+          {translations.bookingInfo.back}
         </button>
         <button
           type="submit"
-          className="px-4 py-2 bg-blue-600 text-white rounded"
+          className="px-4 py-2 bg-[#2b3163] text-white rounded"
         >
-          Next
+          {translations.bookingInfo.next}
         </button>
       </div>
     </form>

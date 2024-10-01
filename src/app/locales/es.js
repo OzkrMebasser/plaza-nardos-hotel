@@ -56,6 +56,7 @@ export const es = {
 
   //Booking info
   bookingInfo: {
+    //******** Detalles de la Habitación ********
     titleH1: "Información de reserva",
     roomDetails: "Detalles de la Habitación",
     personalInfo: "Información Personal",
@@ -69,31 +70,58 @@ export const es = {
     arrivalDate: "Fecha de Llegada",
     arrivalTime: "Hora estimada de llegada",
     departureDate: "Fecha de Salida",
-    note3pm: "Nota: El check-in es a partir de las 3:00 p.m. Sin embargo, puedes utilizar las instalaciones del hotel antes de esa hora.",
+    note3pm:
+      "Nota: El check-in es a partir de las 3:00 p.m. Sin embargo, puedes utilizar las instalaciones del hotel antes de esa hora.",
+    //Nights info INPUTS
     totalNights: "Total de noches: ",
     night: "noche",
-    nights: "noches", 
+    nights: "noches",
     pricePerNight: "Precio por Noche:",
-    taxesPerNight: "Impuestos por noche:", 
+    taxesPerNight: "Impuestos por noche:",
     totalTaxes: "Total Impuestos:",
     grandTotal: "Total:",
     next: "Siguiente",
+    youHaveSelected: "Usted ha seleccionado",
+    //room info INPUTS
+    selectedRoom: "Habitación seleccionada:",
+    numPax: "Número de personas:",
+    arrivalDateSelected: "Fecha de llegada seleccionada:",
+    selectArrivalDate: "Seleccione la fecha de llegada",
+    departureDateSelected: "Fecha de salida seleccionada:",
+    selectDepartureDate: "Seleccione la fecha de salida",
+    estimatedArrivalHour: "Hora de llegada estimada:",
+    //******** Información Personal ********
+    firstName: "Nombre(s)",
+    lastName: "Apellido(s)",
+    email: "Correo electrónico",
+    phone: "Teléfono",
+    country: "País de procedencia",
+    city: "Ciudad de procedencia",
+    message: "Si tiene algún requerimiento especial, por favor escríbalo aquí.",
+    next: "Siguiente",
+    back: "Regresar",
+    //******** Revisar ********
+    reviewBooking: "Revise bien todos los datos de su reservación",
 
-
-    
-
+  
   },
 
   validationsYup: {
-    //booking info
-   roomTypeRequired: "Tipo de habitación es requerido.",
-   checkInRequired: "Fecha de check-in es requerida.",
-   checkOutRequired: "Fecha de check-out es requerida.",
-   checkOutLaterThanCheckIn: "La fecha de check-out debe ser posterior a la fecha de check-in.",
-   arrivalTime: "Hora estimada de llegada es requerida.",
-
+//******** Detalles de la Habitación ********
+roomTypeRequired: "Se requiere el tipo de habitación.",
+checkInRequired: "Se requiere la fecha de check-in.",
+checkOutRequired: "Se requiere la fecha de check-out.",
+checkOutLaterThanCheckIn: "La fecha de check-out debe ser posterior a la fecha de check-in.",
+arrivalTime: "Se requiere la hora de llegada estimada.",
+//******** Información Personal ********
+firstName: "Se requiere el nombre.",
+lastName: "Se requiere el apellido.",
+invalidEmail: "Dirección de correo electrónico inválida.",
+emailRequired: "Se requiere el correo electrónico.",
+phone: "Se requiere el número de teléfono.",
+city: "Se requiere la ciudad.",
+country: "Se requiere el país.",
   },
-  
 
   // "Double Room, Balcón y terraza "
   dlbBedRoom: {

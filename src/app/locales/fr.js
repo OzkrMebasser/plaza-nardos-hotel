@@ -53,6 +53,7 @@ export const fr = {
 
   //Booking info
   bookingInfo: {
+    //******** Detalles de la Habitación ********
     titleH1: "Informations de Réservation",
     roomDetails: "Détails de la Chambre",
     personalInfo: "Informations Personnelles",
@@ -68,6 +69,7 @@ export const fr = {
     departureDate: "Date de Départ",
     note3pm:
       "Remarque : Le check-in est à partir de 15h00. Cependant, vous pouvez utiliser les installations de l'hôtel avant cette heure.",
+    //Nights info INPUTS
     totalNights: "Total de nuits: ",
     night: "nuit",
     nights: "nuits",
@@ -76,15 +78,45 @@ export const fr = {
     totalTaxes: "Total des Taxes:",
     grandTotal: "Total Général:",
     next: "Suivant",
-
+    //room info INPUTS
+    youHaveSelected: "Vous avez sélectionné",
+    selectedRoom: "Chambre sélectionnée:",
+    numPax: "Nombre de personnes:",
+    arrivalDateSelected: "Date d'arrivée sélectionnée:",
+    selectArrivalDate: "Sélectionnez la date d'arrivée",
+    departureDateSelected: "Date de départ sélectionnée:",
+    selectDepartureDate: "Sélectionnez la date de départ",
+    estimatedArrivalHour: "Heure d'arrivée estimée:",
+    //******** Información Personal ********
+    firstName: "Prénom",
+    lastName: "Nom de famille",
+    email: "Adresse électronique",
+    phone: "Numéro de téléphone",
+    country: "Pays d'origine",
+    city: "Ville d'origine",
+    message: "Si vous avez une demande spéciale, veuillez l'écrire ici.",
+    next: "Suivant",
+    back: "Retour",
+    //******** Revisar ********
+    reviewBooking:
+      "Veuillez vérifier attentivement tous les détails de votre réservation",
   },
   validationsYup: {
+    //******** Detalles de la Habitación ********
     roomTypeRequired: "Le type de chambre est requis.",
-    checkInRequired: "La date d'arrivée est requise.",
+    checkInRequired: "La date d'enregistrement est requise.",
     checkOutRequired: "La date de départ est requise.",
     checkOutLaterThanCheckIn:
-      "La date de départ doit être postérieure à la date d'arrivée.",
+      "La date de départ doit être postérieure à la date d'enregistrement.",
     arrivalTime: "L'heure d'arrivée estimée est requise.",
+    //******** Información Personal ********
+    firstName: "Le prénom est requis.",
+    lastName: "Le nom de famille est requis.",
+    invalidEmail: "Adresse e-mail invalide.",
+    emailRequired: "L'email est requis.",
+    phone: "Le numéro de téléphone est requis.",
+    city: "La ville est requise.",
+    country: "Le pays est requis.",
   },
   // "Double Room, Balcón y terraza"
   dlbBedRoom: {

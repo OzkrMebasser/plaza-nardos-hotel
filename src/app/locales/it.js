@@ -53,6 +53,7 @@ export const it = {
 
   //Booking info
   bookingInfo: {
+    //******** Detalles de la Habitación ********
     titleH1: "Informazioni sulla Prenotazione",
     roomDetails: "Dettagli della Camera",
     personalInfo: "Informazioni Personali",
@@ -66,26 +67,56 @@ export const it = {
     arrivalDate: "Data di Arrivo",
     arrivalTime: "Orario di arrivo stimato",
     departureDate: "Data di Partenza",
-    note3pm: "Nota: Il check-in è a partire dalle 15:00. Tuttavia, puoi utilizzare le strutture dell'hotel prima di quell'ora.",
+    note3pm:
+      "Nota: Il check-in è a partire dalle 15:00. Tuttavia, puoi utilizzare le strutture dell'hotel prima di quell'ora.",
+    //Nights info INPUTS
     totalNights: "Totale notti: ",
     night: "notte",
-    nights: "notti", 
+    nights: "notti",
     pricePerNight: "Prezzo per Notte:",
-    taxesPerNight: "Tasse per notte:", 
+    taxesPerNight: "Tasse per notte:",
     totalTaxes: "Tasse Totali:",
     grandTotal: "Totale Generale:",
     next: "Successivo",
-
-    
-
+    //room info INPUTS
+    youHaveSelected: "Hai selezionato",
+    selectedRoom: "Camera selezionata:",
+    numPax: "Numero di persone:",
+    arrivalDateSelected: "Data di arrivo selezionata:",
+    selectArrivalDate: "Seleziona la data di arrivo",
+    departureDateSelected: "Data di partenza selezionata:",
+    selectDepartureDate: "Seleziona la data di partenza",
+    estimatedArrivalHour: "Orario di arrivo stimato:",
+    //******** Información Personal ********
+    firstName: "Nome",
+    lastName: "Cognome",
+    email: "Indirizzo Email",
+    phone: "Numero di Telefono",
+    country: "Paese di Provenienza",
+    city: "Città di Provenienza",
+    message: "Se hai una richiesta speciale, scrivila qui per favore.",
+    next: "Successivo",
+    back: "Indietro",
+    //******** Revisar ********
+    reviewBooking:
+      "Controlla attentamente tutti i dettagli della tua prenotazione",
   },
   validationsYup: {
+    //******** Detalles de la Habitación ********
     roomTypeRequired: "Il tipo di camera è richiesto.",
     checkInRequired: "La data di check-in è richiesta.",
     checkOutRequired: "La data di check-out è richiesta.",
     checkOutLaterThanCheckIn:
       "La data di check-out deve essere successiva alla data di check-in.",
     arrivalTime: "L'orario di arrivo stimato è richiesto.",
+    //******** Información Personal ********
+    firstName: "Il nome è richiesto.",
+    lastName: "Il cognome è richiesto.",
+    invalidEmail: "Indirizzo email non valido.",
+    emailRequired: "L'email è richiesta.",
+    phone: "Il numero di telefono è richiesto.",
+    city: "La città è richiesta.",
+    country: "Il paese è richiesto.",
   },
 
   // "Double Room, Balcón y terraza"

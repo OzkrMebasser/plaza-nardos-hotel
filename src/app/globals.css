@@ -196,3 +196,72 @@
       transform: translateY(10%);
   }
 }
+/* 
+
+
+.eye {
+
+  border-radius: 50%;
+  height: 20px;
+  width: 20px;
+  background: #ffffff;
+
+}
+
+.eye::after { 
+  position: absolute;
+  bottom: 10px;
+  right: 7px;
+  width: 7px;
+  height: 7px;
+  background: #000;
+  border-radius: 50%;
+  content: " ";
+} */
+
+/* Estilos globales */
+
+
+/* Estilos de los ojos */
+.eyes {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+  text-align: center;
+}
+
+.eye {
+  width: 150px;
+  height: 150px;
+  background: #fff;
+  display: inline-block;
+  margin: 20px;
+  border-radius: 50%;
+  position: relative;
+  overflow: hidden;
+  border: 5px solid #6d6875;
+  animation: blink 3s infinite;
+}
+
+@-webkit-keyframes blink {
+  0%, 100% {
+    transform: scale(1, 0.05);
+  }
+  5%, 95% {
+    transform: scale(1, 1);
+  }
+}
+
+.ball {
+  width: 40px;
+  height: 40px;
+  background: #000;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  border: 2px solid #6d6875;
+}
+

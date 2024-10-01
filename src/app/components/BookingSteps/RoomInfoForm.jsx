@@ -8,6 +8,7 @@ import { MdBedroomParent } from "react-icons/md";
 import { FaPeopleGroup } from "react-icons/fa6";
 import { IoCalendarSharp } from "react-icons/io5";
 import { FaCalendarCheck } from "react-icons/fa";
+import { PiWatchFill } from "react-icons/pi";
 
 import { IoTime } from "react-icons/io5";
 import SubTitle from "../SubTitle";
@@ -60,29 +61,6 @@ const RoomInfoForm = ({ onSubmit }) => {
     console.log("Número de personas seleccionadas:", selectedNumber);
   };
 
-  // validationsYup: {
-  //   //booking info
-  //  roomTypeRequired: "Tipo de habitación es requerido.",
-  //  checkInRequired: "Fecha de check-in es requerida.",
-  //  checkOutRequired: "Fecha de check-out es requerida.",
-  //  checkOutLaterThanCheckIn: "La fecha de check-out debe ser posterior a la fecha de check-in.",
-  //  arrivalTime: "Hora estimada de llegada es requerida.",
-
-  // },
-
-  // const validationSchema = Yup.object({
-  //   roomType: Yup.string().required("Tipo de habitación es requerido."),
-  //   checkInDate: Yup.date().required("Fecha de check-in es requerida."),
-  //   checkOutDate: Yup.date()
-  //     .min(
-  //       Yup.ref("checkInDate"),
-  //       "La fecha de check-out debe ser posterior a la fecha de check-in."
-  //     )
-  //     .required("Fecha de check-out es requerida."),
-  //   estimatedArrivalTime: Yup.string().required(
-  //     "Hora estimada de llegada es requerida."
-  //   ),
-  // });
   const validationSchema = Yup.object({
     roomType: Yup.string().required(
       `${translations.validationsYup.roomTypeRequired}`
@@ -323,14 +301,14 @@ const RoomInfoForm = ({ onSubmit }) => {
               {formik.errors.checkOutDate}
             </div>
           ) : null}
-          {formik.values.checkOutDate && (
+          {/* {formik.values.checkOutDate && (
             // Check-Out: <br />
             <p className="block text-sm font-medium text-[#2b3163] mt-3 underline">
               {" "}
               <FaCalendarCheck className="inline w-6 h-6 mr-2" />{" "}
               {formatDate(formik.values.checkOutDate)}{" "}
             </p>
-          )}
+          )} */}
         </div>
       </div>
 
@@ -346,27 +324,15 @@ const RoomInfoForm = ({ onSubmit }) => {
           </strong>
         )}
         {/*Selectioned inputs */}
-        <div className="flex flex-col md:flex-row gap-4">
-          <div className="w-full md:w-1/2 h-auto ">
-            <h3 className="text-center mb-2 font-bold uppercase">
-              Usted ha seleccionado
-            </h3>
-            {/* {selectedRoom && numberOfPeople && (
-              <div className="mt-4">
-                <p className="text-sm font-medium text-[#2b3163]">
-                  Habitación seleccionada:{" "}
-                  {translations[selectedRoom?.roomType]?.title ||
-                    selectedRoom?.roomType}
-                </p>
-                <p className="text-sm font-medium text-[#2b3163]">
-                  Número de personas: {numberOfPeople}
-                </p>
-              </div>
-            )} */}
-            {/*  Habitación seleccionada:*/}
-
+        <h3 className="text-center mb-2 font-bold uppercase text-[#2b3163] ">
+          {/* Usted ha seleccionado */}
+          {translations.bookingInfo.youHaveSelected}
+        </h3>
+        <div className="flex flex-col md:flex-row gap-4 ">
+          <div className="w-full md:w-1/2 h-auto  ">
             <label className="block text-[1rem]  font-medium text-[#2b3163]">
-              Habitación seleccionada:{" "}
+              {/* Habitación seleccionada:{" "} */}
+              {translations.bookingInfo.selectedRoom}
             </label>
             <strong>
               {selectedRoom ? (
@@ -382,12 +348,12 @@ const RoomInfoForm = ({ onSubmit }) => {
             </strong>
 
             <span className="flex justify-start mt-1 mb-1 ">
-              <hr className="w-[15rem] " />
+              <hr className="w-full " />
             </span>
             {/*   Número de personas:*/}
-
             <label className="block text-[1rem]  font-medium text-[#2b3163]">
-              Número de personas:
+              {/* Número de personas: */}
+              {translations.bookingInfo.numPax}
             </label>
             <strong>
               {numberOfPeople ? (
@@ -400,11 +366,12 @@ const RoomInfoForm = ({ onSubmit }) => {
             </strong>
 
             <span className="flex justify-start mt-1 mb-1 ">
-              <hr className="w-[15rem] " />
+              <hr className="w-full " />
             </span>
             {/* Fecha de llegada */}
             <label className="block text-[1rem]  font-medium text-[#2b3163]">
-              Fecha de llegada
+              {/* Fecha de llegada seleccionada: */}
+              {translations.bookingInfo.arrivalDateSelected}
             </label>
             <strong>
               {formik.values.checkInDate ? (
@@ -417,7 +384,8 @@ const RoomInfoForm = ({ onSubmit }) => {
                 </p>
               ) : (
                 <p className="text-[#cececf] ">
-                  Seleccione la fecha de llegada
+                  {/* Seleccione la fecha de llegada */}
+                  {translations.bookingInfo.selectArrivalDate}
                 </p>
               )}
             </strong>
@@ -428,7 +396,8 @@ const RoomInfoForm = ({ onSubmit }) => {
 
             {/* Fecha de Salida */}
             <label className="block text-[1rem]  font-medium text-[#2b3163]">
-              Fecha de Salida
+              {/* Fecha de salida seleccionada: */}
+              {translations.bookingInfo.departureDateSelected}
             </label>
             <strong>
               {formik.values.checkOutDate ? (
@@ -440,7 +409,30 @@ const RoomInfoForm = ({ onSubmit }) => {
                   {formatDate(formik.values.checkOutDate)}
                 </p>
               ) : (
-                <p className="text-[#cececf] ">Seleccione la fecha de salida</p>
+                <p className="text-[#cececf] ">
+                  {/* Seleccione la fecha de salida */}
+                  {translations.bookingInfo.selectDepartureDate}
+                </p>
+              )}
+            </strong>
+
+            <span className="flex justify-end mt-1 mb-1">
+              <hr className="w-full" />
+            </span>
+            {/* Hora de llegada estimada */}
+            <label className="block text-[1rem]  font-medium text-[#2b3163]">
+              {/* Hora de llegada estimada: */}
+              {translations.bookingInfo.estimatedArrivalHour}
+            </label>
+            <strong>
+              {formik.values.estimatedArrivalTime && (
+                // Check-In: <br />
+
+                <p className=" text-[#2b3163] ">
+                  {" "}
+                  <PiWatchFill className="inline w-6 h-6 mr-2" />{" "}
+                  {formik.values.estimatedArrivalTime} hrs.
+                </p>
               )}
             </strong>
 
@@ -449,7 +441,7 @@ const RoomInfoForm = ({ onSubmit }) => {
             </span>
           </div>
           {/*Price, taxes and total per night/s */}
-          <div className="w-full md:w-1/2  h-auto  text-right">
+          <div className="w-full md:w-1/2  h-auto text-left  md:text-right  ">
             <label className="block text-[1rem]  font-medium text-[#2b3163]">
               {/* Total de noches:{" "} */}
               {translations.bookingInfo.totalNights}
@@ -468,7 +460,7 @@ const RoomInfoForm = ({ onSubmit }) => {
               </p>
             </strong>
             <span className="flex justify-end mt-1 mb-1">
-              <hr className="w-[10rem]" />
+              <hr className="w-full md:w-[10rem]" />
             </span>
             <label className="block text-[1rem]  font-medium text-[#2b3163]">
               {/* Precio por Noche: */}
@@ -483,7 +475,7 @@ const RoomInfoForm = ({ onSubmit }) => {
               </p>
             </strong>
             <span className="flex justify-end mt-1 mb-1">
-              <hr className="w-[10rem]" />
+              <hr className="w-full md:w-[10rem]" />
             </span>
             <label className="block text-[1rem]  font-medium text-[#2b3163]">
               {/* Impuestos por noche: */}
@@ -498,14 +490,14 @@ const RoomInfoForm = ({ onSubmit }) => {
               </p>
             </strong>
             <span className="flex justify-end mt-1 mb-1">
-              <hr className="w-[10rem]" />
+              <hr className="w-full md:w-[10rem]" />
             </span>
-            <span className="flex justify-end mt-1 mb-1 ">
+            {/* <span className="flex justify-end mt-1 mb-1 ">
               <hr className="w-[10rem] " />
             </span>
             <span className="flex justify-end mt-1 mb-1 ">
               <hr className="w-[10rem] " />
-            </span>
+            </span> */}
             <label className="block text-[1rem]  font-medium text-[#2b3163]">
               {/* Total Impuestos: */}
               {translations.bookingInfo.totalTaxes}
@@ -526,7 +518,7 @@ const RoomInfoForm = ({ onSubmit }) => {
               </p>
             </strong>
             <span className="flex justify-end mt-1 mb-1">
-              <hr className="w-[10rem] border-t-4" />
+              <hr className="w-full md:w-[10rem] border-t-4" />
             </span>
             <label className="block text-[1rem]  font-bold text-[#2b3163]">
               {/* Total: */}
@@ -541,7 +533,7 @@ const RoomInfoForm = ({ onSubmit }) => {
               </p>
             </strong>
             <span className="flex justify-end mt-1 mb-1">
-              <hr className="w-[10rem] border-t-4" />
+              <hr className="w-full md:w-[10rem] border-t-4" />
             </span>
           </div>
         </div>
