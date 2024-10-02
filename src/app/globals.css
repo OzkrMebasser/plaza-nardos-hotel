@@ -224,23 +224,25 @@
 
 /* Estilos de los ojos */
 .eyes {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 100%;
+  /* position: absolute; */
+  /* top: 50%; */
+  /* transform: translateY(-50%); */
+
   text-align: center;
+ 
+  height: 100vh;
 }
 
 .eye {
-  width: 150px;
-  height: 150px;
+  width: 20px;
+  height: 20px;
   background: #fff;
   display: inline-block;
-  margin: 20px;
+  margin: 9px;
   border-radius: 50%;
   position: relative;
   overflow: hidden;
-  border: 5px solid #6d6875;
+  border: 1px solid #6d6875;
   animation: blink 3s infinite;
 }
 
@@ -254,8 +256,8 @@
 }
 
 .ball {
-  width: 40px;
-  height: 40px;
+  width: 7px;
+  height: 7px;
   background: #000;
   position: absolute;
   top: 50%;

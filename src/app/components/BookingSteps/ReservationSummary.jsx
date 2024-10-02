@@ -2,7 +2,7 @@
 import { useLanguage } from "@/app/contexts/LanguageContext";
 import { useRoomsAndCurrency } from "@/app/contexts/RoomsAndCurrencyContext";
 import { PiCheckSquareFill } from "react-icons/pi";
-import GooglyEyes from "@/app/components/GooglyEyesB";
+import GooglyEyesB from "@/app/components/GooglyEyesB";
 import RoomSumary from "./RoomSumary";
 import React, { useRef } from "react";
 import emailjs from "@emailjs/browser";
@@ -87,7 +87,7 @@ const ReservationSummary = ({ data, personalData, onSubmit, onBack }) => {
           <h3 className="text-center font-bold uppercase text-[#2b3163] mb-4 mt-4">
             {translations.bookingInfo.reviewBooking}
           </h3>
-<GooglyEyes/>
+          <GooglyEyesB />
           {/* Inputs ocultos para emailjs */}
           <input
             type="text"
@@ -192,7 +192,8 @@ const ReservationSummary = ({ data, personalData, onSubmit, onBack }) => {
           <strong>
             <p className=" text-[#2b3163] ">
               {" "}
-              <PiCheckSquareFill className="inline h-5 w-5" /> {name + " " + lastName}
+              <PiCheckSquareFill className="inline h-5 w-5" />{" "}
+              {name + " " + lastName}
             </p>
           </strong>
           <hr className="w-full md:w-[50%] mt-2 mb-2" />

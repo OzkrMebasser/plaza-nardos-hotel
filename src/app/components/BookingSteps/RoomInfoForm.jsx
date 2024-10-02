@@ -147,6 +147,7 @@ const RoomInfoForm = ({ onSubmit }) => {
 
   return (
     <form onSubmit={formik.handleSubmit} className="space-y-4 mt-12 ">
+    
       <SubTitle title={translations.bookingInfo.roomDetails} />
       <div className="lg:grid lg:grid-cols-2 lg:gap-4">
         <div className="mt-6 lg:mt-0">
