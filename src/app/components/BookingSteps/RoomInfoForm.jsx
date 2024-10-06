@@ -147,7 +147,6 @@ const RoomInfoForm = ({ onSubmit }) => {
 
   return (
     <form onSubmit={formik.handleSubmit} className="space-y-4 mt-12 ">
-    
       <SubTitle title={translations.bookingInfo.roomDetails} />
       <div className="lg:grid lg:grid-cols-2 lg:gap-4">
         <div className="mt-6 lg:mt-0">
@@ -237,14 +236,6 @@ const RoomInfoForm = ({ onSubmit }) => {
               {formik.errors.checkInDate}
             </div>
           ) : null}
-          {/* {formik.values.checkInDate && (
-            // Check-In: <br />
-            <p className="block text-sm font-medium text-[#2b3163] mt-3 underline">
-              {" "}
-              <FaCalendarCheck className="inline w-6 h-6 mr-2" />{" "}
-              {formatDate(formik.values.checkInDate)}
-            </p>
-          )} */}
         </div>
 
         <div className="mt-6 lg:mt-0">
@@ -302,14 +293,6 @@ const RoomInfoForm = ({ onSubmit }) => {
               {formik.errors.checkOutDate}
             </div>
           ) : null}
-          {/* {formik.values.checkOutDate && (
-            // Check-Out: <br />
-            <p className="block text-sm font-medium text-[#2b3163] mt-3 underline">
-              {" "}
-              <FaCalendarCheck className="inline w-6 h-6 mr-2" />{" "}
-              {formatDate(formik.values.checkOutDate)}{" "}
-            </p>
-          )} */}
         </div>
       </div>
 
@@ -329,7 +312,7 @@ const RoomInfoForm = ({ onSubmit }) => {
           {/* Usted ha seleccionado */}
           {translations.bookingInfo.youHaveSelected}
         </h3>
-        <div className="flex flex-col md:flex-row gap-4 ">
+        <div className="flex flex-col md:flex-row gap-4 text-center lg:text-left">
           <div className="w-full md:w-1/2 h-auto  ">
             <label className="block text-[1rem]  font-medium text-[#2b3163]">
               {/* Habitación seleccionada:{" "} */}
@@ -347,7 +330,6 @@ const RoomInfoForm = ({ onSubmit }) => {
                 </p>
               )}{" "}
             </strong>
-
             <span className="flex justify-start mt-1 mb-1 ">
               <hr className="w-full " />
             </span>
@@ -365,7 +347,6 @@ const RoomInfoForm = ({ onSubmit }) => {
                 </p>
               )}{" "}
             </strong>
-
             <span className="flex justify-start mt-1 mb-1 ">
               <hr className="w-full " />
             </span>
@@ -390,11 +371,9 @@ const RoomInfoForm = ({ onSubmit }) => {
                 </p>
               )}
             </strong>
-
             <span className="flex justify-end mt-1 mb-1">
               <hr className="w-full" />
             </span>
-
             {/* Fecha de Salida */}
             <label className="block text-[1rem]  font-medium text-[#2b3163]">
               {/* Fecha de salida seleccionada: */}
@@ -416,7 +395,6 @@ const RoomInfoForm = ({ onSubmit }) => {
                 </p>
               )}
             </strong>
-
             <span className="flex justify-end mt-1 mb-1">
               <hr className="w-full" />
             </span>
@@ -436,13 +414,18 @@ const RoomInfoForm = ({ onSubmit }) => {
                 </p>
               )}
             </strong>
-
             <span className="flex justify-end mt-1 mb-1">
               <hr className="w-full" />
+            </span>{" "}
+            <span className="flex justify-end mt-1 mb-1 lg:hidden">
+              <hr className="w-full" />
+            </span>{" "}
+            <span className="flex justify-end mt-1 mb-1 lg:hidden">
+            <hr className="w-full md:w-[10rem] border-t-4" />
             </span>
           </div>
           {/*Price, taxes and total per night/s */}
-          <div className="w-full md:w-1/2  h-auto text-left  md:text-right  ">
+          <div className="w-full md:w-1/2  h-auto text-right  md:text-right  ">
             <label className="block text-[1rem]  font-medium text-[#2b3163]">
               {/* Total de noches:{" "} */}
               {translations.bookingInfo.totalNights}
@@ -493,12 +476,7 @@ const RoomInfoForm = ({ onSubmit }) => {
             <span className="flex justify-end mt-1 mb-1">
               <hr className="w-full md:w-[10rem]" />
             </span>
-            {/* <span className="flex justify-end mt-1 mb-1 ">
-              <hr className="w-[10rem] " />
-            </span>
-            <span className="flex justify-end mt-1 mb-1 ">
-              <hr className="w-[10rem] " />
-            </span> */}
+
             <label className="block text-[1rem]  font-medium text-[#2b3163]">
               {/* Total Impuestos: */}
               {translations.bookingInfo.totalTaxes}

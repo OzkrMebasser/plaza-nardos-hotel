@@ -41,7 +41,7 @@ const AllRoomsInfo = () => {
   return (
     <>
       {/* Fake nav back-ground color */}
-      <section className="h-[125px] bg-[#7c7498] shadow-lg top-0 left-0 w-full transition-all duration-300"></section>
+      <section className="h-[125px] bg-[#2b3163] shadow-lg top-0 left-0 w-full transition-all duration-300"></section>
       <section className="mt-4 py-8">
         <Title title={translations.homeTitles.ourRooms} />
 

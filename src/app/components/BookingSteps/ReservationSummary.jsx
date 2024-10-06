@@ -83,10 +83,9 @@ const ReservationSummary = ({ data, personalData, onSubmit, onBack }) => {
   return (
     <>
       <form ref={form} onSubmit={sendEmail}>
+     
         <div className="p-4 bg-white">
-          <h3 className="text-center font-bold uppercase text-[#2b3163] mb-4 mt-4">
-            {translations.bookingInfo.reviewBooking}
-          </h3>
+        
           <GooglyEyesB />
           {/* Inputs ocultos para emailjs */}
           <input
@@ -175,6 +174,13 @@ const ReservationSummary = ({ data, personalData, onSubmit, onBack }) => {
           />
 
           {/* Renderizado de la información visible */}
+        </div>
+        
+        <div className="mt-[4rem] lg:-mt-[17rem] lg:relative">
+        <h3 className="text-center font-bold uppercase text-[#2b3163] mb-4 mt-4">
+            {translations.bookingInfo.reviewBooking}
+          </h3>
+          {" "}
           <hr className="w-full md:w-[50%] mt-2 mb-2" />
           <label className="block text-[1rem]  font-medium text-[#2b3163]">
             Tipo de Habitación:
