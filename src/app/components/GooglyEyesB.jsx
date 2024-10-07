@@ -1,6 +1,37 @@
 import React, { useEffect } from "react";
-import Bubbles from "./Bubbles";
 import "../globals.css";
+
+// Componente de ojos para pantallas móviles
+    // A ESTE NO LE MUEVAS NADA
+
+const MobileEyes = () => {
+  return (
+    <div className="eyes absolute lg:hidden flex justify-center items-center h-full">
+      <div className="eye w-[10px] h-[10px] m-[4.5px] flex justify-center items-center">
+        <div className="ball "></div>
+      </div>
+      <div className="eye w-[10px] h-[10px] m-[4.5px] flex justify-center items-center">
+        <div className="ball "></div>
+      </div>
+    </div>
+  );
+};
+
+
+// Componente de ojos para pantallas grandes
+const LargeEyes = () => {
+  return (
+   
+     <div className="eyes hidden lg:flex lg:-mt-[15.2rem]">
+      <div className="eye lg:w-[20px] lg:h-[20px] lg:m-[12px] flex justify-center items-center">
+        <div className="ball lg:w-[7px] lg:h-[7px]"></div>
+      </div>
+      <div className="eye lg:w-[20px] lg:h-[20px] lg:m-[12px] flex justify-center items-center">
+        <div className="ball lg:w-[7px] lg:h-[7px]"></div>
+      </div>
+    </div>
+  );
+};
 
 const GooglyEyes = () => {
   useEffect(() => {
@@ -27,54 +58,23 @@ const GooglyEyes = () => {
       document.removeEventListener("mousemove", handleMouseMove);
     };
   }, []);
-  // useEffect(() => {
-  //   const createBubble = () => {
-  //     const section = document.querySelector(".bubble-section");
-  //     const createElement = document.createElement("span");
-  //     const size = Math.random() * 10;
-
-  //     createElement.classList.add("bubble");
-  //     createElement.style.width = 10 + size + "px";
-  //     createElement.style.height = 10 + size + "px";
-  //     createElement.style.left = Math.random() * window.innerWidth + "px";
-  //     section.appendChild(createElement);
-
-  //     setTimeout(() => {
-  //       createElement.remove();
-  //     }, 4000);
-  //   };
-
-  //   const interval = setInterval(createBubble, 50);
-  //   return () => clearInterval(interval); // Limpia el intervalo al desmontar el componente
-  // }, []);
 
   return (
-    <div className="">
-      <div className="flex justify-end  ">
-        <img
-          className=" lg:w-auto  "
-          src="https://firebasestorage.googleapis.com/v0/b/hotel-plaza-nardos.appspot.com/o/main-images%2Fsnorkel.png?alt=media&token=8d4727dd-2c8d-4ebc-8166-cb7c5697af12"
-          alt="snorkel"
-        />
-      </div>
+    <div className="flex justify-center items-center ">
+      <div className=" h-auto flex flex-col justify-center items-center lg:ml-[15rem]  ">
+        <div className="flex justify-center items-center relative ">
+          <img
+            className="lg:w-auto "
+            src="https://firebasestorage.googleapis.com/v0/b/hotel-plaza-nardos.appspot.com/o/main-images%2Fsnorkel.png?alt=media&token=8d4727dd-2c8d-4ebc-8166-cb7c5697af12"
+            alt="snorkel"
+          />
+          {/* {Componente de ojos móviles} */}
+          <MobileEyes />
+        </div>
 
-      <div className="eyes -mt-[6.4rem] lg:ml-[16rem] lg:-mt-[15.2rem] ">
-        <div className="eye w-[10px] h-[10px]  m-[4.5px] lg:w-[20px] lg:h-[20px] lg:m-[12px] ">
-          <div className="ball  lg:w-[7px]  lg:h-[7px]"></div>
-        </div>
-        <div className="eye w-[10px] h-[10px] m-[4.5px] lg:w-[20px] lg:h-[20px] lg:m-[12px] ">
-          <div className="ball lg:w-[7px] lg:h-[7px]"></div>
-        </div>
+        {/* {Componente de ojos grandes} */}
+        <LargeEyes  />
       </div>
-
-      {/* <div className="eyes ">
-        <div className="eye ">
-          <div className="ball"></div>
-        </div>
-        <div className="eye">
-          <div className="ball"></div>
-        </div>
-      </div> */}
     </div>
   );
 };

@@ -99,7 +99,9 @@ export const fr = {
     back: "Retour",
     //******** Revisar ********
     reviewBooking:
-      "Veuillez vérifier attentivement tous les détails de votre réservation",
+      "Nous voulons que vous profitiez de vos vacances, mais d'abord nous avons besoin que vous vérifiiez et confirmiez les détails de votre pré-réservation.",
+    confirm: "Confirmer",
+    sending: "Envoi en cours...",
   },
   validationsYup: {
     //******** Detalles de la Habitación ********

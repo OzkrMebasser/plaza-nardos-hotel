@@ -101,8 +101,9 @@ export const es = {
     next: "Siguiente",
     back: "Regresar",
     //******** Revisar ********
-    reviewBooking: "Revise bien todos los datos de su reservación",
-
+    reviewBooking: "Ya queremos que disfrute de sus vacaciones, solo antes necesitamos que revise y confirme los datos para su pre-reserva.",
+    confirm: "Confirmar", 
+    sending: "Enviando...",
   
   },
 

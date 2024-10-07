@@ -97,9 +97,11 @@ export const it = {
     message: "Se hai una richiesta speciale, scrivila qui per favore.",
     next: "Successivo",
     back: "Indietro",
-    //******** Revisar ********
-    reviewBooking:
-      "Controlla attentamente tutti i dettagli della tua prenotazione",
+  //******** Revisar ******** 
+  reviewBooking: "Vogliamo che lei si goda le sue vacanze, ma prima abbiamo bisogno che controlli e confermi i dettagli della sua pre-prenotazione.",
+  confirm: "Confermare", 
+  sending: "Inviando...",
+ 
   },
   validationsYup: {
     //******** Detalles de la Habitación ********

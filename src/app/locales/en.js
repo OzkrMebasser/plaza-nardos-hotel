@@ -100,8 +100,10 @@ export const en = {
     message: "If you have a special request, please write it here.",
     next: "Next",
     back: "Back",
-    //******** Revisar ********
-reviewBooking: "Please review all your booking details carefully", 
+ //******** Revisar ******** 
+ reviewBooking: "We want you to enjoy your vacation, but first we need you to review and confirm your pre-booking details.",
+ confirm: "Confirm", 
+ sending: "Sending...",
 
   },
 

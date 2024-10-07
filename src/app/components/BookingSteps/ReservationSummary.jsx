@@ -4,14 +4,16 @@ import { useRoomsAndCurrency } from "@/app/contexts/RoomsAndCurrencyContext";
 import { PiCheckSquareFill } from "react-icons/pi";
 import GooglyEyesB from "@/app/components/GooglyEyesB";
 import RoomSumary from "./RoomSumary";
-import React, { useRef } from "react";
+import React, { useState, useRef } from "react";
 import emailjs from "@emailjs/browser";
+
 
 const ReservationSummary = ({ data, personalData, onSubmit, onBack }) => {
   const form = useRef();
   const { getTranslations } = useLanguage();
-  const { roomsData } = useRoomsAndCurrency();
+  const { roomsData, currency } = useRoomsAndCurrency();
   const translations = getTranslations();
+  const [loading, setLoading] = useState(false);
 
   const filteredRooms = roomsData.filter((room) => room.homeShow);
 
@@ -26,12 +28,23 @@ const ReservationSummary = ({ data, personalData, onSubmit, onBack }) => {
     totalPrice,
   } = data;
 
+   // Calcular noches aquí
+   const calculateNights = (checkIn, checkOut) => {
+    const checkInDate = new Date(checkIn);
+    const checkOutDate = new Date(checkOut);
+    return Math.ceil((checkOutDate - checkInDate) / (1000 * 3600 * 24)); // Convertir ms a días
+  };
+  
+
+  const nights = calculateNights(checkInDate, checkOutDate);
+
   const { name, lastName, email, phone, request, country, city } = personalData;
 
   const roomName = translations[roomType]?.title || "Habitación desconocida";
 
   const sendEmail = (e) => {
     e.preventDefault();
+    setLoading(true);
 
     emailjs
       .sendForm(
@@ -47,9 +60,21 @@ const ReservationSummary = ({ data, personalData, onSubmit, onBack }) => {
         },
         (error) => {
           console.log("FAILED...", error.text);
+          // Handle error here
         }
-      );
+      )
+      .finally(() => setLoading(false));
   };
+
+  const roomTypeMapping = {
+    dlbBedRoom: 0,
+    dlbDeluxe: 1,
+    dlbDeluxeWithBalcony: 2,
+    tripleDeluxe: 3,
+    cuadrupleBedRoom: 4,
+  };
+
+  let roomIndex = roomTypeMapping[roomType] || 0;
 
   const getRoomInfo = (index) => {
     const room = filteredRooms[index];
@@ -63,212 +88,123 @@ const ReservationSummary = ({ data, personalData, onSubmit, onBack }) => {
       views: [room],
     };
   };
+  const today = new Date().toISOString().split("T")[0];
 
-  // Definir el índice dinámicamente basado en roomType
-  let roomIndex = 0;
-  if (roomType === "dlbBedRoom") {
-    roomIndex = 0;
-  } else if (roomType === "dlbDeluxe") {
-    roomIndex = 1;
-  } else if (roomType === "dlbDeluxeWithBalcony") {
-    roomIndex = 2;
-  } else if (roomType === "tripleDeluxe") {
-    roomIndex = 3;
-  } else if (roomType === "cuadrupleBedRoom") {
-    roomIndex = 4;
-  }
+  const localeLng = translations.bookingInfo.localeLng;
 
-  // const roomInfo = getRoomInfo(roomIndex);
+  const formatDate = (dateString) => {
+    const date = new Date(dateString + "T00:00:00");
+    return date.toLocaleDateString(`${localeLng}`, {
+      weekday: "long",
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+    });
+  };
+
+  const formatNumber = (number) => number.toLocaleString();
+
+  const grandTotal = `${currency === "EUR" ? "€" : "$"} ${formatNumber(totalPrice)}
+  ${currency}`
 
   return (
-    <>
-      <form ref={form} onSubmit={sendEmail}>
-     
-        <div className="p-4 bg-white">
+    <form ref={form} onSubmit={sendEmail}>
+     <section className="relative lg:mt-[8rem]"> <GooglyEyesB /></section>
+      <div className="p-4 bg-white">
         
-          <GooglyEyesB />
-          {/* Inputs ocultos para emailjs */}
+        {/* Hidden inputs for emailjs */}
+        {Object.entries({
+          roomName,
+          fullName: `${name} ${lastName}`,
+          email,
+          phone,
+          country,
+          city,
+          numberOfPeople,
+          checkInDate: `${formatDate(checkInDate)}`,
+          estimatedArrivalTime,
+          checkOutDate: `${formatDate(checkOutDate)}`,
+          totalPrice: grandTotal,
+          request,
+        }).map(([key, value]) => (
           <input
+            key={key}
             type="text"
-            name="roomName"
-            value={roomName}
+            name={key}
+            value={value}
             readOnly
             className="hidden"
           />
-          <input
-            type="text"
-            name="fullName"
-            value={`${name} ${lastName}`}
-            readOnly
-            className="hidden"
-          />
-          <input
-            type="email"
-            name="email"
-            value={email}
-            readOnly
-            className="hidden"
-          />
-          <input
-            type="text"
-            name="phone"
-            value={phone}
-            readOnly
-            className="hidden"
-          />
-          <input
-            type="text"
-            name="country"
-            value={country}
-            readOnly
-            className="hidden"
-          />
-          <input
-            type="text"
-            name="city"
-            value={city}
-            readOnly
-            className="hidden"
-          />
-          <input
-            type="text"
-            name="numberOfPeople"
-            value={numberOfPeople}
-            readOnly
-            className="hidden"
-          />
-          <input
-            type="text"
-            name="checkInDate"
-            value={checkInDate}
-            readOnly
-            className="hidden"
-          />
-          <input
-            type="text"
-            name="estimatedArrivalTime"
-            value={estimatedArrivalTime}
-            readOnly
-            className="hidden"
-          />
-          <input
-            type="text"
-            name="checkOutDate"
-            value={checkOutDate}
-            readOnly
-            className="hidden"
-          />
-          <input
-            type="text"
-            name="totalPrice"
-            value={totalPrice}
-            readOnly
-            className="hidden"
-          />
-          <input
-            type="text"
-            name="request"
-            value={request}
-            readOnly
-            className="hidden"
-          />
+        ))}
+      </div>
 
-          {/* Renderizado de la información visible */}
-        </div>
+      <div className=" lg:-mt-[21rem] lg:relative">
+        <h3 className="text-center font-bold uppercase text-[#2b3163]  ">
+          {translations.bookingInfo.reviewBooking}
+        </h3>
         
-        <div className="mt-[4rem] lg:-mt-[17rem] lg:relative">
-        <h3 className="text-center font-bold uppercase text-[#2b3163] mb-4 mt-4">
-            {translations.bookingInfo.reviewBooking}
-          </h3>
-          {" "}
-          <hr className="w-full md:w-[50%] mt-2 mb-2" />
-          <label className="block text-[1rem]  font-medium text-[#2b3163]">
-            Tipo de Habitación:
-          </label>
-          <strong>
-            <p className=" text-[#2b3163] ">
-              {" "}
-              <PiCheckSquareFill className="inline h-5 w-5" /> {roomName}
-            </p>
-          </strong>
-          <hr className="w-full md:w-[50%] mt-2 mb-2" />
-          <label className="block text-[1rem]  font-medium text-[#2b3163]">
-            Nombre de la reserva:
-          </label>
-          <strong>
-            <p className=" text-[#2b3163] ">
-              {" "}
-              <PiCheckSquareFill className="inline h-5 w-5" />{" "}
-              {name + " " + lastName}
-            </p>
-          </strong>
-          <hr className="w-full md:w-[50%] mt-2 mb-2" />
-          {/* <p>
-            <strong>Nombre:</strong> {name + " " + lastName}
-          </p> */}
-          <p>
-            <strong>Email:</strong> {email}
-          </p>
-          <p>
-            <strong>Teléfono:</strong> {phone}
-          </p>
-          <p>
-            <strong>País:</strong> {country}
-          </p>
-          <p>
-            <strong>Ciudad:</strong> {city}
-          </p>
-          <p>
-            <strong>Número de Personas:</strong> {numberOfPeople}
-          </p>
-          <p>
-            <strong>Check-In:</strong> {checkInDate}
-          </p>
-          <p>
-            <strong>Hora Estimada de Llegada:</strong> {estimatedArrivalTime}
-          </p>
-          <p>
-            <strong>Check-Out:</strong> {checkOutDate}
-          </p>
-          <p>
-            <strong>Total a Pagar:</strong> {totalPrice}
-          </p>
-          {request && (
-            <p>
-              <strong>Solicitudes Especiales:</strong> {request}
-            </p>
-          )}
-        </div>
+        <hr className="w-full md:w-[35%] mt-2 mb-2" />
+        {Object.entries({
+          "Tipo de Habitación": roomName,
+          "Nombre de la reserva": `${name} ${lastName}`,
+          Email: email,
+          Teléfono: phone,
+          País: country,
+          Ciudad: city,
+          "Número de Personas": numberOfPeople,
+          "Check-In": formatDate(checkInDate),
+          "Hora Estimada de Llegada": `${estimatedArrivalTime} hrs`,
+          "Check-Out": formatDate(checkOutDate),
+          Noches: nights,
+          // {/**ESTAMOS TRABAJANDO AQUI YA QUE MODIFICA EL SIMBOLO PERO NO EL PRECIO */}
+          "Total a Pagar": `${currency === "EUR" ? "€" : "$"} ${formatNumber(totalPrice)}
+  ${currency}` ,
+          ...(request && { "Solicitudes Especiales": request }),
+        }).map(([label, value]) => (
+          <div key={label} className="">
+            <label className="block text-[1rem] font-medium text-[#2b3163]">
+              
+              {label}:
+            </label>
+            <strong>
+              <p className="text-[#2b3163]">
+                <PiCheckSquareFill className="inline h-5 w-5" /> {value}
+              </p>
+            </strong>
+            <hr className="w-full md:w-[35%] mt-2 mb-2" />
+          </div>
+        ))}
+      </div>
 
-        {/* Componente RoomSummary con datos dinámicos */}
-        <RoomSumary
-          roomType={translations[roomType]?.title}
-          bathRoomStuffTitle={translations[roomType]?.bathRoomStuffTitle}
-          roomStuffTitle={translations[roomType]?.roomStuffTitle}
-          viewsTitle={translations[roomType]?.viewsTitle}
-          noSmokingTitle={translations[roomType]?.noSmokingTitle}
-          noSmoking={translations[roomType]?.noSmoking}
-          {...getRoomInfo(roomIndex)}
-        />
+      <RoomSumary
+        roomType={translations[roomType]?.title}
+        bathRoomStuffTitle={translations[roomType]?.bathRoomStuffTitle}
+        roomStuffTitle={translations[roomType]?.roomStuffTitle}
+        viewsTitle={translations[roomType]?.viewsTitle}
+        noSmokingTitle={translations[roomType]?.noSmokingTitle}
+        noSmoking={translations[roomType]?.noSmoking}
+        {...getRoomInfo(roomIndex)}
+      />
 
-        <div className="flex justify-between">
-          <button
-            type="button"
-            onClick={onBack}
-            className="px-4 py-2 bg-gray-300 text-black rounded"
-          >
-            Back
-          </button>
-          <button
-            type="submit"
-            className="px-4 py-2 bg-blue-600 text-white rounded"
-          >
-            Confirmar
-          </button>
-        </div>
-      </form>
-    </>
+      <div className="flex justify-between">
+        <button
+          type="button"
+          onClick={onBack}
+          className="px-4 py-2 bg-gray-300 text-[#2b3163] font-semibold rounded"
+        >
+          {translations.bookingInfo.back}
+        </button>
+        <button
+          type="submit"
+          className={`px-4 py-2 bg-[#2b3163] text-white rounded ${
+            loading ? "opacity-50 cursor-not-allowed" : ""
+          }`}
+          disabled={loading}
+        >
+          {loading ? `${translations.bookingInfo.sendig}` : `${translations.bookingInfo.confirm}`}
+        </button>
+      </div>
+    </form>
   );
 };
-
 export default ReservationSummary;
