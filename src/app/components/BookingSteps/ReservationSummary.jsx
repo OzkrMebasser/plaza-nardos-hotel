@@ -7,7 +7,6 @@ import RoomSumary from "./RoomSumary";
 import React, { useState, useRef } from "react";
 import emailjs from "@emailjs/browser";
 
-
 const ReservationSummary = ({ data, personalData, onSubmit, onBack }) => {
   const form = useRef();
   const { getTranslations } = useLanguage();
@@ -26,15 +25,15 @@ const ReservationSummary = ({ data, personalData, onSubmit, onBack }) => {
     checkOutDate,
     estimatedArrivalTime,
     totalPrice,
+    grandTotalPriceCurrency,
   } = data;
 
-   // Calcular noches aquí
-   const calculateNights = (checkIn, checkOut) => {
+  // Calcular noches aquí
+  const calculateNights = (checkIn, checkOut) => {
     const checkInDate = new Date(checkIn);
     const checkOutDate = new Date(checkOut);
     return Math.ceil((checkOutDate - checkInDate) / (1000 * 3600 * 24)); // Convertir ms a días
   };
-  
 
   const nights = calculateNights(checkInDate, checkOutDate);
 
@@ -104,14 +103,19 @@ const ReservationSummary = ({ data, personalData, onSubmit, onBack }) => {
 
   const formatNumber = (number) => number.toLocaleString();
 
-  const grandTotal = `${currency === "EUR" ? "€" : "$"} ${formatNumber(totalPrice)}
-  ${currency}`
+  // bloquea esta funcion
+  const grandTotal = `${currency === "EUR" ? "€" : "$"} ${formatNumber(
+    totalPrice
+  )}
+  ${currency}`;
 
   return (
     <form ref={form} onSubmit={sendEmail}>
-     <section className="relative lg:mt-[8rem]"> <GooglyEyesB /></section>
+      <section className="relative lg:mt-[8rem]">
+        {" "}
+        <GooglyEyesB />
+      </section>
       <div className="p-4 bg-white">
-        
         {/* Hidden inputs for emailjs */}
         {Object.entries({
           roomName,
@@ -124,7 +128,7 @@ const ReservationSummary = ({ data, personalData, onSubmit, onBack }) => {
           checkInDate: `${formatDate(checkInDate)}`,
           estimatedArrivalTime,
           checkOutDate: `${formatDate(checkOutDate)}`,
-          totalPrice: grandTotal,
+          totalPrice: grandTotalPriceCurrency,
           request,
         }).map(([key, value]) => (
           <input
@@ -142,29 +146,28 @@ const ReservationSummary = ({ data, personalData, onSubmit, onBack }) => {
         <h3 className="text-center font-bold uppercase text-[#2b3163]  ">
           {translations.bookingInfo.reviewBooking}
         </h3>
-        
+
         <hr className="w-full md:w-[35%] mt-2 mb-2" />
         {Object.entries({
-          "Tipo de Habitación": roomName,
-          "Nombre de la reserva": `${name} ${lastName}`,
-          Email: email,
-          Teléfono: phone,
-          País: country,
-          Ciudad: city,
-          "Número de Personas": numberOfPeople,
-          "Check-In": formatDate(checkInDate),
-          "Hora Estimada de Llegada": `${estimatedArrivalTime} hrs`,
-          "Check-Out": formatDate(checkOutDate),
-          Noches: nights,
-          // {/**ESTAMOS TRABAJANDO AQUI YA QUE MODIFICA EL SIMBOLO PERO NO EL PRECIO */}
-          "Total a Pagar": `${currency === "EUR" ? "€" : "$"} ${formatNumber(totalPrice)}
-  ${currency}` ,
+          [translations.bookingInfo.roomType]: roomName,
+          [translations.bookingInfo.firstName]: `${name} ${lastName}`,
+          [translations.bookingInfo.email]: email,
+          [translations.bookingInfo.phone]: phone,
+          [translations.bookingInfo.country]: country,
+          [translations.bookingInfo.city]: city,
+          [translations.bookingInfo.numberOfPax]: numberOfPeople,
+          [translations.bookingInfo.arrivalDate]: formatDate(checkInDate),
+          [translations.bookingInfo.arrivalTime]: `${estimatedArrivalTime} hrs`,
+          [translations.bookingInfo.departureDate]: formatDate(checkOutDate),
+          [translations.bookingInfo.nights]: nights,
+
+          [translations.bookingInfo.grandTotal]: grandTotalPriceCurrency,
+
           ...(request && { "Solicitudes Especiales": request }),
         }).map(([label, value]) => (
           <div key={label} className="">
             <label className="block text-[1rem] font-medium text-[#2b3163]">
-              
-              {label}:
+              {label}
             </label>
             <strong>
               <p className="text-[#2b3163]">
@@ -201,7 +204,9 @@ const ReservationSummary = ({ data, personalData, onSubmit, onBack }) => {
           }`}
           disabled={loading}
         >
-          {loading ? `${translations.bookingInfo.sendig}` : `${translations.bookingInfo.confirm}`}
+          {loading
+            ? `${translations.bookingInfo.sending}`
+            : `${translations.bookingInfo.confirm}`}
         </button>
       </div>
     </form>

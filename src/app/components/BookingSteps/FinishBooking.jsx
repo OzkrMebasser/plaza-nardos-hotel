@@ -1,5 +1,7 @@
 "use client";
 import jsPDF from "jspdf";
+import { PiCheckSquareFill } from "react-icons/pi";
+
 import html2canvas from "html2canvas";
 import { useLanguage } from "@/app/contexts/LanguageContext";
 import { useRoomsAndCurrency } from "@/app/contexts/RoomsAndCurrencyContext";
@@ -23,6 +25,7 @@ const FinishBooking = ({ data, personalData }) => {
     checkOutDate,
     estimatedArrivalTime,
     totalPrice,
+    grandTotalPriceCurrency,
   } = data;
   const { name, lastName, email, phone, request, country, city } = personalData;
   const roomName = translations[roomType]?.title || "Habitación desconocida";
@@ -63,51 +66,59 @@ const FinishBooking = ({ data, personalData }) => {
   // console.log(bookingName);
 
   // Función para descargar el resumen como PDF
-  const handleDownloadPDF = () => {
-    const element = document.getElementById("finish-booking-summary");
+  // const handleDownloadPDF = () => {
+  //   const element = document.getElementById("finish-booking-summary");
 
-    html2canvas(element).then((canvas) => {
-      const imgData = canvas.toDataURL("image/png");
-      const pdf = new jsPDF("p", "mm", "a4");
+  //   html2canvas(element).then((canvas) => {
+  //     const imgData = canvas.toDataURL("image/png");
+  //     const pdf = new jsPDF("p", "mm", "a4");
 
-      const imgWidth = 210; // A4 width in mm
-      const imgHeight = (canvas.height * imgWidth) / canvas.width;
+  //     const imgWidth = 210; // A4 width in mm
+  //     const imgHeight = (canvas.height * imgWidth) / canvas.width;
 
-      pdf.addImage(imgData, "PNG", 0, 0, imgWidth, imgHeight);
-      pdf.save(`${bookingName}`);
-    });
-  };
+  //     pdf.addImage(imgData, "PNG", 0, 0, imgWidth, imgHeight);
+  //     pdf.save(`${bookingName}`);
+  //   });
+  // };
 
   // Función para imprimir la página
   const handlePrint = () => {
-    const printContent = document.getElementById("finish-booking-summary").innerHTML;
+    const printContent = document.getElementById(
+      "finish-booking-summary"
+    ).innerHTML;
     const originalContent = document.body.innerHTML;
-  
-    // Reemplaza el contenido del body con el contenido del div a imprimir
-    document.body.innerHTML = printContent;
-  
-    // Inicia el proceso de impresión
+
+    // Aplicar estilos de impresión
+    document.body.innerHTML = `
+      <style>
+        @media print {
+          body {
+            margin: 20mm;
+          }
+          #finish-booking-summary {
+            padding: 10mm;
+          }
+        }
+      </style>
+      ${printContent}
+    `;
+
     window.print();
-  
-    // Restaura el contenido original de la página
     document.body.innerHTML = originalContent;
-  
-    // Recarga la página para evitar problemas con el DOM
-    window.location.reload();
+    // window.location.reload();
   };
-  
 
   return (
     <>
       <div
-        className="p-4 bg-white rounded-lg shadow-md"
+        className="p-4 px-8 bg-[red] rounded-lg shadow-md"
         id="finish-booking-summary"
       >
-        <h2 className="text-lg font-medium text-gray-900">
+        {/* <h2 className="text-lg font-medium text-gray-900">
           Reserva Completada
-        </h2>
+        </h2> */}
         {/* Renderizado de la información visible */}
-        <p>
+        {/* <p>
           <strong>Tipo de Habitación:</strong> {roomName}
         </p>
         <p>
@@ -138,13 +149,57 @@ const FinishBooking = ({ data, personalData }) => {
           <strong>Check-Out:</strong> {checkOutDate}
         </p>
         <p>
-          <strong>Total a Pagar:</strong> {totalPrice}
+          <strong>Total a Pagar:</strong> {grandTotalPriceCurrency}
         </p>
         {request && (
           <p>
             <strong>Solicitudes Especiales:</strong> {request}
           </p>
-        )}
+        )} */}
+
+        <div className=" ">
+          <h3 className="text-center font-bold uppercase text-[#2b3163]  ">
+          Reserva Completada
+
+          </h3>
+
+          <hr className="w-full md:w-[35%] mt-2 mb-2" />
+          {Object.entries({
+            [translations.bookingInfo.roomType]: roomName,
+            [translations.bookingInfo.firstName]: `${name} ${lastName}`,
+            [translations.bookingInfo.email]: email,
+            [translations.bookingInfo.phone]: phone,
+            [translations.bookingInfo.country]: country,
+            [translations.bookingInfo.city]: city,
+            [translations.bookingInfo.numberOfPax]: numberOfPeople,
+            // {{"ESTOY TRABAJANDO EN LAS FUNCIONES DE FORMADTE Y NIGHTS **************************************************************************
+            // *******************************************
+            // "}}
+
+            // [translations.bookingInfo.arrivalDate]: formatDate(checkInDate),
+            [translations.bookingInfo
+              .arrivalTime]: `${estimatedArrivalTime} hrs`,
+            // [translations.bookingInfo.departureDate]: formatDate(checkOutDate),
+            // [translations.bookingInfo.nights]: nights,
+
+            [translations.bookingInfo.grandTotal]: grandTotalPriceCurrency,
+
+            ...(request && { "Solicitudes Especiales": request }),
+          }).map(([label, value]) => (
+            <div key={label} className="">
+              <label className="block text-[1rem] font-medium text-[#2b3163]">
+                {label}
+              </label>
+              <strong>
+                <p className="text-[#2b3163]">
+                  <PiCheckSquareFill className="inline h-5 w-5" /> {value}
+                </p>
+              </strong>
+              <hr className="w-full md:w-[35%] mt-2 mb-2" />
+            </div>
+          ))}
+        </div>
+
         {/* Componente RoomSummary con datos dinámicos */}
         <RoomSumary
           roomType={translations[roomType]?.title}
@@ -158,12 +213,12 @@ const FinishBooking = ({ data, personalData }) => {
 
         {/* Botones para descargar o imprimir */}
         <div className="mt-4 flex gap-2 justify-around text-sm lg:text-lg">
-          <button
+          {/* <button
             className="px-4 py-2 bg-blue-600 text-white rounded"
             onClick={handleDownloadPDF}
           >
             Descargar PDF
-          </button>
+          </button> */}
           <button
             className="px-4 py-2 bg-green-600 text-white rounded"
             onClick={handlePrint}

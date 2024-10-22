@@ -89,7 +89,7 @@ const RoomInfoForm = ({ onSubmit }) => {
     validationSchema: validationSchema,
     onSubmit: (values) => {
       const totalPrice = calculateTotalPrice(values);
-      onSubmit({ ...values, numberOfPeople, totalPrice });
+      onSubmit({ ...values, numberOfPeople, totalPrice, grandTotalPriceCurrency });
     },
   });
 
@@ -129,8 +129,14 @@ const RoomInfoForm = ({ onSubmit }) => {
   };
 
   const totalPrice = parseFloat(calculateTotalPrice(formik.values));
+
   const totalTaxes = parseFloat(calculateTotalTaxes(formik.values));
   const formatNumber = (number) => number.toLocaleString();
+
+  const grandTotalPriceCurrency = `${
+    currency === "EUR" ? "€" : "$"
+  } ${formatNumber(totalPrice)}
+                ${currency}`;
 
   const uniqueRoomTypes = [...new Set(roomsData.map((room) => room.roomType))];
   const roomTypeTranslations = uniqueRoomTypes.map(
@@ -421,7 +427,7 @@ const RoomInfoForm = ({ onSubmit }) => {
               <hr className="w-full" />
             </span>{" "}
             <span className="flex justify-end mt-1 mb-1 lg:hidden">
-            <hr className="w-full md:w-[10rem] border-t-4" />
+              <hr className="w-full md:w-[10rem] border-t-4" />
             </span>
           </div>
           {/*Price, taxes and total per night/s */}
@@ -505,10 +511,10 @@ const RoomInfoForm = ({ onSubmit }) => {
             </label>
 
             <strong>
-              {" "}
               <p className="text-[#2b3163]">
-                {currency === "EUR" ? "€" : "$"} {formatNumber(totalPrice)}{" "}
-                {currency}
+                {/* {currency === "EUR" ? "€" : "$"} {formatNumber(totalPrice)}{" "}
+                {currency} */}
+                {grandTotalPriceCurrency}
               </p>
             </strong>
             <span className="flex justify-end mt-1 mb-1">
