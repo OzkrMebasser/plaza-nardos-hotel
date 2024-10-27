@@ -6,6 +6,7 @@ import html2canvas from "html2canvas";
 import { useLanguage } from "@/app/contexts/LanguageContext";
 import { useRoomsAndCurrency } from "@/app/contexts/RoomsAndCurrencyContext";
 import RoomSumary from "./RoomSumary";
+import CallCenter from "../CallCenter";
 import React, { useRef } from "react";
 import Link from "next/link";
 
@@ -96,7 +97,7 @@ const FinishBooking = ({ data, personalData }) => {
             margin: 20mm;
           }
           #finish-booking-summary {
-            padding: 10mm;
+            padding: 5mm;
           }
         }
       </style>
@@ -111,59 +112,19 @@ const FinishBooking = ({ data, personalData }) => {
   return (
     <>
       <div
-        className="p-4 px-8 bg-[red] rounded-lg shadow-md"
+        className="p-4 px-8  rounded-lg shadow-md relative lg:mt-[8rem]"
         id="finish-booking-summary"
       >
-        {/* <h2 className="text-lg font-medium text-gray-900">
-          Reserva Completada
-        </h2> */}
-        {/* Renderizado de la información visible */}
-        {/* <p>
-          <strong>Tipo de Habitación:</strong> {roomName}
-        </p>
-        <p>
-          <strong>Nombre:</strong> {name + " " + lastName}
-        </p>
-        <p>
-          <strong>Email:</strong> {email}
-        </p>
-        <p>
-          <strong>Teléfono:</strong> {phone}
-        </p>
-        <p>
-          <strong>País:</strong> {country}
-        </p>
-        <p>
-          <strong>Ciudad:</strong> {city}
-        </p>
-        <p>
-          <strong>Número de Personas:</strong> {numberOfPeople}
-        </p>
-        <p>
-          <strong>Check-In:</strong> {checkInDate}
-        </p>
-        <p>
-          <strong>Hora Estimada de Llegada:</strong> {estimatedArrivalTime}
-        </p>
-        <p>
-          <strong>Check-Out:</strong> {checkOutDate}
-        </p>
-        <p>
-          <strong>Total a Pagar:</strong> {grandTotalPriceCurrency}
-        </p>
-        {request && (
-          <p>
-            <strong>Solicitudes Especiales:</strong> {request}
-          </p>
-        )} */}
-
         <div className=" ">
           <h3 className="text-center font-bold uppercase text-[#2b3163]  ">
-          Reserva Completada
-
+            Tu pre-reserva esta lista en breve, uno de nuestros ejecutivos te
+            contactará para confirmar tu reservación
           </h3>
+          <section id="no-visible-to-print" className="no-print">
+            <CallCenter />
+          </section>
 
-          <hr className="w-full md:w-[35%] mt-2 mb-2" />
+          <hr className="w-full md:w-[35%] mt-4 lg:-mt-[10rem] relative" />
           {Object.entries({
             [translations.bookingInfo.roomType]: roomName,
             [translations.bookingInfo.firstName]: `${name} ${lastName}`,
@@ -210,28 +171,34 @@ const FinishBooking = ({ data, personalData }) => {
           noSmoking={translations[roomType]?.noSmoking}
           {...getRoomInfo(roomIndex)}
         />
-
-        {/* Botones para descargar o imprimir */}
-        <div className="mt-4 flex gap-2 justify-around text-sm lg:text-lg">
-          {/* <button
+      </div>
+      {/* Botones para descargar o imprimir */}
+      <div className="mt-4 flex gap-2 justify-around text-sm lg:text-lg">
+        {/* <button
             className="px-4 py-2 bg-blue-600 text-white rounded"
             onClick={handleDownloadPDF}
           >
             Descargar PDF
           </button> */}
-          <button
-            className="px-4 py-2 bg-green-600 text-white rounded"
-            onClick={handlePrint}
-          >
-            Imprimir
+        <button
+          className="px-4 py-2 bg-green-600 text-white rounded"
+          onClick={handlePrint}
+        >
+          Imprimir
+        </button>
+        <Link href={"/"}>
+          <button className="px-4 py-2 bg-red-600 text-white rounded">
+            Cerrar
           </button>
-          <Link href={"/"}>
-            <button className="px-4 py-2 bg-red-600 text-white rounded">
-              Cerrar
-            </button>
-          </Link>
-        </div>
+        </Link>
       </div>
+      <style jsx>{`
+        @media print {
+          .no-print {
+            display: none;
+          }
+        }
+      `}</style>
     </>
   );
 };
