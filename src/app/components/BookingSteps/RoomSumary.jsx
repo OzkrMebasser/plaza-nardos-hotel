@@ -6,7 +6,7 @@ import RoomAmenities from "@/app/components/RoomAmenities";
 
 import { BsCalendarCheckFill } from "react-icons/bs";
 import "@/app/components/Sliders/mySwyper.css";
-import Link from "next/link";
+import "../../globals.css"
 
 const RoomSumary = ({
   roomType,
@@ -29,7 +29,7 @@ const RoomSumary = ({
 
   return (
     <>
-      <div>
+      <div id="push-up-onPrint">
         <span className="flex-shrink mr-4 lg:mr-8 text-gray-400">
           <h2 className="text-xl lg:text-2xl text-[#2b3163] font-black text-center">
             {roomType}

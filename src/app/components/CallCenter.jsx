@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import "../globals.css";
 
 // Componente de ojos para pantallas móviles
-    // A ESTE NO LE MUEVAS NADA
+    
 
 const MobileEyes = () => {
   return (

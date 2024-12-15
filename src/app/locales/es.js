@@ -101,27 +101,30 @@ export const es = {
     next: "Siguiente",
     back: "Regresar",
     //******** Revisar ********
-    reviewBooking: "Ya queremos que disfrute de sus vacaciones, solo antes necesitamos que revise y confirme los datos para su pre-reserva.",
-    confirm: "Confirmar", 
+    reviewBooking:
+      "Ya queremos que disfrute de sus vacaciones, solo antes necesitamos que revise y confirme los datos para su pre-reserva.",
+    confirm: "Confirmar",
     sending: "Enviando...",
-  
+    preBookingDone:
+      "Tu pre-reserva está lista. En breve, uno de nuestros ejecutivos te contactará para confirmar tu reservación.",
   },
 
   validationsYup: {
-//******** Detalles de la Habitación ********
-roomTypeRequired: "Se requiere el tipo de habitación.",
-checkInRequired: "Se requiere la fecha de check-in.",
-checkOutRequired: "Se requiere la fecha de check-out.",
-checkOutLaterThanCheckIn: "La fecha de check-out debe ser posterior a la fecha de check-in.",
-arrivalTime: "Se requiere la hora de llegada estimada.",
-//******** Información Personal ********
-firstName: "Se requiere el nombre.",
-lastName: "Se requiere el apellido.",
-invalidEmail: "Dirección de correo electrónico inválida.",
-emailRequired: "Se requiere el correo electrónico.",
-phone: "Se requiere el número de teléfono.",
-city: "Se requiere la ciudad.",
-country: "Se requiere el país.",
+    //******** Detalles de la Habitación ********
+    roomTypeRequired: "Se requiere el tipo de habitación.",
+    checkInRequired: "Se requiere la fecha de check-in.",
+    checkOutRequired: "Se requiere la fecha de check-out.",
+    checkOutLaterThanCheckIn:
+      "La fecha de check-out debe ser posterior a la fecha de check-in.",
+    arrivalTime: "Se requiere la hora de llegada estimada.",
+    //******** Información Personal ********
+    firstName: "Se requiere el nombre.",
+    lastName: "Se requiere el apellido.",
+    invalidEmail: "Dirección de correo electrónico inválida.",
+    emailRequired: "Se requiere el correo electrónico.",
+    phone: "Se requiere el número de teléfono.",
+    city: "Se requiere la ciudad.",
+    country: "Se requiere el país.",
   },
 
   // "Double Room, Balcón y terraza "

@@ -102,6 +102,8 @@ export const fr = {
       "Nous voulons que vous profitiez de vos vacances, mais d'abord nous avons besoin que vous vérifiiez et confirmiez les détails de votre pré-réservation.",
     confirm: "Confirmer",
     sending: "Envoi en cours...",
+    preBookingDone:
+      "Votre pré-réservation est prête. L’un de nos agents vous contactera prochainement pour confirmer votre réservation.",
   },
   validationsYup: {
     //******** Detalles de la Habitación ********

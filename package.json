@@ -13,6 +13,7 @@
     "@lordicon/react": "^1.10.0",
     "aos": "^2.3.4",
     "axios": "^1.7.2",
+    "dom-to-image-more": "^3.5.0",
     "flag-icons": "^7.2.3",
     "formik": "^2.4.6",
     "html2canvas": "^1.4.1",

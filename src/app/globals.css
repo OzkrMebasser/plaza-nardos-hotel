@@ -248,4 +248,15 @@
   border: 2px solid #6d6875;
 }
 
+@media print {
+  #push-down-onPrint {
+    margin-top: 20rem;
+  }
+}
+
+@media print {
+  #push-up-onPrint {
+    margin-top: 20rem;
+  }
+}
 
