@@ -29,7 +29,7 @@ const RoomSumary = ({
 
   return (
     <>
-      <div id="push-up-onPrint">
+      <div>
         <span className="flex-shrink mr-4 lg:mr-8 text-gray-400">
           <h2 className="text-xl lg:text-2xl text-[#2b3163] font-black text-center">
             {roomType}
@@ -42,7 +42,7 @@ const RoomSumary = ({
         className={`grid grid-cols-1 md:grid-cols-2 lg:px-8 transition-all duration-500 ease-in-out `}
       >
         <div className="">
-          <section className="px-4 ">
+          <section>
             <RoomSlidesPics images_A={images_A} images_B={images_B} />
           </section>
         </div>

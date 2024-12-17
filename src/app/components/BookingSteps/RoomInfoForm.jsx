@@ -58,7 +58,7 @@ const RoomInfoForm = ({ onSubmit }) => {
       setSelectedRoom(room);
     }
 
-    console.log("Número de personas seleccionadas:", selectedNumber);
+    // console.log("Número de personas seleccionadas:", selectedNumber);
   };
 
   const validationSchema = Yup.object({

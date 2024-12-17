@@ -11,9 +11,9 @@ import { BiSpreadsheet } from "react-icons/bi";
 import Title from "@/app/components/Title";
 import PersonalInfoForm from "./PersonalInfoForm";
 import ReservationSummary from "./ReservationSummary";
-import FormOne from "./FormOne.jsx";
 import RoomInfoForm from "./RoomInfoForm";
 import FinishBooking from "./FinishBooking";
+
 
 const StepForm = () => {
   const [currentStep, setCurrentStep] = useState(1);
