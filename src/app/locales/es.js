@@ -404,6 +404,23 @@ export const es = {
   roomType: "Habitación Doble",
   beds: "2 camas dobles",
 
+  //Contact form
+  contactForm: {
+    fullName: "Nombre Completo",
+    placeHolderFullName: "Ingresa tu nombre completo",
+    phone: "Numero de Teléfono",
+    placeHolderPhone: "Ingresa tu número de teléfono",
+    email: "Correo electrónico",
+    placeHolderEmail: "Ingresa tu correo electrónico",
+    message: "Mensaje",
+    placeHolderMessage: "Escribe tu mensaje",
+    submitButton: "Enviar mensaje",
+    successMessage:
+      "Gracias por tu mensaje! Nos pondremos en contacto contigo lo antes posible.",
+    errorMessage:
+      "Ha ocurrido un error al enviar el mensaje. Por favor, inténtelo de nuevo más tarde.",
+  },
+
   //Chat
   chatCard: {
     typedMessage: "Por favor, escribe tu nombre",

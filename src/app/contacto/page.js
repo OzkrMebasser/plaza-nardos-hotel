@@ -1,11 +1,14 @@
 "use client";
 import React, { useRef } from "react";
+import { useLanguage } from "@/app/contexts/LanguageContext";
 import { BiMailSend } from "react-icons/bi";
 import emailjs from "@emailjs/browser";
 import Title from "../components/Title";
-import "../globals.css"
+import "../globals.css";
 
 const Contacto = () => {
+  const { getTranslations } = useLanguage();
+  const translations = getTranslations();
   const form = useRef();
 
   const sendEmail = (e) => {
@@ -21,11 +24,11 @@ const Contacto = () => {
       .then(
         (result) => {
           console.log("Mensaje enviado con éxito:", result.text);
-          alert("¡Mensaje enviado con éxito!");
+          alert(`${translations.contactForm.successMessage}`);
         },
         (error) => {
           console.log("Error al enviar el mensaje:", error.text);
-          alert("Error al enviar el mensaje.");
+          alert(`${translations.contactForm.errorMessage}`);
         }
       );
     e.target.reset();
@@ -65,13 +68,13 @@ const Contacto = () => {
                   htmlFor="name"
                   className="block text-base font-bold mb-2 text-[#2b3163]"
                 >
-                  Full Name
+                  {translations.contactForm.fullName}
                 </label>
                 <input
                   type="text"
                   name="name"
                   id="name"
-                  placeholder="Enter your full name"
+                  placeholder={`${translations.contactForm.placeHolderFullName}`}
                   required
                   className="w-full rounded-md border border-gray-300 py-3 px-4 text-gray-700 focus:border-[#2b3163] focus:outline-none"
                 />
@@ -83,13 +86,13 @@ const Contacto = () => {
                   htmlFor="phone"
                   className="block text-base font-bold mb-2 text-[#2b3163]"
                 >
-                  Phone Number
+                  {translations.contactForm.phone}
                 </label>
                 <input
                   type="tel"
                   name="phone"
                   id="phone"
-                  placeholder="Enter your phone number"
+                  placeholder={`${translations.contactForm.placeHolderPhone}`}
                   required
                   className="w-full rounded-md border border-gray-300 py-3 px-4 text-gray-700 focus:border-[#2b3163] focus:outline-none"
                 />
@@ -100,15 +103,14 @@ const Contacto = () => {
                 <label
                   htmlFor="email"
                   className="block text-base font-bold mb-2 text-[#2b3163]"
-
                 >
-                  Email Address
+                    {translations.contactForm.email}
                 </label>
                 <input
                   type="email"
                   name="email"
                   id="email"
-                  placeholder="Enter your email"
+                  placeholder={`${translations.contactForm.placeHolderEmail}`}
                   required
                   className="w-full rounded-md border border-gray-300 py-3 px-4 text-gray-700 focus:border-[#2b3163] focus:outline-none"
                 />
@@ -119,46 +121,35 @@ const Contacto = () => {
                 <label
                   htmlFor="message"
                   className="block text-base font-bold mb-2 text-[#2b3163]"
-
                 >
-                  Message
+                  {translations.contactForm.message}
                 </label>
                 <textarea
                   name="message"
                   id="message"
                   rows="5"
-                  placeholder="Write your message here"
+                  placeholder={`${translations.contactForm.placeHolderMessage}`}
                   required
                   className="w-full rounded-md border border-gray-300 py-3 px-4 text-gray-700 focus:border-[#2b3163] focus:outline-none"
                 ></textarea>
               </div>
 
-              {/* Submit Button */}
-              {/* <div>
+              <div className="flex-1 p-4 flex justify-center items-center ">
                 <button
                   type="submit"
-                  className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-4 rounded-md transition duration-300 focus:outline-none"
+                  className="shake-btn cursor-pointer relative group overflow-hidden border-2 px-8 py-2 border-[#2b3163] rounded-lg"
                 >
-                  Send Message
-                </button>
-              </div> */}
-              <div className="flex-1 p-4 flex justify-center items-center ">
-          
-                  <button 
-                  type="submit"
-                  className="shake-btn cursor-pointer relative group overflow-hidden border-2 px-8 py-2 border-[#2b3163] rounded-lg">
-                    <span className="font-bold text-white text-xl relative z-10 group-hover:text-[#2b3163] duration-500">
-                      {/* Reservar{" "} bookNow */}
-                      <p className="inline mr-4">  Send Message</p>
-                      <BiMailSend className="  mb-1 inline h-5 w-5" />
-                    </span>
-                    <span className="absolute top-0 left-0 w-full bg-[#2b3163] duration-500 group-hover:-translate-x-full h-full"></span>
-                    <span className="absolute top-0 left-0 w-full bg-[#2b3163] duration-500 group-hover:translate-x-full h-full"></span>
+                  <span className="font-bold text-white text-xl relative z-10 group-hover:text-[#2b3163] duration-500">
+                    {/* Reservar{" "} bookNow */}
+                    <p className="inline mr-4"> {translations.contactForm.submitButton}</p>
+                    <BiMailSend className="  mb-1 inline h-5 w-5" />
+                  </span>
+                  <span className="absolute top-0 left-0 w-full bg-[#2b3163] duration-500 group-hover:-translate-x-full h-full"></span>
+                  <span className="absolute top-0 left-0 w-full bg-[#2b3163] duration-500 group-hover:translate-x-full h-full"></span>
 
-                    <span className="absolute top-0 left-0 w-full bg-[#2b3163] duration-500 delay-300 group-hover:-translate-y-full h-full"></span>
-                    <span className="absolute delay-300 top-0 left-0 w-full bg-[#2b3163] duration-500 group-hover:translate-y-full h-full"></span>
-                  </button>
-               
+                  <span className="absolute top-0 left-0 w-full bg-[#2b3163] duration-500 delay-300 group-hover:-translate-y-full h-full"></span>
+                  <span className="absolute delay-300 top-0 left-0 w-full bg-[#2b3163] duration-500 group-hover:translate-y-full h-full"></span>
+                </button>
               </div>
             </form>
           </div>

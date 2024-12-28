@@ -381,6 +381,23 @@ export const en = {
   roomType: "Double Room",
   beds: "2 Double Beds",
 
+  // Contact form
+  contactForm: {
+    fullName: "Full Name",
+    placeHolderFullName: "Enter your full name",
+    phone: "Phone Number",
+    placeHolderPhone: "Enter your phone number",
+    email: "Email Address",
+    placeHolderEmail: "Enter your email address",
+    message: "Message",
+    placeHolderMessage: "Write your message",
+    submitButton: "Send Message",
+    successMessage:
+      "Thank you for your message! We will get back to you as soon as possible.",
+    errorMessage:
+      "An error occurred while sending the message. Please try again later.",
+  },
+
   //Chat
   chatCard: {
     typedMessage: "Please type your name",

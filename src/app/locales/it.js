@@ -360,6 +360,23 @@ export const it = {
     noSmoking: "vietato fumare",
   },
 
+  // Contact form
+  contactForm: {
+    fullName: "Nome Completo",
+    placeHolderFullName: "Inserisci il tuo nome completo",
+    phone: "Numero di Telefono",
+    placeHolderPhone: "Inserisci il tuo numero di telefono",
+    email: "Indirizzo Email",
+    placeHolderEmail: "Inserisci il tuo indirizzo email",
+    message: "Messaggio",
+    placeHolderMessage: "Scrivi il tuo messaggio",
+    submitButton: "Invia Messaggio",
+    successMessage:
+      "Grazie per il tuo messaggio! Ti risponderemo al più presto.",
+    errorMessage:
+      "Si è verificato un errore durante l'invio del messaggio. Riprova più tardi.",
+  },
+
   //Chat
   chatCard: {
     typedMessage: "Per favore, digita il tuo nome",
