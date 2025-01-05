@@ -6,11 +6,11 @@ import "../globals.css";
 
 const MobileEyes = () => {
   return (
-    <div className="eyes absolute lg:hidden flex justify-center -mt-6 items-center h-full">
+    <div className="eyes absolute lg:hidden flex justify-center -mt-[28.5px] items-center h-full">
       <div className="eye w-[6px] h-[6px] m-[3px] flex justify-center items-center">
         <div className="ball "></div>
       </div>
-      <div className="eye w-[6px] h-[6px] m-[3px] flex justify-center items-center">
+      <div className="eye w-[6px] h-[6px] m-[3.8px] flex justify-center items-center">
         <div className="ball "></div>
       </div>
     </div>
@@ -22,7 +22,7 @@ const MobileEyes = () => {
 const LargeEyes = () => {
   return (
    
-     <div className="eyes hidden lg:flex lg:-mt-[18.3rem] ">
+     <div className="eyes hidden lg:flex lg:-mt-[18.75rem] ">
       <div className="eye lg:w-[16px] lg:h-[16px] lg:m-[8px]  flex justify-center items-center">
         <div className="ball lg:w-[7px] lg:h-[7px]"></div>
       </div>

@@ -13,7 +13,7 @@ export const en = {
   nav: {
     inicio: "Home",
     habitaciones: "Rooms",
-    servicios: "Services",
+    // servicios: "Services",
     reservaciones: "Book",
     contacto: "Contact",
     nosotros: "About Us",
@@ -414,14 +414,29 @@ export const en = {
     phoneCall: "Give us a Phone Call",
   },
 
-  // Footer
   footer: {
     rooms: "Rooms",
     dlbBedRoom: "Double",
     dlbDeluxe: "Double Deluxe",
-    dlbDeluxeWithBalcony: "Double Deluxe, (Balcony)",
+    dlbDeluxeWithBalcony: "Double Deluxe (Balcony)",
     tripleDeluxe: "Triple Deluxe",
     cuadrupleBedRoom: "Quadruple Comfort",
+
+    // Contacto
+    contact: "Contact",
+    sendMessage: "Send us a message",
+    callUs: "Call us",
+    writeWhatsapp: "Write us on WhatsApp",
+    emailUs: "Email us",
+
+    // Reservaciones
+    reservations: "Reservations",
+    makeReservation: "Make a reservation",
+    line1: "Line #1",
+    line2: "Line #2",
+
+    // Follow Us
+    followUs: "Follow us on:",
   },
 };
 

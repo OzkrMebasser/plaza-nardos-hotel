@@ -12,7 +12,7 @@ export const it = {
   nav: {
     inicio: "Inizio",
     habitaciones: "Camere",
-    servicios: "Servizi",
+    // servicios: "Servizi",
     reservaciones: "Prenotare",
     contacto: "Contatto",
     nosotros: "Chi Siamo",
@@ -393,14 +393,29 @@ export const it = {
     phoneCall: "Fai una Chiamata",
   },
 
-  // Footer
   footer: {
     rooms: "Camere",
     dlbBedRoom: "Doppia",
     dlbDeluxe: "Doppia Deluxe",
-    dlbDeluxeWithBalcony: "Doppia Deluxe, (Balcone)",
+    dlbDeluxeWithBalcony: "Doppia Deluxe (Balcone)",
     tripleDeluxe: "Tripla Deluxe",
     cuadrupleBedRoom: "Quadrupla Comfort",
+
+    // Contacto
+    contact: "Contatto",
+    sendMessage: "Inviaci un messaggio",
+    callUs: "Chiamaci",
+    writeWhatsapp: "Scrivici su WhatsApp",
+    emailUs: "Inviaci un'email",
+
+    // Reservaciones
+    reservations: "Prenotazioni",
+    makeReservation: "Effettua una prenotazione",
+    line1: "Linea #1",
+    line2: "Linea #2",
+
+    // Follow Us
+    followUs: "Seguici su:",
   },
 };
 

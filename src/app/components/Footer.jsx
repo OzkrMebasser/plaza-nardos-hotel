@@ -87,7 +87,8 @@ const Footer = () => {
             </div>
             <div className="w-full px-4 lg:w-1/5 md:w-1/2">
               <p className=" mb-3 font-medium tracking-widest text-white uppercase title-font relative inline-block stroke-current">
-                Contact
+                {/* Contacto */}
+                {translations.footer.contact}
                 <svg
                   className="absolute -bottom-0.5 w-full max-h-1.5"
                   viewBox="0 0 55 5"
@@ -102,34 +103,48 @@ const Footer = () => {
               </p>
               <nav className="mb-10 list-none">
                 <li className="mb-3 hover:text-gray-300">
-                  <a
-                    href="#"
+                  <Link
+                    href="/contacto"
                     className="relative w-fit block after:block after:content-[''] after:absolute after:h-[.8px] after:bg-white after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-left"
                   >
-                    Contact Support
+                    {/* Envíanos un mensaje */}
+                    {translations.footer.sendMessage}
+                    
+                  </Link>
+                </li>
+                <li className="mb-3 hover:text-gray-300">
+                  <a
+                    href="tel:+529843618302"
+                    className="relative w-fit block after:block after:content-[''] after:absolute after:h-[.8px] after:bg-white after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-left"
+                  >
+                    {/* Llámanos */}
+                    {translations.footer.callUs}
                   </a>
                 </li>
                 <li className="mb-3 hover:text-gray-300">
                   <a
-                    href="#"
+                    href="https://wa.me/+529843133309"
                     className="relative w-fit block after:block after:content-[''] after:absolute after:h-[.8px] after:bg-white after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-left"
                   >
-                    Help Resources
+                    {/* Escríbenos por WhatsApp */}
+                    {translations.footer.writeWhatsapp}
                   </a>
                 </li>
                 <li className="mb-3 hover:text-gray-300">
                   <a
-                    href="#"
+                    href="mailto:example@domain.com"
                     className="relative w-fit block after:block after:content-[''] after:absolute after:h-[.8px] after:bg-white after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-left"
                   >
-                    Release Updates
+                    {/* Correo Electrónico */}
+                    {translations.footer.emailUs}
                   </a>
                 </li>
               </nav>
             </div>
             <div className=" w-full px-4 lg:w-1/5 md:w-1/2">
               <p className=" mb-3 font-medium tracking-widest text-white uppercase title-font relative inline-block stroke-current">
-                Reservations
+                {/* Reservaciones */}
+                {translations.footer.reservations}
                 <svg
                   className="absolute -bottom-0.5 w-full max-h-1.5"
                   viewBox="0 0 55 5"
@@ -144,34 +159,38 @@ const Footer = () => {
               </p>
               <nav className="mb-10 list-none">
                 <li className="mb-3 hover:text-gray-300">
-                  <a
-                    href="#"
+                  <Link
+                    href="/reservaciones"
                     className="relative w-fit block after:block after:content-[''] after:absolute after:h-[.8px] after:bg-white after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-left"
                   >
-                    Terms &amp; Privacy
+                    {/* Hacer una reserva */}
+                    {translations.footer.makeReservation}
+                  </Link>
+                </li>
+                <li className="mb-3 hover:text-gray-300">
+                  <a
+                    href="tel:+529843618302"
+                    className="relative w-fit block after:block after:content-[''] after:absolute after:h-[.8px] after:bg-white after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-left"
+                  >
+                    {/* Línea # 1 */}
+                    {translations.footer.line1}
                   </a>
                 </li>
                 <li className="mb-3 hover:text-gray-300">
                   <a
-                    href="#"
+                    href="tel:+529843618303"
                     className="relative w-fit block after:block after:content-[''] after:absolute after:h-[.8px] after:bg-white after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-left"
                   >
-                    Pricing
-                  </a>
-                </li>
-                <li className="mb-3 hover:text-gray-300">
-                  <a
-                    href="#"
-                    className="relative w-fit block after:block after:content-[''] after:absolute after:h-[.8px] after:bg-white after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-left"
-                  >
-                    FAQ
+                    {/* Línea # 2 */}
+                    {translations.footer.line2}
                   </a>
                 </li>
               </nav>
             </div>
             <div className=" w-full px-4 lg:w-1/5 md:w-1/2">
               <p className=" mb-3 font-medium tracking-widest text-white uppercase title-font relative inline-block stroke-current">
-                Siguenos en:
+                {/* Siguenos en: */}
+                {translations.footer.followUs}
                 <svg
                   className="absolute -bottom-0.5 w-full max-h-1.5"
                   viewBox="0 0 55 5"

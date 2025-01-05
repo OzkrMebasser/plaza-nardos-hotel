@@ -17,7 +17,7 @@ const AmenitiesGrid = () => {
 
 
   return (
-    <section className="py-5 relative bg-white  sm:py-16 lg:py-24 lg:pt-10 ">
+    <section id="amenidades" className="py-5 relative bg-white  sm:py-16 lg:py-24 lg:pt-10 ">
       <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8 text-center">
         {/* <Title title={"Amenidades del Hotel"}/> */}
         <Title title={translations.homeTitles.services}/>

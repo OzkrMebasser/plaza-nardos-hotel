@@ -14,7 +14,7 @@ export const es = {
   nav: {
     inicio: "Inicio",
     habitaciones: "Habitaciones",
-    servicios: "Servicios",
+    // servicios: "Servicios",
     reservaciones: "Reservar",
     contacto: "Contacto",
     nosotros: "Nosotros",
@@ -436,7 +436,7 @@ export const es = {
     sendWhatsApp: "Envíanos un WhatsApp",
     phoneCall: "Haznos una llamada ",
   },
-  // Footer
+
   footer: {
     rooms: "Habitaciones",
     dlbBedRoom: "Doble",
@@ -444,6 +444,22 @@ export const es = {
     dlbDeluxeWithBalcony: "Doble Deluxe, (Balcon)",
     tripleDeluxe: "Triple Deluxe",
     cuadrupleBedRoom: "Cuádruple Confort",
+
+    // Contacto
+    contact: "Contacto",
+    sendMessage: "Envíanos un mensaje",
+    callUs: "Llámanos",
+    writeWhatsapp: "Escríbenos por WhatsApp",
+    emailUs: "Correo Electrónico",
+
+    // Reservaciones
+    reservations: "Reservaciones",
+    makeReservation: "Hacer una reserva",
+    line1: "Línea # 1",
+    line2: "Línea # 2",
+
+    //Siguenos
+    followUs: "Siguenos en:",
   },
 };
 

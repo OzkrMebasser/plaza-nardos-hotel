@@ -11,7 +11,7 @@ export const fr = {
   nav: {
     inicio: "Accueil",
     habitaciones: "Chambres",
-    servicios: "Services",
+    // servicios: "Services",
     reservaciones: "Réserver",
     contacto: "Contact",
     nosotros: "À Propos",
@@ -393,14 +393,29 @@ export const fr = {
     sendWhatsApp: "Envoyez-nous un WhatsApp",
     phoneCall: "Passez un Appel",
   },
-  // Footer
   footer: {
     rooms: "Chambres",
     dlbBedRoom: "Double",
     dlbDeluxe: "Double Deluxe",
-    dlbDeluxeWithBalcony: "Double Deluxe, (Balcon)",
+    dlbDeluxeWithBalcony: "Double Deluxe (Balcon)",
     tripleDeluxe: "Triple Deluxe",
     cuadrupleBedRoom: "Quadruple Confort",
+
+    // Contacto
+    contact: "Contact",
+    sendMessage: "Envoyez-nous un message",
+    callUs: "Appelez-nous",
+    writeWhatsapp: "Écrivez-nous sur WhatsApp",
+    emailUs: "Envoyez-nous un email",
+
+    // Reservaciones
+    reservations: "Réservations",
+    makeReservation: "Faites une réservation",
+    line1: "Ligne #1",
+    line2: "Ligne #2",
+
+    // Follow Us
+    followUs: "Suivez-nous sur :",
   },
 };
 
